@@ -1,0 +1,159 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}index.html{% else %}id/index.html{% endif %}"
+layout: layouts/base.njk
+pageKey: home
+slugEn: index.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="{{ c.hero.image }}" alt="{{ c.hero.imageAlt }}" fetchpriority="high">
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="hero-kicker">{{ c.hero.kicker }}</span>
+      <h1 class="headline-xl">{{ c.hero.heading }}</h1>
+      <p class="lede">{{ c.hero.lede }}</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="{{ root }}contact.html">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-outline-light" href="{{ site.profilePdf }}" download>{{ t.ctaDownload }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY STATS -->
+<section class="stat-band" aria-label="{{ c.stats.ariaLabel }}">
+  <div class="container">
+    <div class="stat-band-grid">
+      {%- for s in c.stats.items %}
+      <div class="stat-cell">
+        <div class="stat-lg">{{ s.value }}</div>
+        <span class="label-caps">{{ s.label }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- STORY SNAPSHOT -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">{{ c.story.eyebrow }}</span>
+        <h2 class="headline-lg">{{ c.story.heading }}</h2>
+        <p class="body-md mt-24">{{ c.story.p1 }}</p>
+        <p class="body-md mt-16 text-muted">{{ c.story.p2 }}</p>
+        <div class="chip-row mt-24">
+          {%- for chip in c.story.chips %}
+          <span class="chip{% if loop.first %} chip-crimson{% endif %}">{{ chip }}</span>
+          {%- endfor %}
+        </div>
+        <div class="mt-32">
+          <a class="btn btn-outline" href="{{ root }}about.html">{{ c.story.cta }} <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="media reveal">
+        <img src="{{ c.story.image }}" alt="{{ c.story.imageAlt }}" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS SECTORS -->
+<section class="section section-cream" id="sectors">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.sectors.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.sectors.heading }}</h2>
+      <p class="lede body-md">{{ c.sectors.lede }}</p>
+    </div>
+    <div class="grid-3">
+      {%- for card in c.sectors.cards %}
+      <article class="sector-card reveal">
+        <div class="media"><img src="{{ card.image }}" alt="{{ card.imageAlt }}" loading="lazy"></div>
+        <div class="body">
+          <span class="index">{{ card.index }}</span>
+          <h3 class="headline-md">{{ card.title }}</h3>
+          <p class="desc">{{ card.desc }}</p>
+          <div class="chip-row">
+            {%- for chip in card.chips %}
+            <span class="chip">{{ chip }}</span>
+            {%- endfor %}
+          </div>
+          <div class="more"><a class="btn btn-outline" href="{{ root }}products.html#{{ card.anchor }}">{{ c.sectors.ctaLabel }} <span class="arrow">&rarr;</span></a></div>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURING SNAPSHOT -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="media reveal">
+        <img src="{{ c.manufacturing.image }}" alt="{{ c.manufacturing.imageAlt }}" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">{{ c.manufacturing.eyebrow }}</span>
+        <h2 class="headline-lg">{{ c.manufacturing.heading }}</h2>
+        <p class="body-md mt-24 text-muted">{{ c.manufacturing.lede }}</p>
+        <div class="cap-table mt-32" aria-label="{{ c.manufacturing.capacityAria }}">
+          {%- for row in c.manufacturing.capacities %}
+          <div class="cap-row"><span class="name">{{ row.name }}</span><div class="track"><div class="fill" data-pct="{{ row.pct }}"></div></div><span class="val">{{ row.value }}</span></div>
+          {%- endfor %}
+        </div>
+        <div class="mt-32">
+          <a class="btn btn-outline" href="{{ root }}manufacturing.html">{{ c.manufacturing.cta }} <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT TRUST STRIP -->
+<section class="trust-strip" aria-label="{{ c.trust.ariaLabel }}">
+  <div class="container" style="padding-top:40px;padding-bottom:40px;">
+    <p class="label-caps text-muted mb-24" style="text-align:center;">{{ c.trust.label }}</p>
+    <div class="trust-grid">
+      {%- for name in c.trust.names %}
+      <div class="trust-cell"><span>{{ name }}</span></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section section-low">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">{{ c.certs.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.certs.heading }}</h2>
+      <p class="lede body-md">{{ c.certs.lede }}</p>
+    </div>
+    <div class="grid-3">
+      {%- for card in c.certs.cards %}
+      <div class="cert-card reveal">
+        <div class="cert-code">{{ card.code }}<small>{{ card.subtitle }}</small></div>
+        <p>{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="mt-48" style="text-align:center;">
+      <a class="btn btn-outline" href="{{ root }}clients.html#certifications">{{ c.certs.cta }} <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

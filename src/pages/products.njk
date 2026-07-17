@@ -1,0 +1,66 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}products.html{% else %}id/products.html{% endif %}"
+layout: layouts/base.njk
+pageKey: products
+slugEn: products.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+{% include "partials/page-hero.njk" %}
+
+{%- for cat in c.categories %}
+<section class="section{% if cat.cream %} section-cream{% endif %}" id="{{ cat.anchor }}">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ cat.eyebrow }}</span>
+      <h2 class="headline-lg">{{ cat.heading }}</h2>
+      <p class="lede body-md">{{ cat.lede }}</p>
+    </div>
+    {%- for p in cat.products %}
+    <article class="product-card reveal">
+      <div class="media"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" loading="lazy"></div>
+      <div class="body">
+        <div class="brand-line">
+          <h3 class="headline-md" style="font-size:28px;line-height:34px;">{{ p.name }}</h3>
+          <span class="label-caps text-crimson">{{ p.tagline }}</span>
+        </div>
+        <p class="desc">{{ p.desc }}</p>
+        <div class="chip-row">
+          {%- for chip in p.chips %}
+          <span class="chip">{{ chip }}</span>
+          {%- endfor %}
+        </div>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{%- endfor %}
+
+<!-- SERVICES STRIP -->
+<section class="section section-low">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.services.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.services.heading }}</h2>
+      <p class="lede body-md">{{ c.services.lede }}</p>
+    </div>
+    <div class="grid-3">
+      {%- for card in c.services.cards %}
+      <div class="card card-pad reveal">
+        <span class="label-caps text-crimson">{{ c.services.labelPrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3 class="headline-md mt-16">{{ card.title }}</h3>
+        <p class="body-sm text-muted">{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

@@ -1,0 +1,70 @@
+{
+  "en": {
+    "brandTag": "Since 1978 · Proven Results",
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "products": "Products & Services",
+      "manufacturing": "Manufacturing",
+      "manufacturingFull": "Manufacturing & Quality",
+      "industries": "Industries",
+      "clients": "Clients",
+      "contact": "Contact Us"
+    },
+    "ctaConsult": "Request a Technical Consultation",
+    "ctaDownload": "Download Company Profile",
+    "footer": {
+      "quote": "\"To deliver high-quality, innovative, durable, and certified coating solutions that empower industries across Indonesia.\"",
+      "navigation": "Navigation",
+      "sectors": "Business Sectors",
+      "office": "Head Office & Factory",
+      "sectorAutomotive": "Automotive Paints",
+      "sectorMarine": "Marine, Offshore & Protective",
+      "sectorArchitectural": "Architectural Coatings",
+      "telp": "Telp.",
+      "email": "Email",
+      "rights": "All rights reserved.",
+      "since": "Since 1978 · Proven Results"
+    },
+    "a11y": {
+      "primaryNav": "Primary",
+      "toggleNav": "Toggle navigation",
+      "logoAlt": "PT Victorindo Kimiatama logo",
+      "wordmarkAlt": "PT Victorindo Kimiatama wordmark"
+    }
+  },
+  "id": {
+    "brandTag": "Since 1978 · Proven Results",
+    "nav": {
+      "home": "Beranda",
+      "about": "Tentang Kami",
+      "products": "Produk & Layanan",
+      "manufacturing": "Manufaktur",
+      "manufacturingFull": "Manufaktur & Kualitas",
+      "industries": "Industri",
+      "clients": "Klien",
+      "contact": "Hubungi Kami"
+    },
+    "ctaConsult": "Ajukan Konsultasi Teknis",
+    "ctaDownload": "Unduh Profil Perusahaan",
+    "footer": {
+      "quote": "\"Menghadirkan solusi coating berkualitas tinggi, inovatif, tahan lama, dan tersertifikasi yang memberdayakan industri di seluruh Indonesia.\"",
+      "navigation": "Navigasi",
+      "sectors": "Sektor Bisnis",
+      "office": "Kantor Pusat & Pabrik",
+      "sectorAutomotive": "Cat Otomotif",
+      "sectorMarine": "Marine, Offshore & Protective",
+      "sectorArchitectural": "Cat Arsitektural",
+      "telp": "Telp.",
+      "email": "Email",
+      "rights": "Seluruh hak cipta.",
+      "since": "Since 1978 · Proven Results"
+    },
+    "a11y": {
+      "primaryNav": "Utama",
+      "toggleNav": "Buka menu navigasi",
+      "logoAlt": "Logo PT Victorindo Kimiatama",
+      "wordmarkAlt": "Logo wordmark PT Victorindo Kimiatama"
+    }
+  }
+}

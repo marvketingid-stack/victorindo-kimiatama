@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Hubungi Kami — PT Victorindo Kimiatama",
+    "description": "Ajukan konsultasi teknis dengan PT Victorindo Kimiatama — kantor pusat dan pabrik di Karawang, Jawa Barat. Telp. +62 822-8000-5809."
+  },
+  "hero": {
+    "breadcrumb": "Hubungi Kami",
+    "eyebrow": "Hubungi Kami",
+    "heading": "Ajukan Konsultasi Teknis",
+    "lede": "Diskusikan dengan tim teknis kami mengenai pemilihan produk, color matching, metode aplikasi, atau peluang kemitraan."
+  },
+  "info": {
+    "eyebrow": "Kantor Pusat Korporat",
+    "heading": "Kantor Pusat & Pabrik",
+    "addressLabel": "Alamat",
+    "phoneLabel": "Telp.",
+    "emailLabel": "Email",
+    "websiteLabel": "Website"
+  },
+  "profileCard": {
+    "label": "Profil Perusahaan",
+    "desc": "Dapatkan gambaran lengkap produk, kapasitas, sertifikasi, dan portofolio kami dalam satu dokumen."
+  },
+  "form": {
+    "eyebrow": "Pertanyaan Teknis",
+    "heading": "Ceritakan Proyek Anda",
+    "nameLabel": "Nama Lengkap",
+    "namePlaceholder": "NAMA ANDA",
+    "nameError": "Mohon masukkan nama lengkap Anda.",
+    "companyLabel": "Perusahaan",
+    "companyPlaceholder": "NAMA PERUSAHAAN",
+    "emailLabel": "Email Korporat",
+    "emailPlaceholder": "NAME@COMPANY.CO.ID",
+    "emailError": "Mohon gunakan alamat email korporat yang valid.",
+    "phoneLabel": "Telepon",
+    "phonePlaceholder": "+62",
+    "industryLabel": "Industri",
+    "industryDefault": "— Pilih industri Anda —",
+    "industryOptions": [
+      "Otomotif & Karoseri Bus",
+      "Konstruksi & Real Estat",
+      "Manufaktur & Industri",
+      "Minyak, Gas & Petrokimia",
+      "Transportasi Publik",
+      "Industri Berat & Infrastruktur",
+      "Lainnya"
+    ],
+    "industryError": "Mohon pilih industri Anda.",
+    "messageLabel": "Pesan",
+    "messagePlaceholder": "JELASKAN KEBUTUHAN COATING ANDA...",
+    "messageError": "Mohon jelaskan kebutuhan Anda (min. 10 karakter).",
+    "submit": "Kirim Pertanyaan",
+    "note": "Kolom bertanda * wajib diisi. Tim teknis kami biasanya merespons dalam satu hari kerja.",
+    "success": "Terima kasih — aplikasi email Anda telah terbuka dengan pertanyaan Anda. Jika tidak terbuka, silakan email kami langsung di <strong>info@victorindokimiatama.com</strong>."
+  },
+  "location": {
+    "eyebrow": "Lokasi Pabrik",
+    "heading": "Temukan Kami di Karawang",
+    "lede": "Kantor pusat dan fasilitas manufaktur kami berlokasi di Karawang Timur, Jawa Barat — di jantung koridor industri Indonesia.",
+    "mapTitle": "Peta lokasi pabrik PT Victorindo Kimiatama"
+  }
+}

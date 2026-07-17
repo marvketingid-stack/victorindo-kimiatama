@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Manufaktur & Kualitas — PT Victorindo Kimiatama",
+    "description": "Fasilitas VK memadukan teknologi manufaktur canggih dengan proses teruji — kendali mutu kelas laboratorium dan pusat inovasi R&D di Karawang, Jawa Barat."
+  },
+  "hero": {
+    "breadcrumb": "Manufaktur & Kualitas",
+    "eyebrow": "Manufaktur & Produksi",
+    "heading": "Manufaktur Terpercaya",
+    "lede": "Fasilitas kami memadukan teknologi manufaktur canggih dengan proses teruji untuk menghasilkan output berkualitas tinggi yang konsisten."
+  },
+  "facility": {
+    "eyebrow": "Fasilitas Produksi",
+    "heading": "Dibangun untuk Pasokan yang Konsisten",
+    "image": "/assets/img/factory-aerial.webp",
+    "imageAlt": "Pemandangan udara fasilitas produksi PT Victorindo Kimiatama di Karawang, Jawa Barat",
+    "features": [
+      { "title": "R&D & Layanan Teknis", "desc": "Tim khusus yang berfokus pada peningkatan kualitas produk, formulasi baru, dan inovasi aplikasi." },
+      { "title": "Sistem Kendali Mutu", "desc": "Pengujian ketat selama proses dan pada barang jadi memastikan setiap batch memenuhi standar kualitas yang ketat." },
+      { "title": "Pasokan Konsisten", "desc": "Penjadwalan produksi dan manajemen inventori untuk memenuhi permintaan pelanggan secara andal setiap saat." },
+      { "title": "Distribusi Unggul", "desc": "Jaringan distribusi luas dengan sistem manajemen modern — mengirim secara andal ke seluruh Indonesia." }
+    ]
+  },
+  "capacity": {
+    "eyebrow": "Kapasitas Produksi",
+    "heading": "Kapasitas per Lini Produk",
+    "lede": "Kapasitas produksi per shift per bulan di seluruh lini produk, didukung peralatan manufaktur modern dan tim formulasi ahli. Satuan dalam Metrik Ton (MT).",
+    "aria": "Kapasitas produksi dalam metrik ton per shift per bulan",
+    "rows": [
+      { "name": "Base Coat", "pct": 52, "value": "100 MT" },
+      { "name": "Clear Coat", "pct": 100, "value": "192 MT" },
+      { "name": "Synthetic Paint", "pct": 47, "value": "90 MT" },
+      { "name": "Epoxy", "pct": 50, "value": "96 MT" },
+      { "name": "Thinner", "pct": 83, "value": "160 MT" },
+      { "name": "Hardener", "pct": 19, "value": "36 MT" },
+      { "name": "Putty", "pct": 100, "value": "192 MT" }
+    ],
+    "footnote": "Rekam Jejak Terbukti — Dipercaya Perusahaan Terkemuka"
+  },
+  "stages": {
+    "eyebrow": "Di Dalam Fasilitas",
+    "heading": "Dari Bahan Baku hingga Batch Jadi",
+    "labelPrefix": "TAHAP",
+    "cards": [
+      { "title": "Pencampuran & Formulasi", "desc": "Bahan baku ditakar dan dicampur di bawah prosedur formulasi yang terkontrol.", "image": "/assets/img/production-mixing.webp", "imageAlt": "Operator memindahkan bahan baku dari drum ke tangki pencampur stainless steel" },
+      { "title": "Pengisian & Pengemasan", "desc": "Lini pengisian otomatis menjaga volume yang akurat serta kemasan yang bersih dan konsisten.", "image": "/assets/img/production-filling-line.webp", "imageAlt": "Kaleng Blinken di mesin pengisian otomatis" },
+      { "title": "Gudang & Distribusi", "desc": "Barang jadi disiapkan untuk pengiriman yang andal dan tepat jadwal ke seluruh Indonesia.", "image": "/assets/img/warehouse-distribution.webp", "imageAlt": "Forklift memindahkan palet karton Steelux dan Blinken di dalam gudang VK" }
+    ]
+  },
+  "qc": {
+    "eyebrow": "Kendali Mutu",
+    "heading": "Presisi di Setiap Langkah",
+    "lede": "Pengujian kelas laboratorium memastikan coating kami berkinerja melampaui ekspektasi, secara konsisten.",
+    "labelPrefix": "QC",
+    "cards": [
+      { "title": "Pengukuran Warna", "desc": "Verifikasi akurasi dan konsistensi warna menggunakan instrumen pengukuran presisi." },
+      { "title": "Pengujian Fisik", "desc": "Pengujian sifat fisik produk untuk memastikan kualitas memenuhi standar yang ditetapkan." },
+      { "title": "Performa Coating", "desc": "Evaluasi daya tahan dan performa coating dalam berbagai kondisi aplikasi." },
+      { "title": "Kendali Produksi", "desc": "Kendali mutu di sepanjang proses produksi untuk menjaga konsistensi di setiap batch." }
+    ],
+    "photos": [
+      { "image": "/assets/img/qc-spectrophotometer.webp", "imageAlt": "Analis QC memverifikasi akurasi warna dengan spektrofotometer dan perangkat lunak MSQC" },
+      { "image": "/assets/img/qc-viscometer.webp", "imageAlt": "Teknisi QC menjalankan uji viskositas pada viskometer Krebs" }
+    ],
+    "equipmentTitle": "Peralatan Pengujian Laboratorium",
+    "equipment": [
+      { "name": "Minolta Chroma Meter", "image": "/assets/img/alat-minolta-chroma-meter.webp" },
+      { "name": "Multi Angle Spectrophotometer", "image": "/assets/img/alat-multi-angle-spectrophotometer.webp" },
+      { "name": "Salt Spray Test Machine", "image": "/assets/img/alat-salt-spray-test.webp" },
+      { "name": "UV Machine", "image": "/assets/img/alat-uv-machine.webp" },
+      { "name": "Impact Test", "image": "/assets/img/alat-impact-test.webp" },
+      { "name": "Hardness Test", "image": "/assets/img/alat-hardness-test.webp" },
+      { "name": "Elcometer 106 Pull-Off Adhesion Tester", "image": "/assets/img/alat-elcometer-adhesion.webp" },
+      { "name": "Adhesive Test Kit", "image": "/assets/img/alat-adhesive-test-kit.webp" },
+      { "name": "Laboratory Digital Scales", "image": "/assets/img/alat-digital-scales.webp" },
+      { "name": "Viscometer Machine", "image": "/assets/img/alat-viscometer-machine.webp" },
+      { "name": "Viscometer Cup NK2", "image": "/assets/img/alat-viscometer-cup-nk2.webp" },
+      { "name": "Grindometer", "image": "/assets/img/alat-grindometer.webp" }
+    ]
+  },
+  "rnd": {
+    "eyebrow": "Teknologi & Inovasi",
+    "heading": "Inovasi & Teknologi",
+    "lede": "Didukung lebih dari 45 tahun keahlian formulasi, tim R&D kami mengembangkan teknologi coating mutakhir yang disesuaikan dengan kondisi Indonesia.",
+    "image": "/assets/img/laboratory-rnd.webp",
+    "imageAlt": "Kimiawan R&D VK bekerja di laboratorium formulasi",
+    "focusTitle": "Fokus R&D",
+    "chips": ["Pengembangan Warna", "Formula Ramah Lingkungan", "Sistem Performa Tinggi", "Efisiensi Aplikasi", "Adaptasi Iklim Lokal"],
+    "secondImage": "/assets/img/lab-color-matching.webp",
+    "secondImageAlt": "Kolorist menimbang sampel formulasi di samping kaleng Blinken di laboratorium warna",
+    "labelPrefix": "R&D",
+    "cards": [
+      { "title": "Pengembangan Formulasi Baru", "desc": "Pengembangan berkelanjutan formulasi coating canggih menggunakan teknologi modern dan standar global." },
+      { "title": "Inovasi Aplikasi", "desc": "Mengembangkan metode aplikasi inovatif untuk meningkatkan efisiensi coating dan kualitas hasil akhir." },
+      { "title": "Inisiatif Keberlanjutan", "desc": "Mengembangkan formulasi ramah lingkungan ber-VOC rendah yang memenuhi standar industri yang terus berkembang." },
+      { "title": "Pengujian Performa", "desc": "Pengujian laboratorium canggih untuk ketahanan UV, salt spray, adhesi, dan benturan." },
+      { "title": "Ilmu Warna & Color Matching", "desc": "Spektrofotometri multi-sudut dan chroma metering untuk pencocokan warna yang presisi." },
+      { "title": "Optimalisasi Proses", "desc": "Lean manufacturing dan perbaikan berkelanjutan untuk mengoptimalkan efisiensi dan konsistensi produksi." }
+    ]
+  },
+  "ctaBand": {
+    "label": "Kunjungan Pabrik",
+    "heading": "Lihat langsung standar manufaktur dan QC kami dari dekat."
+  }
+}

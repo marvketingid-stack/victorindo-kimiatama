@@ -1,0 +1,181 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}clients.html{% else %}id/clients.html{% endif %}"
+layout: layouts/base.njk
+pageKey: clients
+slugEn: clients.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+<style>
+  .map-svg .island { fill: var(--surface-cream); stroke: var(--industrial-grey); stroke-width: 1.5; }
+  .map-svg .city { fill: var(--brand-crimson); }
+  .map-svg .city-ring { fill: none; stroke: var(--brand-crimson); stroke-width: 1; opacity: .55; }
+  .map-svg .map-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; fill: var(--industrial-grey); text-transform: uppercase; }
+  .map-svg .city-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .04em; fill: var(--on-surface); }
+</style>
+
+{% include "partials/page-hero.njk" %}
+
+<!-- CLIENT ECOSYSTEM -->
+<section class="section">
+  <div class="container">
+    {%- for group in c.groups %}
+    <div class="client-group">
+      <h3>{{ group.title }}</h3>
+      <div class="client-grid">
+        {%- for client in group.clients %}
+        <div class="client-cell reveal"><span class="cname">{{ client.name }}</span><span class="csub">{{ client.sub }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section section-cream" id="certifications">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.certs.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.certs.heading }}</h2>
+      <p class="lede body-md">{{ c.certs.lede }}</p>
+    </div>
+    <div class="grid-3 mb-24">
+      {%- for card in c.certs.isoCards %}
+      <div class="cert-card reveal">
+        <div class="cert-code">{{ card.code }}<small>{{ card.subtitle }}</small></div>
+        <p>{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="grid-2">
+      {%- for card in c.certs.otherCards %}
+      <div class="cert-card reveal">
+        <div class="cert-code">{{ card.code }}<small>{{ card.subtitle }}</small></div>
+        <p>{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUTION MAP -->
+<section class="section" id="distribution">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.distribution.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.distribution.heading }}</h2>
+      <p class="lede body-md">{{ c.distribution.lede }}</p>
+    </div>
+
+    <div class="map-wrap reveal">
+      <svg class="map-svg" viewBox="0 0 1000 430" role="img" aria-label="{{ c.distribution.mapAria }}">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="#e9e8e8" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="1000" height="430" fill="url(#grid)"/>
+
+        <!-- Sumatra -->
+        <polygon class="island" points="60,30 105,45 150,85 185,130 205,175 235,205 265,235 250,255 215,240 175,205 140,165 105,125 75,80 55,50"/>
+        <!-- Java -->
+        <polygon class="island" points="255,285 330,290 400,288 455,292 490,300 470,315 400,312 330,308 270,302 245,295"/>
+        <!-- Bali & Nusa Tenggara -->
+        <polygon class="island" points="505,300 525,296 535,306 515,312"/>
+        <polygon class="island" points="545,300 575,297 585,308 555,313"/>
+        <polygon class="island" points="600,302 640,300 660,312 615,316"/>
+        <polygon class="island" points="640,330 690,326 705,340 660,345"/>
+        <!-- Kalimantan -->
+        <polygon class="island" points="345,70 400,45 460,55 505,90 515,140 495,190 450,215 395,205 355,170 335,120"/>
+        <!-- Sulawesi -->
+        <polygon class="island" points="565,95 590,110 585,150 615,130 645,115 655,135 620,165 600,200 615,235 595,245 575,210 565,170 550,130"/>
+        <!-- Maluku -->
+        <polygon class="island" points="700,160 720,155 725,170 705,175"/>
+        <polygon class="island" points="730,200 750,195 755,212 735,215"/>
+        <!-- Papua -->
+        <polygon class="island" points="780,130 840,110 905,120 960,145 975,190 950,235 920,270 890,290 870,260 845,240 810,225 785,190 770,160"/>
+
+        <!-- island labels -->
+        <text class="map-label" x="70" y="255">{{ c.distribution.mapLabels.sumatra }}</text>
+        <text class="map-label" x="330" y="345">{{ c.distribution.mapLabels.java }}</text>
+        <text class="map-label" x="385" y="130">{{ c.distribution.mapLabels.kalimantan }}</text>
+        <text class="map-label" x="545" y="75">{{ c.distribution.mapLabels.sulawesi }}</text>
+        <text class="map-label" x="860" y="90">{{ c.distribution.mapLabels.papua }}</text>
+
+        <!-- cities: Sumatra -->
+        <g>
+          <circle class="city-ring" cx="120" cy="78" r="9"/><circle class="city" cx="120" cy="78" r="4"/>
+          <text class="city-label" x="133" y="82">Medan</text>
+          <circle class="city-ring" cx="152" cy="128" r="9"/><circle class="city" cx="152" cy="128" r="4"/>
+          <text class="city-label" x="165" y="132">Pekanbaru</text>
+          <circle class="city-ring" cx="148" cy="168" r="9"/><circle class="city" cx="148" cy="168" r="4"/>
+          <text class="city-label" x="120" y="188">Padang</text>
+          <circle class="city-ring" cx="205" cy="192" r="9"/><circle class="city" cx="205" cy="192" r="4"/>
+          <text class="city-label" x="218" y="196">Jambi</text>
+          <circle class="city-ring" cx="252" cy="248" r="9"/><circle class="city" cx="252" cy="248" r="4"/>
+          <text class="city-label" x="185" y="265">B. Lampung</text>
+        </g>
+        <!-- cities: Java & Bali -->
+        <g>
+          <circle class="city-ring" cx="288" cy="290" r="9"/><circle class="city" cx="288" cy="290" r="4"/>
+          <text class="city-label" x="252" y="282">Jakarta</text>
+          <circle class="city-ring" cx="330" cy="296" r="9"/><circle class="city" cx="330" cy="296" r="4"/>
+          <text class="city-label" x="318" y="332">Bandung</text>
+          <circle class="city-ring" cx="392" cy="293" r="9"/><circle class="city" cx="392" cy="293" r="4"/>
+          <text class="city-label" x="372" y="278">Semarang</text>
+          <circle class="city-ring" cx="452" cy="297" r="9"/><circle class="city" cx="452" cy="297" r="4"/>
+          <text class="city-label" x="440" y="282">Surabaya</text>
+          <circle class="city-ring" cx="518" cy="304" r="9"/><circle class="city" cx="518" cy="304" r="4"/>
+          <text class="city-label" x="480" y="330">Denpasar</text>
+          <circle class="city-ring" cx="565" cy="305" r="9"/><circle class="city" cx="565" cy="305" r="4"/>
+          <text class="city-label" x="556" y="288">Mataram</text>
+          <circle class="city-ring" cx="672" cy="336" r="9"/><circle class="city" cx="672" cy="336" r="4"/>
+          <text class="city-label" x="640" y="362">Kupang</text>
+        </g>
+        <!-- cities: Kalimantan -->
+        <g>
+          <circle class="city-ring" cx="368" cy="140" r="9"/><circle class="city" cx="368" cy="140" r="4"/>
+          <text class="city-label" x="298" y="144">Pontianak</text>
+          <circle class="city-ring" cx="486" cy="120" r="9"/><circle class="city" cx="486" cy="120" r="4"/>
+          <text class="city-label" x="499" y="116">Samarinda</text>
+          <circle class="city-ring" cx="492" cy="158" r="9"/><circle class="city" cx="492" cy="158" r="4"/>
+          <text class="city-label" x="505" y="168">Balikpapan</text>
+        </g>
+        <!-- cities: Sulawesi -->
+        <g>
+          <circle class="city-ring" cx="580" cy="222" r="9"/><circle class="city" cx="580" cy="222" r="4"/>
+          <text class="city-label" x="593" y="230">Makassar</text>
+        </g>
+        <!-- cities: Papua -->
+        <g>
+          <circle class="city-ring" cx="948" cy="150" r="9"/><circle class="city" cx="948" cy="150" r="4"/>
+          <text class="city-label" x="900" y="135">Jayapura</text>
+          <circle class="city-ring" cx="905" cy="278" r="9"/><circle class="city" cx="905" cy="278" r="4"/>
+          <text class="city-label" x="918" y="286">Merauke</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="region-grid">
+      {%- for region in c.distribution.regions %}
+      <div class="region-col reveal">
+        <h3>{{ region.title }}</h3>
+        <ul>
+          {%- for item in region.items %}
+          <li><strong>{{ item.region }}</strong>{% if item.cities %} — {{ item.cities }}{% endif %}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

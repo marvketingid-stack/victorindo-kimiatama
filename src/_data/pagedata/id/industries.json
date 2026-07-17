@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "title": "Industri — PT Victorindo Kimiatama",
+    "description": "Dari pabrik otomotif hingga anjungan lepas pantai — VK menggerakkan 6 vertikal industri dengan solusi coating teruji dan portofolio proyek nasional."
+  },
+  "hero": {
+    "breadcrumb": "Industri",
+    "eyebrow": "Industri yang Dilayani",
+    "heading": "Menggerakkan Beragam Industri",
+    "lede": "Dari pabrik otomotif hingga anjungan lepas pantai — sistem coating terspesialisasi yang terbukti di enam vertikal industri."
+  },
+  "verticals": {
+    "labelPrefix": "Vertikal",
+    "items": [
+      { "icon": "car", "title": "Otomotif & Karoseri Bus", "desc": "Produsen OEM, karoseri bus, pabrik perakitan mobil, dan bengkel refinish otomotif." },
+      { "icon": "building", "title": "Konstruksi & Real Estat", "desc": "Perumahan, gedung komersial, mal, hotel, rumah sakit, dan proyek infrastruktur besar." },
+      { "icon": "gear", "title": "Manufaktur & Industri", "desc": "Lantai pabrik, mesin, struktur baja, peralatan manufaktur, dan fasilitas industri." },
+      { "icon": "rig", "title": "Minyak, Gas & Petrokimia", "desc": "Anjungan lepas pantai, tangki penyimpanan, jaringan pipa, pabrik pengolahan kimia, dan kapal laut." },
+      { "icon": "bus", "title": "Transportasi Publik", "desc": "Bus TransJakarta, kereta komuter, sistem rel, dan solusi coating kendaraan transportasi massal." },
+      { "icon": "factory", "title": "Industri Berat & Infrastruktur", "desc": "Fabrikasi baja, struktur industri, pembangkit listrik, fasilitas pengolahan air, dan lainnya." }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Portofolio",
+    "heading": "Karya Kami Berbicara Sendiri",
+    "lede": "Pilihan proyek yang diselesaikan dengan sistem coating VK — mencakup aplikasi otomotif, marine, industri, dan arsitektural.",
+    "items": [
+      { "cat": "Otomotif / OEM", "title": "Kendaraan EV Wuling", "desc": "Dukungan teknis dan aplikasi refinish coating untuk kualitas perbaikan yang konsisten.", "image": "/assets/img/portfolio-wuling-ev.webp", "imageAlt": "Kendaraan listrik Wuling putih di studio finishing" },
+      { "cat": "Otomotif / Perakitan", "title": "Handal Indonesia Motor", "desc": "Menyediakan sistem refinish coating yang andal dan bantuan teknis.", "image": "/assets/img/portfolio-handal-motor.webp", "imageAlt": "SUV BAIC yang dirakit oleh Handal Indonesia Motor" },
+      { "cat": "Transportasi Publik / Rel", "title": "Kereta INKA KCMP", "desc": "Coating struktural dan khusus untuk proyek kereta cepat unggulan Indonesia.", "image": "/assets/img/portfolio-inka-train.webp", "imageAlt": "Bodi kereta cepat INKA KCMP di hall fabrikasi" },
+      { "cat": "Otomotif / Karoseri", "title": "Karoseri New Armada", "desc": "Memasok sistem cat otomotif lengkap dari primer hingga clear coat.", "image": "/assets/img/portfolio-new-armada.webp", "imageAlt": "Bodi minibus berlapis primer di lini karoseri New Armada" },
+      { "cat": "Otomotif / Karoseri", "title": "Karoseri Laksana", "desc": "Menghadirkan solusi coating menyeluruh untuk aplikasi manufaktur bus.", "image": "/assets/img/portfolio-laksana.webp", "imageAlt": "Bus jadi di fasilitas manufaktur bus Laksana" },
+      { "cat": "Marine / Offshore", "title": "Marine Coating", "desc": "Coating marine untuk tongkang dengan daya tahan dan perlindungan korosi unggul.", "image": "/assets/img/portfolio-marine-coating.webp", "imageAlt": "Lambung tongkang biru dilapisi sistem marine VK di galangan kapal" },
+      { "cat": "Minyak, Gas & Petrokimia", "title": "Kilang Minyak", "desc": "Solusi coating protektif untuk kilang minyak, menjamin daya tahan dan ketahanan korosi.", "image": "/assets/img/portfolio-oil-refinery.webp", "imageAlt": "Tangki penyimpanan putih di kilang minyak" },
+      { "cat": "Industri / Energi", "title": "Coating Tabung LPG", "desc": "Coating khusus untuk tabung LPG 3 kg dengan persyaratan ketahanan panas dan daya tahan.", "image": "/assets/img/portfolio-lpg-coating.webp", "imageAlt": "Pekerja menyemprot coating tabung LPG 3 kg di bilik coating" },
+      { "cat": "Industri / Petrokimia", "title": "Lining Tangki Kimia", "desc": "Lining tangki protektif untuk penyimpanan bahan kimia, menjamin ketahanan kimia dan daya tahan unggul.", "image": "/assets/img/portfolio-chemical-tank.webp", "imageAlt": "Lining interior tangki penyimpanan bahan kimia besar" },
+      { "cat": "Manufaktur / Industri", "title": "Gudang Danone", "desc": "Sistem coating lantai dan dinding berperforma tinggi untuk fasilitas gudang industri besar.", "image": "/assets/img/portfolio-danone-warehouse.webp", "imageAlt": "Lantai epoxy mengilap di dalam gudang Danone" },
+      { "cat": "Industri Berat / Infrastruktur", "title": "Pengecatan Struktur", "desc": "Sistem coating anti-korosi untuk struktur pipa industri dan instalasi mekanikal.", "image": "/assets/img/portfolio-structure-painting.webp", "imageAlt": "Struktur pipa biru berlapis anti-korosi di pabrik industri" },
+      { "cat": "Arsitektural / Hospitality", "title": "Arsitektural Hotel", "desc": "Coating arsitektural interior dan eksterior premium untuk Swiss-Belinn Hotel, Cikarang.", "image": "/assets/img/portfolio-hotel-swissbelinn.webp", "imageAlt": "Eksterior Swiss-Belinn Hotel Cikarang dengan finishing arsitektural premium" }
+    ]
+  },
+  "ctaBand": {
+    "label": "Industri Anda, Keahlian Kami",
+    "heading": "Mari diskusikan sistem coating yang tepat untuk sektor Anda."
+  }
+}

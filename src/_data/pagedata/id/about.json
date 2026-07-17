@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Tentang Kami — PT Victorindo Kimiatama",
+    "description": "Sejak 1978, PT Victorindo Kimiatama berkembang dari spesialis cat otomotif pertama di Indonesia menjadi produsen coating kelas dunia yang diakui secara nasional."
+  },
+  "hero": {
+    "breadcrumb": "Tentang Kami",
+    "eyebrow": "Profil Perusahaan",
+    "heading": "Kisah & Warisan Kami",
+    "lede": "PT Victorindo Kimiatama adalah spesialis cat otomotif dan solusi coating pertama yang terpercaya di Indonesia — salah satu produsen coating paling mapan di Indonesia sejak 1978, menghadirkan produk coating unggulan untuk berbagai industri."
+  },
+  "heritage": {
+    "eyebrow": "Sejak 1978",
+    "heading": "Bangga Buatan Indonesia",
+    "para": "Sejak didirikan pada tahun 1978 di Palmerah, Jakarta, PT Victorindo Kimiatama telah berkembang dari spesialis cat otomotif pertama di Indonesia menjadi produsen coating kelas dunia yang diakui secara nasional, didorong oleh lebih dari empat dekade inovasi dan dedikasi.",
+    "image": "/assets/img/factory-aerial.webp",
+    "imageAlt": "Pemandangan udara kompleks pabrik PT Victorindo Kimiatama di Karawang",
+    "specs": [
+      { "k": "Tahun Berdiri", "v": "1978" },
+      { "k": "Negara Asal", "v": "Indonesia" },
+      { "k": "Tahun Keunggulan", "v": "45+" },
+      { "k": "Cakupan Pasar", "v": "3 Sektor" },
+      { "k": "Jaringan Distribusi", "v": "Nasional" }
+    ]
+  },
+  "commitment": {
+    "label": "Komitmen Kami",
+    "quote": "\"Menghadirkan solusi coating berkualitas tinggi, inovatif, tahan lama, dan tersertifikasi yang memberdayakan industri di seluruh Indonesia.\""
+  },
+  "vision": {
+    "eyebrow": "Visi & Misi",
+    "heading": "Tujuan & Arah",
+    "visionLabel": "Visi",
+    "visionText": "Menjadi produsen solusi coating nasional terdepan, dikenal karena inovasi, kualitas, dan keberlanjutan — dipercaya di seluruh Indonesia dan sekitarnya.",
+    "missionLabel": "Misi",
+    "missions": [
+      { "title": "Kualitas Utama", "desc": "Menghadirkan produk coating yang secara konsisten memenuhi dan melampaui standar internasional melalui manajemen mutu yang ketat." },
+      { "title": "Didorong Inovasi", "desc": "Terus berinvestasi dalam R&D untuk mengembangkan formulasi unggul yang menjawab kebutuhan industri yang terus berkembang." },
+      { "title": "Pertumbuhan Berkelanjutan", "desc": "Membangun kemitraan jangka panjang yang berlandaskan kepercayaan, keandalan, dan kemajuan bersama dengan klien dan komunitas kami." },
+      { "title": "Kebanggaan Nasional", "desc": "Memperjuangkan keunggulan manufaktur Indonesia dengan memproduksi produk kelas dunia sepenuhnya di dalam negeri." }
+    ]
+  },
+  "legacy": {
+    "ariaLabel": "Warisan kami dalam angka",
+    "items": [
+      { "value": "45+", "label": "Tahun Pengalaman" },
+      { "value": "3", "label": "Sektor Bisnis" },
+      { "value": "6", "label": "Industri yang Dilayani" },
+      { "value": "ISO", "label": "9001 · 14001 · 45001" }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Tonggak Sejarah",
+    "heading": "Perjalanan Pertumbuhan",
+    "lede": "Sejak didirikan pada tahun 1978 di Palmerah, Jakarta, PT Victorindo Kimiatama telah berkembang dari spesialis cat otomotif pertama di Indonesia menjadi produsen coating kelas dunia yang diakui secara nasional.",
+    "milestonePrefix": "Tonggak",
+    "items": [
+      { "year": "1978 — Awal Mula", "title": "Didirikan di Palmerah, Jakarta", "desc": "PT Victorindo Kimiatama didirikan sebagai spesialis cat otomotif pertama di Indonesia.", "major": true },
+      { "year": "", "title": "Memasok New Armada Karoseri", "desc": "VK menjadi pemasok cat terpercaya bagi New Armada, salah satu produsen karoseri terkemuka di Indonesia.", "major": false },
+      { "year": "", "title": "Memasok Karoseri Otomotif di Seluruh Indonesia", "desc": "Distribusi meluas untuk melayani karoseri otomotif di seluruh Nusantara.", "major": false },
+      { "year": "", "title": "Relokasi Pabrik — Kembangan", "desc": "Kapasitas produksi tumbuh seiring relokasi pabrik ke Kembangan.", "major": false },
+      { "year": "", "title": "PT Hartono Istana Teknologi", "desc": "VK ditunjuk sebagai mitra coating untuk PT Hartono Istana Teknologi.", "major": false },
+      { "year": "", "title": "Relokasi Pabrik — Bekasi", "desc": "Pertumbuhan berkelanjutan mendorong relokasi pabrik kedua ke Bekasi.", "major": false },
+      { "year": "", "title": "Sertifikasi ISO 9000", "desc": "VK meraih sertifikasi ISO 9000, meresmikan sistem manajemen mutunya.", "major": false },
+      { "year": "", "title": "PT Toyota Astra Motor (TAM)", "desc": "VK mulai memasok solusi coating ke PT Toyota Astra Motor.", "major": false },
+      { "year": "", "title": "PT Isuzu Astra Motor Indonesia", "desc": "Portofolio klien OEM bertambah dengan PT Isuzu Astra Motor Indonesia.", "major": false },
+      { "year": "", "title": "Pabrik Karawang", "desc": "VK mendirikan fasilitas manufaktur modernnya di Karawang, Jawa Barat — rumah perusahaan hingga kini.", "major": true },
+      { "year": "", "title": "Tersertifikasi ISO 9001:2015", "desc": "Sistem manajemen mutu ditingkatkan dan tersertifikasi standar ISO 9001:2015.", "major": false },
+      { "year": "", "title": "Sub-Con Suzuki", "desc": "VK dipercaya sebagai pemasok coating sub-kontraktor untuk Suzuki.", "major": false },
+      { "year": "", "title": "PT LG Electronics Indonesia", "desc": "Solusi coating meluas ke sektor manufaktur elektronik bersama PT LG Electronics Indonesia.", "major": false },
+      { "year": "", "title": "PT Tayoh Helm Industri", "desc": "VK memasok coating khusus untuk PT Tayoh Helm Industri.", "major": false },
+      { "year": "", "title": "PT KJS (Kreasindo Jayatama Sukses)", "desc": "Kemitraan terjalin dengan PT Kreasindo Jayatama Sukses.", "major": false },
+      { "year": "", "title": "Transjakarta — Sertifikasi TKDN", "desc": "VK meraih sertifikasi TKDN dan mendukung armada transportasi publik Transjakarta.", "major": false },
+      { "year": "Hari Ini", "title": "Sertifikasi ISO 9001, ISO 14001 & ISO 45001", "desc": "Sertifikasi tiga ISO menegaskan komitmen VK terhadap kualitas, tanggung jawab lingkungan, serta kesehatan & keselamatan kerja.", "major": true }
+    ],
+    "sideImage": "/assets/img/production-filling-line.webp",
+    "sideImageAlt": "Kaleng Blinken clear coat di lini pengisian VK yang modern",
+    "advantage": {
+      "label": "Keunggulan VK",
+      "items": [
+        { "title": "Produsen Berpengalaman", "desc": "Melayani produsen OEM, karoseri bus, pabrik perakitan mobil, dan bengkel refinish otomotif." },
+        { "title": "Model Bisnis Terintegrasi", "desc": "Dari R&D dan produksi hingga distribusi dan dukungan teknis — semua dalam satu atap untuk layanan tanpa hambatan." },
+        { "title": "Keahlian Lokal Mendalam", "desc": "Lebih dari 45 tahun memahami iklim, regulasi, kebutuhan industri, dan dinamika pasar Indonesia." },
+        { "title": "Mitra Pertumbuhan Jangka Panjang", "desc": "VK berinvestasi dalam pengembangan kapasitas dan pemeliharaan hubungan — mitra untuk bertumbuh bersama selama puluhan tahun." }
+      ]
+    }
+  },
+  "ctaBand": {
+    "label": "Bermitra dengan Kami",
+    "heading": "Lebih dari 45 tahun keahlian coating, siap untuk proyek Anda berikutnya."
+  }
+}

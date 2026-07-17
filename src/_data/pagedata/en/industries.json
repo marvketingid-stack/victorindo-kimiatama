@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "title": "Industries — PT Victorindo Kimiatama",
+    "description": "From automotive factories to offshore platforms — VK powers 6 industrial verticals with proven coating solutions and a nationwide project portfolio."
+  },
+  "hero": {
+    "breadcrumb": "Industries",
+    "eyebrow": "Industries Served",
+    "heading": "Powering Diverse Industries",
+    "lede": "From automotive factories to offshore platforms — specialized coating systems proven across six industrial verticals."
+  },
+  "verticals": {
+    "labelPrefix": "Vertical",
+    "items": [
+      { "icon": "car", "title": "Automotive & Bus Bodyworks", "desc": "OEM manufacturers, bus bodyworks, car assembly plants, and automotive refinish workshops." },
+      { "icon": "building", "title": "Construction & Real Estate", "desc": "Residential housing, commercial buildings, malls, hotels, hospitals, and large infrastructure projects." },
+      { "icon": "gear", "title": "Manufacturing & Industrial", "desc": "Factory floors, machinery, steel structures, manufacturing equipment, and industrial facilities." },
+      { "icon": "rig", "title": "Oil, Gas & Petrochemical", "desc": "Offshore platforms, storage tanks, pipelines, chemical processing plants, and marine vessels." },
+      { "icon": "bus", "title": "Public Transportation", "desc": "TransJakarta buses, commuter trains, rail systems, and mass transit vehicle coating solutions." },
+      { "icon": "factory", "title": "Heavy Industry & Infrastructure", "desc": "Steel fabrication, industrial structures, power plants, water treatment facilities, and more." }
+    ]
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "heading": "Our Work Speaks for Itself",
+    "lede": "A selection of projects delivered with VK coating systems — across automotive, marine, industrial, and architectural applications.",
+    "items": [
+      { "cat": "Automotive / OEM", "title": "Wuling EV Vehicles", "desc": "Technical support and refinish coating application for consistent repair quality.", "image": "/assets/img/portfolio-wuling-ev.webp", "imageAlt": "White Wuling electric vehicle in a finishing studio" },
+      { "cat": "Automotive / Assembly", "title": "Handal Indonesia Motor", "desc": "Providing reliable refinish coating systems and technical assistance.", "image": "/assets/img/portfolio-handal-motor.webp", "imageAlt": "BAIC SUV assembled by Handal Indonesia Motor" },
+      { "cat": "Public Transportation / Rail", "title": "INKA KCMP Train", "desc": "Structural and specialty coating for Indonesia's flagship high-speed train project.", "image": "/assets/img/portfolio-inka-train.webp", "imageAlt": "INKA KCMP high-speed train car body in the fabrication hall" },
+      { "cat": "Automotive / Karoseri", "title": "New Armada Bodyworks", "desc": "Supplying complete automotive paint systems from primer to clear coat.", "image": "/assets/img/portfolio-new-armada.webp", "imageAlt": "Minibus bodies in primer at the New Armada bodyworks line" },
+      { "cat": "Automotive / Karoseri", "title": "Laksana Bodyworks", "desc": "Delivering end-to-end coating solutions for bus manufacturing applications.", "image": "/assets/img/portfolio-laksana.webp", "imageAlt": "Finished coaches at the Laksana bus manufacturing facility" },
+      { "cat": "Marine / Offshore", "title": "Marine Coating", "desc": "Marine coating for barges with superior durability and corrosion protection.", "image": "/assets/img/portfolio-marine-coating.webp", "imageAlt": "Blue barge hull coated with VK marine system at a shipyard" },
+      { "cat": "Oil, Gas & Petrochemical", "title": "Oil Refinery", "desc": "Protective coating solutions for oil refineries, ensuring durability and corrosion resistance.", "image": "/assets/img/portfolio-oil-refinery.webp", "imageAlt": "White storage tanks at an oil refinery" },
+      { "cat": "Industrial / Energy", "title": "LPG Gas Coating", "desc": "Specialized coating for 3kg LPG cylinders with heat resistance and durability requirements.", "image": "/assets/img/portfolio-lpg-coating.webp", "imageAlt": "Painter spray-coating a 3kg LPG cylinder in the coating booth" },
+      { "cat": "Industrial / Petrochemical", "title": "Chemical Tank Lining", "desc": "Protective tank lining for chemical storage, ensuring superior chemical resistance and durability.", "image": "/assets/img/portfolio-chemical-tank.webp", "imageAlt": "Interior lining of a large chemical storage tank" },
+      { "cat": "Manufacturing / Industrial", "title": "Danone Warehouse", "desc": "High-performance floor and wall coating system for a large industrial warehouse facility.", "image": "/assets/img/portfolio-danone-warehouse.webp", "imageAlt": "High-gloss epoxy floor inside the Danone warehouse" },
+      { "cat": "Heavy Industry / Infrastructure", "title": "Structure Painting", "desc": "Anti-corrosion coating system for industrial pipe structures and mechanical installations.", "image": "/assets/img/portfolio-structure-painting.webp", "imageAlt": "Anti-corrosion coated blue pipe structures at an industrial plant" },
+      { "cat": "Architectural / Hospitality", "title": "Hotel Architectural", "desc": "Premium interior and exterior architectural coating for Swiss-Belinn Hotel, Cikarang.", "image": "/assets/img/portfolio-hotel-swissbelinn.webp", "imageAlt": "Swiss-Belinn Hotel Cikarang exterior with premium architectural finish" }
+    ]
+  },
+  "ctaBand": {
+    "label": "Your Industry, Our Expertise",
+    "heading": "Let's discuss the right coating system for your sector."
+  }
+}

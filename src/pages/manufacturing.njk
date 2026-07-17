@@ -1,0 +1,156 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}manufacturing.html{% else %}id/manufacturing.html{% endif %}"
+layout: layouts/base.njk
+pageKey: manufacturing
+slugEn: manufacturing.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+{% include "partials/page-hero.njk" %}
+
+<!-- FACILITY -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="media reveal">
+        <img src="{{ c.facility.image }}" alt="{{ c.facility.imageAlt }}" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">{{ c.facility.eyebrow }}</span>
+        <h2 class="headline-lg">{{ c.facility.heading }}</h2>
+        <ul class="feature-list mt-24">
+          {%- for f in c.facility.features %}
+          <li>
+            <span class="num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+            <div>
+              <h4>{{ f.title }}</h4>
+              <p>{{ f.desc }}</p>
+            </div>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION CAPACITY -->
+<section class="section section-dark" id="capacity">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.capacity.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.capacity.heading }}</h2>
+      <p class="lede body-md">{{ c.capacity.lede }}</p>
+    </div>
+    <div class="cap-table" style="max-width:860px;" aria-label="{{ c.capacity.aria }}">
+      {%- for row in c.capacity.rows %}
+      <div class="cap-row"><span class="name" style="color:#fff;">{{ row.name }}</span><div class="track" style="background:#2b2b2b;border-color:#3d3d3d;"><div class="fill"{% if loop.index % 2 == 0 %} style="background:var(--brand-rust);"{% endif %} data-pct="{{ row.pct }}"></div></div><span class="val" style="color:#fff;">{{ row.value }}</span></div>
+      {%- endfor %}
+    </div>
+    <p class="label-caps mt-32" style="color:#8b8888;">{{ c.capacity.footnote }}</p>
+  </div>
+</section>
+
+<!-- PRODUCTION GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.stages.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.stages.heading }}</h2>
+    </div>
+    <div class="grid-3">
+      {%- for card in c.stages.cards %}
+      <figure class="sector-card reveal">
+        <div class="media"><img src="{{ card.image }}" alt="{{ card.imageAlt }}" loading="lazy"></div>
+        <div class="body">
+          <span class="index">{{ c.stages.labelPrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+          <h3 class="subhead-sm">{{ card.title }}</h3>
+          <p class="desc">{{ card.desc }}</p>
+        </div>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY CONTROL -->
+<section class="section section-cream" id="quality">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.qc.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.qc.heading }}</h2>
+      <p class="lede body-md">{{ c.qc.lede }}</p>
+    </div>
+    <div class="grid-4 mb-48">
+      {%- for card in c.qc.cards %}
+      <div class="card card-accent card-pad reveal">
+        <span class="label-caps text-crimson">{{ c.qc.labelPrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3 class="subhead-sm mt-16 mb-16">{{ card.title }}</h3>
+        <p class="body-sm text-muted">{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+
+    <div class="split mb-48" style="align-items:stretch;">
+      {%- for photo in c.qc.photos %}
+      <figure class="media reveal" style="border:2px solid var(--stroke-dark);">
+        <img src="{{ photo.image }}" alt="{{ photo.imageAlt }}" loading="lazy" style="height:100%;object-fit:cover;">
+      </figure>
+      {%- endfor %}
+    </div>
+
+    <h3 class="headline-md mb-24">{{ c.qc.equipmentTitle }}</h3>
+    <div class="equip-grid">
+      {%- for eq in c.qc.equipment %}
+      <div class="equip-card reveal">
+        <div class="media"><img src="{{ eq.image }}" alt="{{ eq.name }}" loading="lazy"></div>
+        <div class="name">{{ eq.name }}</div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- R&D / INNOVATION -->
+<section class="section" id="innovation">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.rnd.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.rnd.heading }}</h2>
+      <p class="lede body-md">{{ c.rnd.lede }}</p>
+    </div>
+    <div class="split mb-48">
+      <div class="media reveal" style="border:2px solid var(--stroke-dark);">
+        <img src="{{ c.rnd.image }}" alt="{{ c.rnd.imageAlt }}" loading="lazy">
+      </div>
+      <div class="reveal">
+        <h3 class="headline-md mb-16">{{ c.rnd.focusTitle }}</h3>
+        <div class="chip-row">
+          {%- for chip in c.rnd.chips %}
+          <span class="chip chip-crimson">{{ chip }}</span>
+          {%- endfor %}
+        </div>
+        <div class="media mt-32" style="border:2px solid var(--stroke-dark);">
+          <img src="{{ c.rnd.secondImage }}" alt="{{ c.rnd.secondImageAlt }}" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="grid-3">
+      {%- for card in c.rnd.cards %}
+      <div class="card card-pad reveal">
+        <span class="label-caps text-crimson">{{ c.rnd.labelPrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3 class="subhead-sm mt-16 mb-16">{{ card.title }}</h3>
+        <p class="body-sm text-muted">{{ card.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

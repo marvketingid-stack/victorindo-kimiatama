@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Manufacturing & Quality — PT Victorindo Kimiatama",
+    "description": "VK's facility combines advanced manufacturing technology with proven processes — laboratory-grade quality control and an R&D innovation hub in Karawang, West Java."
+  },
+  "hero": {
+    "breadcrumb": "Manufacturing & Quality",
+    "eyebrow": "Manufacturing & Production",
+    "heading": "Trusted Manufacturing",
+    "lede": "Our facility combines advanced manufacturing technology with proven processes to deliver consistent, high-quality output."
+  },
+  "facility": {
+    "eyebrow": "Production Facility",
+    "heading": "Built for Consistent Supply",
+    "image": "/assets/img/factory-aerial.webp",
+    "imageAlt": "Aerial view of the PT Victorindo Kimiatama production facility in Karawang, Jawa Barat",
+    "features": [
+      { "title": "R&D & Technical Service", "desc": "Dedicated team focused on product quality improvement, new formulations, and application innovation." },
+      { "title": "Quality Control System", "desc": "Rigorous in-process and finished goods testing ensures every batch meets strict quality standards." },
+      { "title": "Consistent Supply", "desc": "Production scheduling and inventory management to reliably meet customer demand at all times." },
+      { "title": "Superior Distribution", "desc": "Extensive distribution network with modern management systems — delivering reliably across Indonesia." }
+    ]
+  },
+  "capacity": {
+    "eyebrow": "Production Capacity",
+    "heading": "Capacity by Product Line",
+    "lede": "Per shift per month production capacity across all product lines, powered by modern manufacturing equipment and expert formulation teams. Units in Metric Tons (MT).",
+    "aria": "Production capacity in metric tons per shift per month",
+    "rows": [
+      { "name": "Base Coat", "pct": 52, "value": "100 MT" },
+      { "name": "Clear Coat", "pct": 100, "value": "192 MT" },
+      { "name": "Synthetic Paint", "pct": 47, "value": "90 MT" },
+      { "name": "Epoxy", "pct": 50, "value": "96 MT" },
+      { "name": "Thinner", "pct": 83, "value": "160 MT" },
+      { "name": "Hardener", "pct": 19, "value": "36 MT" },
+      { "name": "Putty", "pct": 100, "value": "192 MT" }
+    ],
+    "footnote": "Proven Track Record — Trusted by Leading Companies"
+  },
+  "stages": {
+    "eyebrow": "Inside the Facility",
+    "heading": "From Raw Material to Finished Batch",
+    "labelPrefix": "STAGE",
+    "cards": [
+      { "title": "Mixing & Formulation", "desc": "Raw materials are batched and blended under controlled formulation procedures.", "image": "/assets/img/production-mixing.webp", "imageAlt": "Operator transferring raw material from a drum into a stainless-steel mixing tank" },
+      { "title": "Filling & Packing", "desc": "Automated filling lines maintain accurate volume and clean, consistent packaging.", "image": "/assets/img/production-filling-line.webp", "imageAlt": "Blinken can on the automated filling machine" },
+      { "title": "Warehouse & Distribution", "desc": "Finished goods are staged for reliable, on-schedule delivery across Indonesia.", "image": "/assets/img/warehouse-distribution.webp", "imageAlt": "Forklift moving pallets of Steelux and Blinken cartons inside the VK warehouse" }
+    ]
+  },
+  "qc": {
+    "eyebrow": "Quality Control",
+    "heading": "Precision at Every Step",
+    "lede": "Laboratory-grade testing ensures our coatings perform beyond expectations, consistently.",
+    "labelPrefix": "QC",
+    "cards": [
+      { "title": "Color Measurement", "desc": "Verification of color accuracy and consistency using precision measurement instruments." },
+      { "title": "Physical Testing", "desc": "Testing of product physical properties to ensure quality meets established standards." },
+      { "title": "Coating Performance", "desc": "Evaluation of coating durability and performance under various application conditions." },
+      { "title": "Production Control", "desc": "Quality control throughout the production process to maintain consistency in every batch." }
+    ],
+    "photos": [
+      { "image": "/assets/img/qc-spectrophotometer.webp", "imageAlt": "QC analyst verifying color accuracy with a spectrophotometer and MSQC software" },
+      { "image": "/assets/img/qc-viscometer.webp", "imageAlt": "QC technician running a viscosity test on a Krebs viscometer" }
+    ],
+    "equipmentTitle": "Laboratory Testing Equipment",
+    "equipment": [
+      { "name": "Minolta Chroma Meter", "image": "/assets/img/alat-minolta-chroma-meter.webp" },
+      { "name": "Multi Angle Spectrophotometer", "image": "/assets/img/alat-multi-angle-spectrophotometer.webp" },
+      { "name": "Salt Spray Test Machine", "image": "/assets/img/alat-salt-spray-test.webp" },
+      { "name": "UV Machine", "image": "/assets/img/alat-uv-machine.webp" },
+      { "name": "Impact Test", "image": "/assets/img/alat-impact-test.webp" },
+      { "name": "Hardness Test", "image": "/assets/img/alat-hardness-test.webp" },
+      { "name": "Elcometer 106 Pull-Off Adhesion Tester", "image": "/assets/img/alat-elcometer-adhesion.webp" },
+      { "name": "Adhesive Test Kit", "image": "/assets/img/alat-adhesive-test-kit.webp" },
+      { "name": "Laboratory Digital Scales", "image": "/assets/img/alat-digital-scales.webp" },
+      { "name": "Viscometer Machine", "image": "/assets/img/alat-viscometer-machine.webp" },
+      { "name": "Viscometer Cup NK2", "image": "/assets/img/alat-viscometer-cup-nk2.webp" },
+      { "name": "Grindometer", "image": "/assets/img/alat-grindometer.webp" }
+    ]
+  },
+  "rnd": {
+    "eyebrow": "Technology & Innovation",
+    "heading": "Innovation & Technology",
+    "lede": "Backed by over 45 years of formulation expertise, our R&D team develops cutting-edge coating technologies tailored to Indonesian conditions.",
+    "image": "/assets/img/laboratory-rnd.webp",
+    "imageAlt": "VK R&D chemists working at the formulation laboratory",
+    "focusTitle": "R&D Focus",
+    "chips": ["Color Development", "Eco-Friendly Formulas", "High-Performance Systems", "Application Efficiency", "Local Climate Adaptation"],
+    "secondImage": "/assets/img/lab-color-matching.webp",
+    "secondImageAlt": "Colorist weighing a formulation sample beside a Blinken can in the color lab",
+    "labelPrefix": "R&D",
+    "cards": [
+      { "title": "New Formulation Development", "desc": "Continuous development of advanced coating formulations using modern technologies and global standards." },
+      { "title": "Application Innovation", "desc": "Developing innovative application methods to improve coating efficiency and finish quality." },
+      { "title": "Sustainability Initiatives", "desc": "Developing eco-friendly, low-VOC formulations that meet evolving industry standards." },
+      { "title": "Performance Testing", "desc": "Advanced laboratory testing for UV, salt spray, adhesion, and impact resistance." },
+      { "title": "Color Science & Matching", "desc": "Multi-angle spectrophotometry and chroma metering for precise color matching." },
+      { "title": "Process Optimization", "desc": "Lean manufacturing and continuous improvement to optimize production efficiency and consistency." }
+    ]
+  },
+  "ctaBand": {
+    "label": "Factory Visit",
+    "heading": "See our manufacturing and QC standards up close."
+  }
+}

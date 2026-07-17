@@ -1,0 +1,596 @@
+# Decap CMS — PT Victorindo Kimiatama
+# Admin: https://victorindo-kimiatama.netlify.app/admin/
+backend:
+  name: github
+  repo: marvketingid-stack/victorindo-kimiatama
+  branch: main
+  base_url: https://api.netlify.com
+
+# Saat diakses dari localhost + `npx decap-server` berjalan, pakai backend lokal (tanpa login GitHub)
+local_backend: true
+
+media_folder: "src/assets/img"
+public_folder: "/assets/img"
+site_url: https://victorindo-kimiatama.netlify.app
+display_url: https://victorindo-kimiatama.netlify.app
+logo_url: https://victorindo-kimiatama.netlify.app/assets/img/logo-vk.png
+locale: id
+
+# ---------- Field schema definitions (dipakai ulang EN & ID) ----------
+x_schemas:
+  meta: &meta
+    label: "Meta / SEO"
+    name: "meta"
+    widget: "object"
+    collapsed: true
+    fields:
+      - { label: "Judul Tab Browser", name: "title", widget: "string" }
+      - { label: "Deskripsi (Google)", name: "description", widget: "text" }
+  page_hero: &page_hero
+    label: "Hero Halaman"
+    name: "hero"
+    widget: "object"
+    fields:
+      - { label: "Breadcrumb", name: "breadcrumb", widget: "string" }
+      - { label: "Label Kecil (Eyebrow)", name: "eyebrow", widget: "string" }
+      - { label: "Judul Besar", name: "heading", widget: "string" }
+      - { label: "Paragraf Pembuka", name: "lede", widget: "text" }
+  cta_band: &cta_band
+    label: "Banner CTA Bawah"
+    name: "ctaBand"
+    widget: "object"
+    collapsed: true
+    fields:
+      - { label: "Label", name: "label", widget: "string" }
+      - { label: "Judul", name: "heading", widget: "string" }
+
+  home_fields: &home_fields
+    - *meta
+    - label: "Hero"
+      name: "hero"
+      widget: "object"
+      fields:
+        - { label: "Label Kecil (Kicker)", name: "kicker", widget: "string" }
+        - { label: "Judul Besar", name: "heading", widget: "string" }
+        - { label: "Paragraf Pembuka", name: "lede", widget: "text" }
+        - { label: "Foto Latar", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+    - label: "Angka Statistik"
+      name: "stats"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Aria Label", name: "ariaLabel", widget: "string" }
+        - label: "Item"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Angka", name: "value", widget: "string" }
+            - { label: "Keterangan", name: "label", widget: "string" }
+    - label: "Kisah Perusahaan"
+      name: "story"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf 1", name: "p1", widget: "text" }
+        - { label: "Paragraf 2", name: "p2", widget: "text" }
+        - { label: "Chips", name: "chips", widget: "list" }
+        - { label: "Teks Tombol", name: "cta", widget: "string" }
+        - { label: "Foto", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+    - label: "Sektor Bisnis"
+      name: "sectors"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Teks Tombol Kartu", name: "ctaLabel", widget: "string" }
+        - label: "Kartu Sektor"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Index (mis. SECTOR / 01)", name: "index", widget: "string" }
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+            - { label: "Foto", name: "image", widget: "image" }
+            - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+            - { label: "Chips", name: "chips", widget: "list" }
+            - { label: "Anchor Link", name: "anchor", widget: "string", hint: "automotive / marine / architectural" }
+    - label: "Manufaktur & Kapasitas"
+      name: "manufacturing"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Aria Label", name: "capacityAria", widget: "string" }
+        - label: "Kapasitas Produksi"
+          name: "capacities"
+          widget: "list"
+          fields:
+            - { label: "Nama Produk", name: "name", widget: "string" }
+            - { label: "Persen Bar (0-100)", name: "pct", widget: "number", value_type: "int", min: 0, max: 100 }
+            - { label: "Nilai (mis. 100 MT)", name: "value", widget: "string" }
+        - { label: "Teks Tombol", name: "cta", widget: "string" }
+        - { label: "Foto", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+    - label: "Strip Klien"
+      name: "trust"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Aria Label", name: "ariaLabel", widget: "string" }
+        - { label: "Judul Strip", name: "label", widget: "string" }
+        - { label: "Nama Klien", name: "names", widget: "list" }
+    - label: "Sertifikasi"
+      name: "certs"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - label: "Kartu"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Kode (mis. ISO 9001)", name: "code", widget: "string" }
+            - { label: "Subjudul", name: "subtitle", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+        - { label: "Teks Tombol", name: "cta", widget: "string" }
+    - *cta_band
+
+  about_fields: &about_fields
+    - *meta
+    - *page_hero
+    - label: "Warisan (Heritage)"
+      name: "heritage"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "para", widget: "text" }
+        - { label: "Foto", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+        - label: "Tabel Spesifikasi"
+          name: "specs"
+          widget: "list"
+          fields:
+            - { label: "Keterangan", name: "k", widget: "string" }
+            - { label: "Nilai", name: "v", widget: "string" }
+    - label: "Kutipan Komitmen"
+      name: "commitment"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Label", name: "label", widget: "string" }
+        - { label: "Kutipan", name: "quote", widget: "text" }
+    - label: "Visi & Misi"
+      name: "vision"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Label Visi", name: "visionLabel", widget: "string" }
+        - { label: "Teks Visi", name: "visionText", widget: "text" }
+        - { label: "Label Misi", name: "missionLabel", widget: "string" }
+        - label: "Misi"
+          name: "missions"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - label: "Statistik Warisan"
+      name: "legacy"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Aria Label", name: "ariaLabel", widget: "string" }
+        - label: "Item"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Angka", name: "value", widget: "string" }
+            - { label: "Keterangan", name: "label", widget: "string" }
+    - label: "Perjalanan Pertumbuhan (Timeline)"
+      name: "journey"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Prefix Milestone", name: "milestonePrefix", widget: "string" }
+        - label: "Milestone"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Tahun / Label (kosongkan untuk nomor otomatis)", name: "year", widget: "string", required: false, default: "" }
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+            - { label: "Milestone Penting?", name: "major", widget: "boolean", default: false }
+        - { label: "Foto Samping", name: "sideImage", widget: "image" }
+        - { label: "Teks Alt Foto", name: "sideImageAlt", widget: "string" }
+        - label: "Kartu Keunggulan VK"
+          name: "advantage"
+          widget: "object"
+          fields:
+            - { label: "Label", name: "label", widget: "string" }
+            - label: "Item"
+              name: "items"
+              widget: "list"
+              fields:
+                - { label: "Judul", name: "title", widget: "string" }
+                - { label: "Deskripsi", name: "desc", widget: "text" }
+    - *cta_band
+
+  products_fields: &products_fields
+    - *meta
+    - *page_hero
+    - label: "Kategori Produk"
+      name: "categories"
+      widget: "list"
+      fields:
+        - { label: "Anchor Link", name: "anchor", widget: "string" }
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Latar Krem?", name: "cream", widget: "boolean", default: false }
+        - label: "Produk"
+          name: "products"
+          widget: "list"
+          fields:
+            - { label: "Nama Brand", name: "name", widget: "string" }
+            - { label: "Tagline", name: "tagline", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+            - { label: "Foto", name: "image", widget: "image" }
+            - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+            - { label: "Chips", name: "chips", widget: "list" }
+    - label: "Layanan Teknis"
+      name: "services"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Prefix Label", name: "labelPrefix", widget: "string" }
+        - label: "Kartu"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - *cta_band
+
+  manufacturing_fields: &manufacturing_fields
+    - *meta
+    - *page_hero
+    - label: "Fasilitas"
+      name: "facility"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Foto", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+        - label: "Fitur"
+          name: "features"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - label: "Kapasitas Produksi"
+      name: "capacity"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Aria Label", name: "aria", widget: "string" }
+        - label: "Baris Kapasitas"
+          name: "rows"
+          widget: "list"
+          fields:
+            - { label: "Nama Produk", name: "name", widget: "string" }
+            - { label: "Persen Bar (0-100)", name: "pct", widget: "number", value_type: "int", min: 0, max: 100 }
+            - { label: "Nilai (mis. 100 MT)", name: "value", widget: "string" }
+        - { label: "Catatan Kaki", name: "footnote", widget: "string" }
+    - label: "Tahapan Produksi"
+      name: "stages"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Prefix Label", name: "labelPrefix", widget: "string" }
+        - label: "Kartu"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+            - { label: "Foto", name: "image", widget: "image" }
+            - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+    - label: "Kendali Mutu (QC)"
+      name: "qc"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Prefix Label", name: "labelPrefix", widget: "string" }
+        - label: "Kartu QC"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+        - label: "Foto QC"
+          name: "photos"
+          widget: "list"
+          fields:
+            - { label: "Foto", name: "image", widget: "image" }
+            - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+        - { label: "Judul Peralatan", name: "equipmentTitle", widget: "string" }
+        - label: "Peralatan Lab"
+          name: "equipment"
+          widget: "list"
+          fields:
+            - { label: "Nama Alat", name: "name", widget: "string" }
+            - { label: "Foto", name: "image", widget: "image" }
+    - label: "R&D / Inovasi"
+      name: "rnd"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Foto 1", name: "image", widget: "image" }
+        - { label: "Teks Alt Foto 1", name: "imageAlt", widget: "string" }
+        - { label: "Judul Fokus", name: "focusTitle", widget: "string" }
+        - { label: "Chips Fokus", name: "chips", widget: "list" }
+        - { label: "Foto 2", name: "secondImage", widget: "image" }
+        - { label: "Teks Alt Foto 2", name: "secondImageAlt", widget: "string" }
+        - { label: "Prefix Label", name: "labelPrefix", widget: "string" }
+        - label: "Kartu R&D"
+          name: "cards"
+          widget: "list"
+          fields:
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - *cta_band
+
+  industries_fields: &industries_fields
+    - *meta
+    - *page_hero
+    - label: "Vertikal Industri"
+      name: "verticals"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Prefix Label", name: "labelPrefix", widget: "string" }
+        - label: "Item"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Ikon", name: "icon", widget: "select", options: ["car", "building", "gear", "rig", "bus", "factory"] }
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - label: "Portofolio Proyek"
+      name: "portfolio"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - label: "Proyek"
+          name: "items"
+          widget: "list"
+          fields:
+            - { label: "Kategori", name: "cat", widget: "string" }
+            - { label: "Judul", name: "title", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+            - { label: "Foto", name: "image", widget: "image" }
+            - { label: "Teks Alt Foto", name: "imageAlt", widget: "string" }
+    - *cta_band
+
+  clients_fields: &clients_fields
+    - *meta
+    - *page_hero
+    - label: "Grup Klien"
+      name: "groups"
+      widget: "list"
+      fields:
+        - { label: "Judul Grup", name: "title", widget: "string" }
+        - label: "Klien"
+          name: "clients"
+          widget: "list"
+          fields:
+            - { label: "Nama", name: "name", widget: "string" }
+            - { label: "Kategori", name: "sub", widget: "string" }
+    - label: "Sertifikasi"
+      name: "certs"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - label: "Kartu ISO"
+          name: "isoCards"
+          widget: "list"
+          fields:
+            - { label: "Kode", name: "code", widget: "string" }
+            - { label: "Subjudul", name: "subtitle", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+        - label: "Kartu Lainnya (TKDN/BKI)"
+          name: "otherCards"
+          widget: "list"
+          fields:
+            - { label: "Kode", name: "code", widget: "string" }
+            - { label: "Subjudul", name: "subtitle", widget: "string" }
+            - { label: "Deskripsi", name: "desc", widget: "text" }
+    - label: "Distribusi"
+      name: "distribution"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Aria Label Peta", name: "mapAria", widget: "string" }
+        - label: "Label Pulau di Peta"
+          name: "mapLabels"
+          widget: "object"
+          fields:
+            - { label: "Sumatra", name: "sumatra", widget: "string" }
+            - { label: "Jawa & Bali", name: "java", widget: "string" }
+            - { label: "Kalimantan", name: "kalimantan", widget: "string" }
+            - { label: "Sulawesi", name: "sulawesi", widget: "string" }
+            - { label: "Papua", name: "papua", widget: "string" }
+        - label: "Wilayah"
+          name: "regions"
+          widget: "list"
+          fields:
+            - { label: "Judul Wilayah", name: "title", widget: "string" }
+            - label: "Daftar"
+              name: "items"
+              widget: "list"
+              fields:
+                - { label: "Provinsi/Wilayah", name: "region", widget: "string" }
+                - { label: "Kota", name: "cities", widget: "string", required: false, default: "" }
+    - *cta_band
+
+  contact_fields: &contact_fields
+    - *meta
+    - *page_hero
+    - label: "Info Kontak"
+      name: "info"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Label Alamat", name: "addressLabel", widget: "string" }
+        - { label: "Label Telepon", name: "phoneLabel", widget: "string" }
+        - { label: "Label Email", name: "emailLabel", widget: "string" }
+        - { label: "Label Website", name: "websiteLabel", widget: "string" }
+    - label: "Kartu Profil Perusahaan"
+      name: "profileCard"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Label", name: "label", widget: "string" }
+        - { label: "Deskripsi", name: "desc", widget: "text" }
+    - label: "Formulir"
+      name: "form"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Label Nama", name: "nameLabel", widget: "string" }
+        - { label: "Placeholder Nama", name: "namePlaceholder", widget: "string" }
+        - { label: "Error Nama", name: "nameError", widget: "string" }
+        - { label: "Label Perusahaan", name: "companyLabel", widget: "string" }
+        - { label: "Placeholder Perusahaan", name: "companyPlaceholder", widget: "string" }
+        - { label: "Label Email", name: "emailLabel", widget: "string" }
+        - { label: "Placeholder Email", name: "emailPlaceholder", widget: "string" }
+        - { label: "Error Email", name: "emailError", widget: "string" }
+        - { label: "Label Telepon", name: "phoneLabel", widget: "string" }
+        - { label: "Placeholder Telepon", name: "phonePlaceholder", widget: "string" }
+        - { label: "Label Industri", name: "industryLabel", widget: "string" }
+        - { label: "Opsi Default Industri", name: "industryDefault", widget: "string" }
+        - { label: "Pilihan Industri", name: "industryOptions", widget: "list" }
+        - { label: "Error Industri", name: "industryError", widget: "string" }
+        - { label: "Label Pesan", name: "messageLabel", widget: "string" }
+        - { label: "Placeholder Pesan", name: "messagePlaceholder", widget: "string" }
+        - { label: "Error Pesan", name: "messageError", widget: "string" }
+        - { label: "Teks Tombol Kirim", name: "submit", widget: "string" }
+        - { label: "Catatan", name: "note", widget: "string" }
+        - { label: "Pesan Sukses", name: "success", widget: "text" }
+    - label: "Lokasi Pabrik"
+      name: "location"
+      widget: "object"
+      collapsed: true
+      fields:
+        - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+        - { label: "Judul", name: "heading", widget: "string" }
+        - { label: "Paragraf", name: "lede", widget: "text" }
+        - { label: "Judul Peta (aksesibilitas)", name: "mapTitle", widget: "string" }
+
+# ---------- Collections ----------
+collections:
+  - name: "pages_id"
+    label: "Halaman (Bahasa Indonesia)"
+    description: "Edit teks & foto halaman versi Bahasa Indonesia"
+    files:
+      - { label: "Beranda", name: "home", file: "src/_data/pagedata/id/home.json", fields: *home_fields }
+      - { label: "Tentang Kami", name: "about", file: "src/_data/pagedata/id/about.json", fields: *about_fields }
+      - { label: "Produk & Layanan", name: "products", file: "src/_data/pagedata/id/products.json", fields: *products_fields }
+      - { label: "Manufaktur & Kualitas", name: "manufacturing", file: "src/_data/pagedata/id/manufacturing.json", fields: *manufacturing_fields }
+      - { label: "Industri", name: "industries", file: "src/_data/pagedata/id/industries.json", fields: *industries_fields }
+      - { label: "Klien", name: "clients", file: "src/_data/pagedata/id/clients.json", fields: *clients_fields }
+      - { label: "Hubungi Kami", name: "contact", file: "src/_data/pagedata/id/contact.json", fields: *contact_fields }
+
+  - name: "pages_en"
+    label: "Halaman (English)"
+    description: "Edit teks & foto halaman versi English"
+    files:
+      - { label: "Home", name: "home", file: "src/_data/pagedata/en/home.json", fields: *home_fields }
+      - { label: "About Us", name: "about", file: "src/_data/pagedata/en/about.json", fields: *about_fields }
+      - { label: "Products & Services", name: "products", file: "src/_data/pagedata/en/products.json", fields: *products_fields }
+      - { label: "Manufacturing & Quality", name: "manufacturing", file: "src/_data/pagedata/en/manufacturing.json", fields: *manufacturing_fields }
+      - { label: "Industries", name: "industries", file: "src/_data/pagedata/en/industries.json", fields: *industries_fields }
+      - { label: "Clients", name: "clients", file: "src/_data/pagedata/en/clients.json", fields: *clients_fields }
+      - { label: "Contact Us", name: "contact", file: "src/_data/pagedata/en/contact.json", fields: *contact_fields }
+
+  - name: "custom_pages"
+    label: "Halaman Baru"
+    label_singular: "Halaman"
+    description: "Tambah halaman baru di luar 7 halaman utama (mis. berita, promo, halaman produk khusus)"
+    folder: "src/custom"
+    create: true
+    extension: "md"
+    slug: "{{fields.lang}}-{{fields.slug}}"
+    fields:
+      - { label: "Bahasa", name: "lang", widget: "select", options: [{ label: "English", value: "en" }, { label: "Bahasa Indonesia", value: "id" }], default: "id" }
+      - { label: "Slug URL (huruf kecil, tanpa spasi — mis. berita-pabrik-baru)", name: "slug", widget: "string", pattern: ["^[a-z0-9-]+$", "Hanya huruf kecil, angka, dan tanda hubung"] }
+      - { label: "Judul Halaman", name: "title", widget: "string" }
+      - { label: "Deskripsi Singkat", name: "description", widget: "text", required: false }
+      - { label: "Label Kecil (Eyebrow)", name: "eyebrow", widget: "string", required: false }
+      - { label: "Foto Utama", name: "heroImage", widget: "image", required: false }
+      - { label: "Teks Alt Foto", name: "heroImageAlt", widget: "string", required: false }
+      - { label: "Isi Halaman", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Pengaturan Situs"
+    files:
+      - label: "Info Perusahaan & Kontak"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Base URL Situs (ganti saat pindah domain)", name: "baseUrl", widget: "string" }
+          - { label: "Nama Perusahaan", name: "companyName", widget: "string" }
+          - { label: "Telepon (tampilan)", name: "phone", widget: "string" }
+          - { label: "Telepon (link tel:)", name: "phoneHref", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Alamat", name: "address", widget: "text" }
+          - { label: "Website (tampilan)", name: "websiteLabel", widget: "string" }
+          - { label: "Website (URL)", name: "websiteUrl", widget: "string" }
+          - { label: "URL Embed Google Maps", name: "mapEmbedUrl", widget: "string" }
+          - { label: "ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string" }
+          - { label: "File PDF Profil Perusahaan", name: "profilePdf", widget: "string" }

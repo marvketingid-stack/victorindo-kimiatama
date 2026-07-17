@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "Products & Services — PT Victorindo Kimiatama",
+    "description": "Comprehensive coating systems engineered for performance and durability: Blinken, Steelux, Dankdeutz, Viktronox, Maxtrak, and Velora."
+  },
+  "hero": {
+    "breadcrumb": "Products & Services",
+    "eyebrow": "Products & Services",
+    "heading": "Our Product Portfolio",
+    "lede": "Comprehensive coating systems engineered for performance and durability — specialized solutions across three distinct industry verticals."
+  },
+  "categories": [
+    {
+      "anchor": "automotive",
+      "eyebrow": "Category / 01",
+      "heading": "Automotive Paints",
+      "lede": "High-performance paint systems engineered for automotive bodyshops, bus karoseri manufacturers, and OEM assembly operations.",
+      "cream": false,
+      "products": [
+        {
+          "name": "BLINKEN",
+          "tagline": "High Class Quality",
+          "desc": "BLINKEN delivers superior color and long-lasting protection for modern vehicle finishing standards.",
+          "image": "/assets/img/product-blinken.webp",
+          "imageAlt": "Blinken Clear Coat Polyurethane can being filled on the VK production line",
+          "chips": ["Basecoat", "Clear Coat Polyurethane", "Automotive Refinish"]
+        },
+        {
+          "name": "STEELUX",
+          "tagline": "Automotive & Industrial Coating",
+          "desc": "Steelux delivers high-quality automotive paint and industrial coatings with modern performance standards.",
+          "image": "/assets/img/product-steelux.webp",
+          "imageAlt": "VK warehouse operator presenting a Steelux automotive and industrial coating can",
+          "chips": ["Automotive Paint", "Industrial Coating", "Primer & Surfacer"]
+        },
+        {
+          "name": "DANKDEUTZ",
+          "tagline": "Carroserie Polyester Putty",
+          "desc": "DANKDEUTZ Body Filler is a high-quality polyester filler that is easy to apply and sand, providing a smooth vehicle body surface before painting.",
+          "image": "/assets/img/product-dankdeutz.webp",
+          "imageAlt": "Dank Deutz Carroserie Polyester Putty pail held by a VK warehouse operator",
+          "chips": ["Body Filler", "Putty Systems", "Easy Sanding"]
+        }
+      ]
+    },
+    {
+      "anchor": "marine",
+      "eyebrow": "Category / 02",
+      "heading": "Marine, Offshore & Protective",
+      "lede": "Industrial-grade protective coatings designed for the harshest environments — from offshore platforms to heavy steel structures.",
+      "cream": true,
+      "products": [
+        {
+          "name": "VIKTRONOX",
+          "tagline": "Marine & Protective Coating",
+          "desc": "Viktronox provides high-quality coating protection for marine, offshore, and extreme industrial environments.",
+          "image": "/assets/img/portfolio-marine-coating.webp",
+          "imageAlt": "Barge hull coated with Viktronox marine protective coating",
+          "chips": ["Anti-Corrosion", "Marine & Offshore", "Industrial Primers"]
+        },
+        {
+          "name": "MAXTRAK",
+          "tagline": "Epoxy Floor Coating System",
+          "desc": "Maxtrak is a two-component epoxy floor coating system designed for maximum protection and a professional concrete finish.",
+          "image": "/assets/img/portfolio-danone-warehouse.webp",
+          "imageAlt": "Industrial warehouse floor finished with Maxtrak epoxy floor coating",
+          "chips": ["Two-Component Epoxy", "Floor Coatings", "Concrete Finish"]
+        }
+      ]
+    },
+    {
+      "anchor": "architectural",
+      "eyebrow": "Category / 03",
+      "heading": "Architectural Coatings",
+      "lede": "Premium decorative and protective coatings for residential, commercial, and large-scale construction projects across Indonesia.",
+      "cream": false,
+      "products": [
+        {
+          "name": "VELORA",
+          "tagline": "Interior & Exterior Decorative Paint",
+          "desc": "Velora is a premium decorative paint designed for interior and exterior wall applications, suitable for both new surfaces and previously painted substrates.",
+          "image": "/assets/img/architecture-fox-lite.webp",
+          "imageAlt": "FOX Lite hotel exterior finished with Velora architectural coatings",
+          "chips": ["Interior Wall Paint", "Exterior Coatings", "Weatherproof Systems", "Specialty Finishes"]
+        }
+      ]
+    }
+  ],
+  "services": {
+    "eyebrow": "Beyond Products",
+    "heading": "Technical Services",
+    "lede": "Every VK product is backed by an integrated service model — from formulation to on-site application support.",
+    "labelPrefix": "Service",
+    "cards": [
+      { "title": "R&D & Technical Service", "desc": "Dedicated team focused on product quality improvement, new formulations, and application innovation." },
+      { "title": "Color Science & Matching", "desc": "Multi-angle spectrophotometry and chroma metering for precise color matching." },
+      { "title": "Superior Distribution", "desc": "Extensive distribution network with modern management systems — delivering reliably across Indonesia." }
+    ]
+  },
+  "ctaBand": {
+    "label": "Product Consultation",
+    "heading": "Need the right coating system for your application?"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Klien — PT Victorindo Kimiatama",
+    "description": "Dipercaya para pemimpin industri Indonesia — portofolio klien bergengsi di sektor otomotif, arsitektural, dan industri, dengan kualitas tersertifikasi dan distribusi nasional."
+  },
+  "hero": {
+    "breadcrumb": "Klien",
+    "eyebrow": "Klien & Kemitraan",
+    "heading": "Dipercaya para Pemimpin Industri Indonesia",
+    "lede": "Portofolio klien bergengsi yang mencakup sektor otomotif, arsitektural, dan industri."
+  },
+  "groups": [
+    {
+      "title": "Otomotif & Transportasi",
+      "clients": [
+        { "name": "PT Laksana Bus Manufaktur", "sub": "Manufaktur Bus" },
+        { "name": "PT Mekar Armada Jaya", "sub": "Karoseri" },
+        { "name": "HIBA Group", "sub": "Transportasi" },
+        { "name": "SAIC-GM-Wuling Automobile Co., Ltd.", "sub": "OEM Otomotif" },
+        { "name": "PT Handal Indonesia Motor", "sub": "Perakitan Kendaraan" }
+      ]
+    },
+    {
+      "title": "Industri & Energi",
+      "clients": [
+        { "name": "PT Pertamina Trading & Services", "sub": "Minyak & Gas" },
+        { "name": "Danone", "sub": "Manufaktur" }
+      ]
+    },
+    {
+      "title": "Arsitektural & Komersial",
+      "clients": [
+        { "name": "FOX Lite Cikarang", "sub": "Hospitality" },
+        { "name": "Swiss-Belinn Hotel Cikarang", "sub": "Hospitality" },
+        { "name": "RS Kanker Dharmais", "sub": "Kesehatan" },
+        { "name": "Lippo Malls Investment Trust", "sub": "Komersial" },
+        { "name": "MT Haryono Residence Jakarta", "sub": "Residensial" }
+      ]
+    },
+    {
+      "title": "Mitra Perjalanan Pertumbuhan",
+      "clients": [
+        { "name": "PT Toyota Astra Motor (TAM)", "sub": "OEM Otomotif" },
+        { "name": "PT Isuzu Astra Motor Indonesia", "sub": "OEM Otomotif" },
+        { "name": "Suzuki (Sub-Con)", "sub": "OEM Otomotif" },
+        { "name": "PT LG Electronics Indonesia", "sub": "Elektronik" },
+        { "name": "New Armada Karoseri", "sub": "Karoseri" },
+        { "name": "PT Hartono Istana Teknologi", "sub": "Elektronik" },
+        { "name": "Transjakarta", "sub": "Transportasi Publik" },
+        { "name": "PT KJS (Kreasindo Jayatama Sukses)", "sub": "Industri" }
+      ]
+    }
+  ],
+  "certs": {
+    "eyebrow": "Sertifikasi & Standar",
+    "heading": "Tersertifikasi untuk Keunggulan",
+    "lede": "Sertifikasi tiga ISO kami menunjukkan komitmen teguh kami terhadap manajemen mutu, tanggung jawab lingkungan, serta kesehatan & keselamatan kerja.",
+    "isoCards": [
+      { "code": "ISO 9001", "subtitle": "Sistem Manajemen Mutu", "desc": "Memastikan produk dan proses secara konsisten memenuhi standar pelanggan dan regulasi." },
+      { "code": "ISO 14001", "subtitle": "Sistem Manajemen Lingkungan", "desc": "Menunjukkan komitmen kami untuk meminimalkan dampak lingkungan melalui manufaktur yang bertanggung jawab." },
+      { "code": "ISO 45001", "subtitle": "Kesehatan & Keselamatan Kerja", "desc": "Melindungi tenaga kerja kami melalui manajemen kesehatan dan keselamatan kerja yang efektif." }
+    ],
+    "otherCards": [
+      { "code": "TKDN", "subtitle": "Tingkat Komponen Dalam Negeri", "desc": "Tingkat kandungan dalam negeri tersertifikasi, mendukung program industri nasional Indonesia." },
+      { "code": "BKI", "subtitle": "Biro Klasifikasi Indonesia", "desc": "Tersertifikasi memenuhi standar klasifikasi marine dan industri Indonesia, menjamin kualitas, keselamatan, dan keandalan untuk aplikasi coating protektif." }
+    ]
+  },
+  "distribution": {
+    "eyebrow": "Distribusi & Jangkauan Pasar",
+    "heading": "Jaringan Nasional",
+    "lede": "Menjangkau setiap penjuru Nusantara.",
+    "mapAria": "Peta bergaya Indonesia menampilkan cakupan distribusi VK di Sumatera, Jawa dan Bali, Kalimantan, Sulawesi, dan Papua",
+    "mapLabels": { "sumatra": "Sumatera", "java": "Jawa & Bali", "kalimantan": "Kalimantan", "sulawesi": "Sulawesi", "papua": "Papua" },
+    "regions": [
+      {
+        "title": "Sumatera",
+        "items": [
+          { "region": "Sumatera Utara", "cities": "Medan" },
+          { "region": "Riau", "cities": "Pekanbaru" },
+          { "region": "Sumatera Barat", "cities": "Padang" },
+          { "region": "Jambi", "cities": "" },
+          { "region": "Lampung", "cities": "Bandar Lampung" }
+        ]
+      },
+      {
+        "title": "Jawa & Bali",
+        "items": [
+          { "region": "DKI Jakarta / Banten", "cities": "Jabodetabek" },
+          { "region": "Jawa Barat", "cities": "Bandung" },
+          { "region": "Jawa Tengah", "cities": "Semarang" },
+          { "region": "Jawa Timur", "cities": "Surabaya" },
+          { "region": "Bali", "cities": "Denpasar" },
+          { "region": "Nusa Tenggara Barat (NTB)", "cities": "Lombok / Mataram" },
+          { "region": "Nusa Tenggara Timur (NTT)", "cities": "Kupang" }
+        ]
+      },
+      {
+        "title": "Kalimantan",
+        "items": [
+          { "region": "Kalimantan Barat", "cities": "Pontianak" },
+          { "region": "Kalimantan Timur", "cities": "Samarinda / Balikpapan" }
+        ]
+      },
+      {
+        "title": "Sulawesi",
+        "items": [
+          { "region": "Sulawesi Selatan", "cities": "Makassar" }
+        ]
+      },
+      {
+        "title": "Papua",
+        "items": [
+          { "region": "Papua", "cities": "Jayapura" },
+          { "region": "Papua Selatan / Papua Barat Daya", "cities": "Merauke" }
+        ]
+      }
+    ]
+  },
+  "ctaBand": {
+    "label": "Bergabunglah dengan Ekosistem Klien Kami",
+    "heading": "Bermitra dengan produsen coating paling berpengalaman di Indonesia."
+  }
+}

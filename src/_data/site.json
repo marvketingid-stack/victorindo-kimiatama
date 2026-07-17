@@ -1,0 +1,13 @@
+{
+  "baseUrl": "https://victorindo-kimiatama.netlify.app",
+  "companyName": "PT Victorindo Kimiatama",
+  "phone": "+62 822-8000-5809",
+  "phoneHref": "tel:+6282280005809",
+  "email": "info@victorindokimiatama.com",
+  "address": "Jl. Surotokunto KM.5 Warungbambu, Kec. Karawang Timur, Karawang, Jawa Barat 41371",
+  "websiteLabel": "www.victorindokimiatama.com",
+  "websiteUrl": "https://www.victorindokimiatama.com",
+  "mapEmbedUrl": "https://www.google.com/maps?q=PT+Victorindo+Kimiatama,+Jl.+Surotokunto+KM.5+Warungbambu,+Karawang+Timur,+Karawang,+Jawa+Barat+41371&output=embed",
+  "whatsappWidgetId": "1fe47c4b-b489-4504-94d1-1b8095756233",
+  "profilePdf": "/assets/docs/VK-Company-Profile.pdf"
+}

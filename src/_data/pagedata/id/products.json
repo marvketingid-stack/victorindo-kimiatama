@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "Produk & Layanan — PT Victorindo Kimiatama",
+    "description": "Sistem coating komprehensif yang dirancang untuk performa dan daya tahan: Blinken, Steelux, Dankdeutz, Viktronox, Maxtrak, dan Velora."
+  },
+  "hero": {
+    "breadcrumb": "Produk & Layanan",
+    "eyebrow": "Produk & Layanan",
+    "heading": "Portofolio Produk Kami",
+    "lede": "Sistem coating komprehensif yang dirancang untuk performa dan daya tahan — solusi terspesialisasi di tiga vertikal industri yang berbeda."
+  },
+  "categories": [
+    {
+      "anchor": "automotive",
+      "eyebrow": "Kategori / 01",
+      "heading": "Cat Otomotif",
+      "lede": "Sistem cat berperforma tinggi yang dirancang untuk bengkel bodi otomotif, produsen karoseri bus, dan operasi perakitan OEM.",
+      "cream": false,
+      "products": [
+        {
+          "name": "BLINKEN",
+          "tagline": "High Class Quality",
+          "desc": "BLINKEN menghadirkan warna unggul dan perlindungan tahan lama untuk standar finishing kendaraan modern.",
+          "image": "/assets/img/product-blinken.webp",
+          "imageAlt": "Kaleng Blinken Clear Coat Polyurethane sedang diisi di lini produksi VK",
+          "chips": ["Basecoat", "Clear Coat Polyurethane", "Automotive Refinish"]
+        },
+        {
+          "name": "STEELUX",
+          "tagline": "Automotive & Industrial Coating",
+          "desc": "Steelux menghadirkan cat otomotif dan coating industri berkualitas tinggi dengan standar performa modern.",
+          "image": "/assets/img/product-steelux.webp",
+          "imageAlt": "Operator gudang VK menunjukkan kaleng coating otomotif dan industri Steelux",
+          "chips": ["Cat Otomotif", "Coating Industri", "Primer & Surfacer"]
+        },
+        {
+          "name": "DANKDEUTZ",
+          "tagline": "Carroserie Polyester Putty",
+          "desc": "DANKDEUTZ Body Filler adalah dempul poliester berkualitas tinggi yang mudah diaplikasikan dan diamplas, menghasilkan permukaan bodi kendaraan yang halus sebelum pengecatan.",
+          "image": "/assets/img/product-dankdeutz.webp",
+          "imageAlt": "Pail Dank Deutz Carroserie Polyester Putty dipegang operator gudang VK",
+          "chips": ["Body Filler", "Sistem Putty", "Mudah Diamplas"]
+        }
+      ]
+    },
+    {
+      "anchor": "marine",
+      "eyebrow": "Kategori / 02",
+      "heading": "Marine, Offshore & Protective",
+      "lede": "Coating protektif kelas industri yang dirancang untuk lingkungan paling ekstrem — dari anjungan lepas pantai hingga struktur baja berat.",
+      "cream": true,
+      "products": [
+        {
+          "name": "VIKTRONOX",
+          "tagline": "Marine & Protective Coating",
+          "desc": "Viktronox memberikan perlindungan coating berkualitas tinggi untuk lingkungan marine, offshore, dan industri ekstrem.",
+          "image": "/assets/img/portfolio-marine-coating.webp",
+          "imageAlt": "Lambung tongkang dilapisi coating protektif marine Viktronox",
+          "chips": ["Anti-Korosi", "Marine & Offshore", "Primer Industri"]
+        },
+        {
+          "name": "MAXTRAK",
+          "tagline": "Sistem Coating Lantai Epoxy",
+          "desc": "Maxtrak adalah sistem coating lantai epoxy dua komponen yang dirancang untuk perlindungan maksimal dan hasil akhir beton yang profesional.",
+          "image": "/assets/img/portfolio-danone-warehouse.webp",
+          "imageAlt": "Lantai gudang industri dengan finishing coating lantai epoxy Maxtrak",
+          "chips": ["Epoxy Dua Komponen", "Coating Lantai", "Finishing Beton"]
+        }
+      ]
+    },
+    {
+      "anchor": "architectural",
+      "eyebrow": "Kategori / 03",
+      "heading": "Cat Arsitektural",
+      "lede": "Coating dekoratif dan protektif premium untuk proyek residensial, komersial, dan konstruksi skala besar di seluruh Indonesia.",
+      "cream": false,
+      "products": [
+        {
+          "name": "VELORA",
+          "tagline": "Cat Dekoratif Interior & Eksterior",
+          "desc": "Velora adalah cat dekoratif premium yang dirancang untuk aplikasi dinding interior dan eksterior, cocok untuk permukaan baru maupun yang pernah dicat sebelumnya.",
+          "image": "/assets/img/architecture-fox-lite.webp",
+          "imageAlt": "Eksterior hotel FOX Lite dengan finishing coating arsitektural Velora",
+          "chips": ["Cat Dinding Interior", "Coating Eksterior", "Sistem Tahan Cuaca", "Finishing Khusus"]
+        }
+      ]
+    }
+  ],
+  "services": {
+    "eyebrow": "Lebih dari Sekadar Produk",
+    "heading": "Layanan Teknis",
+    "lede": "Setiap produk VK didukung model layanan terintegrasi — dari formulasi hingga dukungan aplikasi di lokasi.",
+    "labelPrefix": "Layanan",
+    "cards": [
+      { "title": "R&D & Layanan Teknis", "desc": "Tim khusus yang berfokus pada peningkatan kualitas produk, formulasi baru, dan inovasi aplikasi." },
+      { "title": "Ilmu Warna & Color Matching", "desc": "Spektrofotometri multi-sudut dan chroma metering untuk pencocokan warna yang presisi." },
+      { "title": "Distribusi Unggul", "desc": "Jaringan distribusi luas dengan sistem manajemen modern — mengirim secara andal ke seluruh Indonesia." }
+    ]
+  },
+  "ctaBand": {
+    "label": "Konsultasi Produk",
+    "heading": "Butuh sistem coating yang tepat untuk aplikasi Anda?"
+  }
+}

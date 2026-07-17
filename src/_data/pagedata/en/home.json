@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "PT Victorindo Kimiatama — Indonesia's Trusted Paint & Coating Specialist Since 1978",
+    "description": "PT Victorindo Kimiatama is Indonesia's first trusted specialist in automotive paint and coating solutions, delivering excellent coating products across multiple industries since 1978."
+  },
+  "hero": {
+    "kicker": "Coating Solutions Manufacturer",
+    "heading": "Indonesia's Trusted Paint & Coating Specialist Since 1978",
+    "lede": "PT Victorindo Kimiatama is Indonesia's first trusted specialist in automotive paint and coating solutions — one of Indonesia's long-established coating manufacturers, delivering excellent coating products across multiple industries.",
+    "image": "/assets/img/factory-aerial.webp",
+    "imageAlt": "Aerial view of the PT Victorindo Kimiatama manufacturing facility in Karawang, West Java"
+  },
+  "stats": {
+    "ariaLabel": "Company key figures",
+    "items": [
+      { "value": "1978", "label": "Year Established" },
+      { "value": "45+", "label": "Years of Excellence" },
+      { "value": "3", "label": "Business Sectors" },
+      { "value": "Nationwide", "label": "Distribution Network" }
+    ]
+  },
+  "story": {
+    "eyebrow": "Company Overview",
+    "heading": "Our Story & Heritage",
+    "p1": "Since its establishment in 1978 in Palmerah, Jakarta, PT Victorindo Kimiatama has grown from Indonesia's first automotive paint specialist into a nationally recognized world-class coating manufacturer, driven by over four decades of innovation and dedication.",
+    "p2": "Proudly made in Indonesia — every formulation is developed, produced, and quality-tested entirely within the country.",
+    "chips": ["Proudly Made in Indonesia", "Est. 1978", "Karawang, Jawa Barat"],
+    "cta": "Read Our Full Story",
+    "image": "/assets/img/production-mixing.webp",
+    "imageAlt": "VK production operator transferring raw material into a stainless-steel mixing tank"
+  },
+  "sectors": {
+    "eyebrow": "Business Sectors",
+    "heading": "Three Pillars of Excellence",
+    "lede": "Specialized coating solutions across three distinct industry verticals.",
+    "ctaLabel": "View Products",
+    "cards": [
+      {
+        "index": "SECTOR / 01",
+        "title": "Automotive Paints",
+        "desc": "High-performance paint systems engineered for automotive bodyshops, bus karoseri manufacturers, and OEM assembly operations.",
+        "image": "/assets/img/product-blinken.webp",
+        "imageAlt": "Blinken clear coat polyurethane can on the VK filling line",
+        "chips": ["Basecoat & Clearcoat", "Primer & Surfacer", "Putty Systems", "Touch-Up & Refinish"],
+        "anchor": "automotive"
+      },
+      {
+        "index": "SECTOR / 02",
+        "title": "Marine, Offshore & Protective",
+        "desc": "Industrial-grade protective coatings designed for the harshest environments — from offshore platforms to heavy steel structures.",
+        "image": "/assets/img/portfolio-marine-coating.webp",
+        "imageAlt": "Barge protected with VK marine coating at a shipyard",
+        "chips": ["Anti-Corrosion Coatings", "Epoxy Systems", "Industrial Primers", "Floor Coatings"],
+        "anchor": "marine"
+      },
+      {
+        "index": "SECTOR / 03",
+        "title": "Architectural Coatings",
+        "desc": "Premium decorative and protective coatings for residential, commercial, and large-scale construction projects across Indonesia.",
+        "image": "/assets/img/architecture-fox-lite.webp",
+        "imageAlt": "FOX Lite hotel building finished with VK architectural coatings",
+        "chips": ["Interior Wall Paint", "Exterior Coatings", "Weatherproof Systems", "Specialty Finishes"],
+        "anchor": "architectural"
+      }
+    ]
+  },
+  "manufacturing": {
+    "eyebrow": "Manufacturing & Production",
+    "heading": "Trusted Manufacturing",
+    "lede": "Per shift per month production capacity across all product lines, powered by modern manufacturing equipment and expert formulation teams.",
+    "capacityAria": "Production capacity in metric tons per shift per month",
+    "capacities": [
+      { "name": "Base Coat", "pct": 52, "value": "100 MT" },
+      { "name": "Clear Coat", "pct": 100, "value": "192 MT" },
+      { "name": "Synthetic Paint", "pct": 47, "value": "90 MT" },
+      { "name": "Epoxy", "pct": 50, "value": "96 MT" },
+      { "name": "Thinner", "pct": 83, "value": "160 MT" },
+      { "name": "Hardener", "pct": 19, "value": "36 MT" },
+      { "name": "Putty", "pct": 100, "value": "192 MT" }
+    ],
+    "cta": "Explore Our Facility",
+    "image": "/assets/img/production-line-blinken.webp",
+    "imageAlt": "Blinken cans moving along the VK filling and packing line"
+  },
+  "trust": {
+    "ariaLabel": "Trusted by leading companies",
+    "label": "Proven Track Record — Trusted by Leading Companies",
+    "names": [
+      "Laksana Bus Manufaktur", "Mekar Armada Jaya", "HIBA Group", "SAIC-GM-Wuling", "Handal Indonesia Motor",
+      "Pertamina Trading & Services", "Danone", "Swiss-Belinn Cikarang", "RS Kanker Dharmais", "Lippo Malls"
+    ]
+  },
+  "certs": {
+    "eyebrow": "Certifications & Standards",
+    "heading": "Certified for Excellence",
+    "lede": "Our triple ISO certification demonstrates our unwavering commitment to quality management, environmental responsibility, and occupational health & safety.",
+    "cards": [
+      { "code": "ISO 9001", "subtitle": "Quality Management System", "desc": "Ensures products and processes consistently meet customer and regulatory standards." },
+      { "code": "ISO 14001", "subtitle": "Environmental Management System", "desc": "Demonstrates our commitment to minimizing environmental impact through responsible manufacturing." },
+      { "code": "ISO 45001", "subtitle": "Occupational Health & Safety", "desc": "Protects our workforce through effective workplace health and safety management." }
+    ],
+    "cta": "View All Certifications"
+  },
+  "ctaBand": {
+    "label": "Our Commitment",
+    "heading": "Building the Future of the Indonesian Coating Industry."
+  }
+}

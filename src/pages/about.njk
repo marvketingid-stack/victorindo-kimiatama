@@ -1,0 +1,119 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}about.html{% else %}id/about.html{% endif %}"
+layout: layouts/base.njk
+pageKey: about
+slugEn: about.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+{% include "partials/page-hero.njk" %}
+
+<!-- HERITAGE -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="media reveal">
+        <img src="{{ c.heritage.image }}" alt="{{ c.heritage.imageAlt }}" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">{{ c.heritage.eyebrow }}</span>
+        <h2 class="headline-lg">{{ c.heritage.heading }}</h2>
+        <p class="body-md mt-24">{{ c.heritage.para }}</p>
+        <ul class="spec-list mt-32">
+          {%- for spec in c.heritage.specs %}
+          <li><span class="k">{{ spec.k }}</span><span class="v">{{ spec.v }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT QUOTE -->
+<section class="section-dark" style="padding:64px 0;">
+  <div class="container" style="text-align:center;">
+    <span class="label-caps" style="color:#D63F13;">{{ c.commitment.label }}</span>
+    <p class="headline-md" style="color:#fff;max-width:860px;margin:20px auto 0;font-size:28px;line-height:40px;">{{ c.commitment.quote }}</p>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.vision.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.vision.heading }}</h2>
+    </div>
+    <div class="card card-accent card-pad mb-32 reveal">
+      <span class="label-caps text-crimson">{{ c.vision.visionLabel }}</span>
+      <p class="headline-md mt-16" style="font-weight:600;font-size:22px;line-height:34px;">{{ c.vision.visionText }}</p>
+    </div>
+    <div class="grid-2">
+      {%- for m in c.vision.missions %}
+      <div class="card card-pad reveal">
+        <span class="label-caps text-crimson">{{ c.vision.missionLabel }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3 class="headline-md mt-16">{{ m.title }}</h3>
+        <p class="body-sm text-muted">{{ m.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- OUR LEGACY STATS -->
+<section class="stat-band" aria-label="{{ c.legacy.ariaLabel }}">
+  <div class="container">
+    <div class="stat-band-grid">
+      {%- for s in c.legacy.items %}
+      <div class="stat-cell">
+        <div class="stat-lg">{{ s.value }}</div>
+        <span class="label-caps">{{ s.label | replace("·", "&middot;") | safe }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH JOURNEY -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.journey.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.journey.heading }}</h2>
+      <p class="lede body-md">{{ c.journey.lede }}</p>
+    </div>
+    <div class="split" style="align-items:start;">
+      <div class="timeline">
+        {%- for item in c.journey.items %}
+        <div class="tl-item{% if item.major %} milestone-major{% endif %} reveal">
+          <span class="tl-node"></span>
+          <span class="tl-year">{% if item.year %}{{ item.year }}{% else %}{{ c.journey.milestonePrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}{% endif %}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+      <div style="position:sticky;top:112px;">
+        <div class="media reveal" style="border:2px solid var(--stroke-dark);">
+          <img src="{{ c.journey.sideImage }}" alt="{{ c.journey.sideImageAlt }}" loading="lazy">
+        </div>
+        <div class="card card-accent card-pad mt-24 reveal">
+          <span class="label-caps text-crimson">{{ c.journey.advantage.label }}</span>
+          <ul class="mt-16" style="display:flex;flex-direction:column;gap:14px;">
+            {%- for adv in c.journey.advantage.items %}
+            <li><strong style="font-family:'Montserrat',sans-serif;font-size:14px;">{{ adv.title }}</strong><br><span class="body-sm text-muted">{{ adv.desc }}</span></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

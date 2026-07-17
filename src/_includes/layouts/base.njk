@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] if pageKey else null %}
+{%- if c %}
+<title>{{ c.meta.title }}</title>
+<meta name="description" content="{{ c.meta.description }}">
+{%- else %}
+<title>{{ title }} — {{ site.companyName }}</title>
+<meta name="description" content="{{ description }}">
+{%- endif %}
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+{%- if slugEn %}
+<link rel="alternate" hreflang="en" href="{{ site.baseUrl }}/{{ slugEn }}">
+<link rel="alternate" hreflang="id" href="{{ site.baseUrl }}/id/{{ slugEn }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.baseUrl }}/{{ slugEn }}">
+{%- endif %}
+{%- block head %}{% endblock %}
+</head>
+<body>
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a class="brand" href="{{ root }}index.html">
+      <img src="/assets/img/logo-vk.png" alt="{{ t.a11y.logoAlt }}">
+      <span class="brand-text">
+        <span class="brand-name">PT VICTORINDO KIMIATAMA</span>
+        <span class="brand-tag">{{ t.brandTag | replace("·", "&middot;") | safe }}</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="{{ t.a11y.primaryNav }}">
+      <a href="{{ root }}about.html"{% if pageKey == "about" %} class="active"{% endif %}>{{ t.nav.about }}</a>
+      <a href="{{ root }}products.html"{% if pageKey == "products" %} class="active"{% endif %}>{{ t.nav.products }}</a>
+      <a href="{{ root }}manufacturing.html"{% if pageKey == "manufacturing" %} class="active"{% endif %}>{{ t.nav.manufacturing }}</a>
+      <a href="{{ root }}industries.html"{% if pageKey == "industries" %} class="active"{% endif %}>{{ t.nav.industries }}</a>
+      <a href="{{ root }}clients.html"{% if pageKey == "clients" %} class="active"{% endif %}>{{ t.nav.clients }}</a>
+      <a href="{{ root }}contact.html" class="nav-contact">{{ t.nav.contact }}</a>
+    </nav>
+    <div class="lang-toggle" aria-label="Language / Bahasa">
+      {%- if slugEn %}
+      <a href="/{{ slugEn }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
+      <a href="/id/{{ slugEn }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
+      {%- else %}
+      <a href="/index.html"{% if lang == "en" %} class="active"{% endif %}>EN</a>
+      <a href="/id/index.html"{% if lang == "id" %} class="active"{% endif %}>ID</a>
+      {%- endif %}
+    </div>
+    <div class="nav-cta"><a class="btn btn-primary" href="{{ root }}contact.html">{{ t.nav.contact }}</a></div>
+    <button class="nav-toggle" aria-label="{{ t.a11y.toggleNav }}" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-wordmark-white.svg" alt="{{ t.a11y.wordmarkAlt }}">
+        <p>{{ t.footer.quote }}</p>
+        <div class="footer-iso">
+          <span class="chip">ISO 9001</span>
+          <span class="chip">ISO 14001</span>
+          <span class="chip">ISO 45001</span>
+          <span class="chip">TKDN</span>
+          <span class="chip">BKI</span>
+        </div>
+      </div>
+      <div>
+        <h4>{{ t.footer.navigation }}</h4>
+        <ul>
+          <li><a href="{{ root }}index.html">{{ t.nav.home }}</a></li>
+          <li><a href="{{ root }}about.html">{{ t.nav.about }}</a></li>
+          <li><a href="{{ root }}products.html">{{ t.nav.products }}</a></li>
+          <li><a href="{{ root }}manufacturing.html">{{ t.nav.manufacturingFull }}</a></li>
+          <li><a href="{{ root }}industries.html">{{ t.nav.industries }}</a></li>
+          <li><a href="{{ root }}clients.html">{{ t.nav.clients }}</a></li>
+          <li><a href="{{ root }}contact.html">{{ t.nav.contact }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ t.footer.sectors }}</h4>
+        <ul>
+          <li><a href="{{ root }}products.html#automotive">{{ t.footer.sectorAutomotive }}</a></li>
+          <li><a href="{{ root }}products.html#marine">{{ t.footer.sectorMarine }}</a></li>
+          <li><a href="{{ root }}products.html#architectural">{{ t.footer.sectorArchitectural }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ t.footer.office }}</h4>
+        <p class="faddr"><strong>{{ site.companyName }}</strong>{{ site.address }}</p>
+        <p class="faddr"><strong>{{ t.footer.telp }}</strong><a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        <p class="faddr"><strong>{{ t.footer.email }}</strong><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyright-year">2026</span> {{ site.companyName }}. {{ t.footer.rights }}</p>
+      <p>{{ t.footer.since | replace("·", "&middot;") | safe }}</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<!-- Elfsight WhatsApp Chat -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-{{ site.whatsappWidgetId }}"></div>
+</body>
+</html>

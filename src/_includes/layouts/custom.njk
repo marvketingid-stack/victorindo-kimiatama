@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+{%- set t = ui[lang] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ root }}index.html">{{ t.nav.home }}</a><span class="sep">/</span><span class="current">{{ title }}</span>
+      </nav>
+      {%- if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1 class="headline-lg">{{ title }}</h1>
+      {%- if description %}<p class="lede">{{ description }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {%- if heroImage %}
+    <div class="media reveal mb-48" style="border:2px solid var(--stroke-dark);max-width:960px;">
+      <img src="{{ heroImage }}" alt="{{ heroImageAlt or title }}">
+    </div>
+    {%- endif %}
+    <div class="prose">
+{{ content | safe }}
+    </div>
+  </div>
+</section>

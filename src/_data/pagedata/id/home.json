@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "PT Victorindo Kimiatama — Spesialis Cat & Coating Terpercaya di Indonesia Sejak 1978",
+    "description": "PT Victorindo Kimiatama adalah spesialis cat otomotif dan solusi coating pertama yang terpercaya di Indonesia, menghadirkan produk coating unggulan untuk berbagai industri sejak 1978."
+  },
+  "hero": {
+    "kicker": "Produsen Solusi Coating",
+    "heading": "Spesialis Cat & Coating Terpercaya di Indonesia Sejak 1978",
+    "lede": "PT Victorindo Kimiatama adalah spesialis cat otomotif dan solusi coating pertama yang terpercaya di Indonesia — salah satu produsen coating paling mapan di Indonesia, menghadirkan produk coating unggulan untuk berbagai industri.",
+    "image": "/assets/img/factory-aerial.webp",
+    "imageAlt": "Pemandangan udara fasilitas manufaktur PT Victorindo Kimiatama di Karawang, Jawa Barat"
+  },
+  "stats": {
+    "ariaLabel": "Angka kunci perusahaan",
+    "items": [
+      { "value": "1978", "label": "Tahun Berdiri" },
+      { "value": "45+", "label": "Tahun Keunggulan" },
+      { "value": "3", "label": "Sektor Bisnis" },
+      { "value": "Nasional", "label": "Jaringan Distribusi" }
+    ]
+  },
+  "story": {
+    "eyebrow": "Profil Perusahaan",
+    "heading": "Kisah & Warisan Kami",
+    "p1": "Sejak didirikan pada tahun 1978 di Palmerah, Jakarta, PT Victorindo Kimiatama telah berkembang dari spesialis cat otomotif pertama di Indonesia menjadi produsen coating kelas dunia yang diakui secara nasional, didorong oleh lebih dari empat dekade inovasi dan dedikasi.",
+    "p2": "Dengan bangga dibuat di Indonesia — setiap formulasi dikembangkan, diproduksi, dan diuji kualitasnya sepenuhnya di dalam negeri.",
+    "chips": ["Bangga Buatan Indonesia", "Est. 1978", "Karawang, Jawa Barat"],
+    "cta": "Baca Kisah Lengkap Kami",
+    "image": "/assets/img/production-mixing.webp",
+    "imageAlt": "Operator produksi VK memindahkan bahan baku ke tangki pencampur stainless steel"
+  },
+  "sectors": {
+    "eyebrow": "Sektor Bisnis",
+    "heading": "Tiga Pilar Keunggulan",
+    "lede": "Solusi coating terspesialisasi di tiga vertikal industri yang berbeda.",
+    "ctaLabel": "Lihat Produk",
+    "cards": [
+      {
+        "index": "SEKTOR / 01",
+        "title": "Cat Otomotif",
+        "desc": "Sistem cat berperforma tinggi yang dirancang untuk bengkel bodi otomotif, produsen karoseri bus, dan operasi perakitan OEM.",
+        "image": "/assets/img/product-blinken.webp",
+        "imageAlt": "Kaleng Blinken clear coat polyurethane di lini pengisian VK",
+        "chips": ["Basecoat & Clearcoat", "Primer & Surfacer", "Sistem Putty", "Touch-Up & Refinish"],
+        "anchor": "automotive"
+      },
+      {
+        "index": "SEKTOR / 02",
+        "title": "Marine, Offshore & Protective",
+        "desc": "Coating protektif kelas industri yang dirancang untuk lingkungan paling ekstrem — dari anjungan lepas pantai hingga struktur baja berat.",
+        "image": "/assets/img/portfolio-marine-coating.webp",
+        "imageAlt": "Tongkang yang dilindungi marine coating VK di galangan kapal",
+        "chips": ["Coating Anti-Korosi", "Sistem Epoxy", "Primer Industri", "Coating Lantai"],
+        "anchor": "marine"
+      },
+      {
+        "index": "SEKTOR / 03",
+        "title": "Cat Arsitektural",
+        "desc": "Coating dekoratif dan protektif premium untuk proyek residensial, komersial, dan konstruksi skala besar di seluruh Indonesia.",
+        "image": "/assets/img/architecture-fox-lite.webp",
+        "imageAlt": "Gedung hotel FOX Lite dengan finishing coating arsitektural VK",
+        "chips": ["Cat Dinding Interior", "Coating Eksterior", "Sistem Tahan Cuaca", "Finishing Khusus"],
+        "anchor": "architectural"
+      }
+    ]
+  },
+  "manufacturing": {
+    "eyebrow": "Manufaktur & Produksi",
+    "heading": "Manufaktur Terpercaya",
+    "lede": "Kapasitas produksi per shift per bulan di seluruh lini produk, didukung peralatan manufaktur modern dan tim formulasi ahli.",
+    "capacityAria": "Kapasitas produksi dalam metrik ton per shift per bulan",
+    "capacities": [
+      { "name": "Base Coat", "pct": 52, "value": "100 MT" },
+      { "name": "Clear Coat", "pct": 100, "value": "192 MT" },
+      { "name": "Synthetic Paint", "pct": 47, "value": "90 MT" },
+      { "name": "Epoxy", "pct": 50, "value": "96 MT" },
+      { "name": "Thinner", "pct": 83, "value": "160 MT" },
+      { "name": "Hardener", "pct": 19, "value": "36 MT" },
+      { "name": "Putty", "pct": 100, "value": "192 MT" }
+    ],
+    "cta": "Jelajahi Fasilitas Kami",
+    "image": "/assets/img/production-line-blinken.webp",
+    "imageAlt": "Kaleng Blinken bergerak di lini pengisian dan pengemasan VK"
+  },
+  "trust": {
+    "ariaLabel": "Dipercaya perusahaan terkemuka",
+    "label": "Rekam Jejak Terbukti — Dipercaya Perusahaan Terkemuka",
+    "names": [
+      "Laksana Bus Manufaktur", "Mekar Armada Jaya", "HIBA Group", "SAIC-GM-Wuling", "Handal Indonesia Motor",
+      "Pertamina Trading & Services", "Danone", "Swiss-Belinn Cikarang", "RS Kanker Dharmais", "Lippo Malls"
+    ]
+  },
+  "certs": {
+    "eyebrow": "Sertifikasi & Standar",
+    "heading": "Tersertifikasi untuk Keunggulan",
+    "lede": "Sertifikasi tiga ISO kami menunjukkan komitmen teguh kami terhadap manajemen mutu, tanggung jawab lingkungan, serta kesehatan & keselamatan kerja.",
+    "cards": [
+      { "code": "ISO 9001", "subtitle": "Sistem Manajemen Mutu", "desc": "Memastikan produk dan proses secara konsisten memenuhi standar pelanggan dan regulasi." },
+      { "code": "ISO 14001", "subtitle": "Sistem Manajemen Lingkungan", "desc": "Menunjukkan komitmen kami untuk meminimalkan dampak lingkungan melalui manufaktur yang bertanggung jawab." },
+      { "code": "ISO 45001", "subtitle": "Kesehatan & Keselamatan Kerja", "desc": "Melindungi tenaga kerja kami melalui manajemen kesehatan dan keselamatan kerja yang efektif." }
+    ],
+    "cta": "Lihat Semua Sertifikasi"
+  },
+  "ctaBand": {
+    "label": "Komitmen Kami",
+    "heading": "Membangun Masa Depan Industri Coating Indonesia."
+  }
+}

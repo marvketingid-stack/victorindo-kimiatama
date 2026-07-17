@@ -1,0 +1,70 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{% if lang == 'en' %}industries.html{% else %}id/industries.html{% endif %}"
+layout: layouts/base.njk
+pageKey: industries
+slugEn: industries.html
+---
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+{%- set root = "/" if lang == "en" else "/id/" %}
+
+{% include "partials/page-hero.njk" %}
+
+<!-- SIX VERTICALS -->
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      {%- for v in c.verticals.items %}
+      <div class="industry-card reveal">
+        <div class="icon-box" aria-hidden="true">
+          {%- if v.icon == "car" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M3 16l2-6h14l2 6M5 16h14M7 16v2M17 16v2M8 10l1.5-4h5L16 10"/></svg>
+          {%- elif v.icon == "building" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M4 21V9l5-4v6l5-4v6l6-4v12M4 21h16M8 17h2M13 17h2"/></svg>
+          {%- elif v.icon == "gear" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/><circle cx="12" cy="12" r="3.2"/></svg>
+          {%- elif v.icon == "rig" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M7 21V8a5 5 0 0 1 10 0v13M7 21h10M7 12h10M12 3v2"/></svg>
+          {%- elif v.icon == "bus" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M5 17V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10M5 17h14M5 13h14M8 20l-1 1.5M16 20l1 1.5M8.5 17v3h7v-3"/></svg>
+          {%- else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M3 21h18M6 21V10l6-6 6 6v11M10 21v-5h4v5M9 10h6"/></svg>
+          {%- endif %}
+        </div>
+        <span class="label-caps text-crimson">{{ c.verticals.labelPrefix }} / {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.desc }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section section-cream" id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ c.portfolio.eyebrow }}</span>
+      <h2 class="headline-lg">{{ c.portfolio.heading }}</h2>
+      <p class="lede body-md">{{ c.portfolio.lede }}</p>
+    </div>
+    <div class="portfolio-grid">
+      {%- for item in c.portfolio.items %}
+      <article class="portfolio-item reveal">
+        <div class="media"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" loading="lazy"></div>
+        <div class="caption">
+          <span class="cat">{{ item.cat }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

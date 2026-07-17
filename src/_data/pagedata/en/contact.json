@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Contact Us — PT Victorindo Kimiatama",
+    "description": "Request a technical consultation with PT Victorindo Kimiatama — corporate headquarters and factory in Karawang, Jawa Barat. Telp. +62 822-8000-5809."
+  },
+  "hero": {
+    "breadcrumb": "Contact Us",
+    "eyebrow": "Contact Us",
+    "heading": "Request a Technical Consultation",
+    "lede": "Talk to our technical team about product selection, color matching, application methods, or partnership opportunities."
+  },
+  "info": {
+    "eyebrow": "Corporate Headquarters",
+    "heading": "Head Office & Factory",
+    "addressLabel": "Address",
+    "phoneLabel": "Telp.",
+    "emailLabel": "Email",
+    "websiteLabel": "Website"
+  },
+  "profileCard": {
+    "label": "Company Profile",
+    "desc": "Get the complete overview of our products, capacity, certifications, and portfolio in one document."
+  },
+  "form": {
+    "eyebrow": "Technical Inquiry",
+    "heading": "Tell Us About Your Project",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "YOUR NAME",
+    "nameError": "Please enter your full name.",
+    "companyLabel": "Company",
+    "companyPlaceholder": "COMPANY NAME",
+    "emailLabel": "Corporate Email",
+    "emailPlaceholder": "NAME@COMPANY.CO.ID",
+    "emailError": "Please use a valid corporate email address.",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+62",
+    "industryLabel": "Industry",
+    "industryDefault": "— Select your industry —",
+    "industryOptions": [
+      "Automotive & Bus Bodyworks",
+      "Construction & Real Estate",
+      "Manufacturing & Industrial",
+      "Oil, Gas & Petrochemical",
+      "Public Transportation",
+      "Heavy Industry & Infrastructure",
+      "Other"
+    ],
+    "industryError": "Please select your industry.",
+    "messageLabel": "Message",
+    "messagePlaceholder": "DESCRIBE YOUR COATING REQUIREMENT...",
+    "messageError": "Please describe your requirement (min. 10 characters).",
+    "submit": "Submit Inquiry",
+    "note": "Fields marked * are required. Our technical team typically responds within one business day.",
+    "success": "Thank you — your email client has been opened with your inquiry. If it did not open, please email us directly at <strong>info@victorindokimiatama.com</strong>."
+  },
+  "location": {
+    "eyebrow": "Factory Location",
+    "heading": "Find Us in Karawang",
+    "lede": "Our head office and manufacturing facility are located in Karawang Timur, Jawa Barat — at the heart of Indonesia's industrial corridor.",
+    "mapTitle": "PT Victorindo Kimiatama factory location map"
+  }
+}

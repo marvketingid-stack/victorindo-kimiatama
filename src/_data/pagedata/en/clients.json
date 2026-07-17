@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Clients — PT Victorindo Kimiatama",
+    "description": "Trusted by Indonesia's leaders — a portfolio of prestigious clients spanning automotive, architectural, and industrial sectors, with certified quality and nationwide distribution."
+  },
+  "hero": {
+    "breadcrumb": "Clients",
+    "eyebrow": "Clients & Partnerships",
+    "heading": "Trusted by Indonesia's Leaders",
+    "lede": "A portfolio of prestigious clients spanning automotive, architectural, and industrial sectors."
+  },
+  "groups": [
+    {
+      "title": "Automotive & Transportation",
+      "clients": [
+        { "name": "PT Laksana Bus Manufaktur", "sub": "Bus Manufacturing" },
+        { "name": "PT Mekar Armada Jaya", "sub": "Karoseri" },
+        { "name": "HIBA Group", "sub": "Transportation" },
+        { "name": "SAIC-GM-Wuling Automobile Co., Ltd.", "sub": "Automotive OEM" },
+        { "name": "PT Handal Indonesia Motor", "sub": "Vehicle Assembly" }
+      ]
+    },
+    {
+      "title": "Industrial & Energy",
+      "clients": [
+        { "name": "PT Pertamina Trading & Services", "sub": "Oil & Gas" },
+        { "name": "Danone", "sub": "Manufacturing" }
+      ]
+    },
+    {
+      "title": "Architectural & Commercial",
+      "clients": [
+        { "name": "FOX Lite Cikarang", "sub": "Hospitality" },
+        { "name": "Swiss-Belinn Hotel Cikarang", "sub": "Hospitality" },
+        { "name": "RS Kanker Dharmais", "sub": "Healthcare" },
+        { "name": "Lippo Malls Investment Trust", "sub": "Commercial" },
+        { "name": "MT Haryono Residence Jakarta", "sub": "Residential" }
+      ]
+    },
+    {
+      "title": "Growth Journey Partners",
+      "clients": [
+        { "name": "PT Toyota Astra Motor (TAM)", "sub": "Automotive OEM" },
+        { "name": "PT Isuzu Astra Motor Indonesia", "sub": "Automotive OEM" },
+        { "name": "Suzuki (Sub-Con)", "sub": "Automotive OEM" },
+        { "name": "PT LG Electronics Indonesia", "sub": "Electronics" },
+        { "name": "New Armada Karoseri", "sub": "Karoseri" },
+        { "name": "PT Hartono Istana Teknologi", "sub": "Electronics" },
+        { "name": "Transjakarta", "sub": "Public Transport" },
+        { "name": "PT KJS (Kreasindo Jayatama Sukses)", "sub": "Industrial" }
+      ]
+    }
+  ],
+  "certs": {
+    "eyebrow": "Certifications & Standards",
+    "heading": "Certified for Excellence",
+    "lede": "Our triple ISO certification demonstrates our unwavering commitment to quality management, environmental responsibility, and occupational health & safety.",
+    "isoCards": [
+      { "code": "ISO 9001", "subtitle": "Quality Management System", "desc": "Ensures products and processes consistently meet customer and regulatory standards." },
+      { "code": "ISO 14001", "subtitle": "Environmental Management System", "desc": "Demonstrates our commitment to minimizing environmental impact through responsible manufacturing." },
+      { "code": "ISO 45001", "subtitle": "Occupational Health & Safety", "desc": "Protects our workforce through effective workplace health and safety management." }
+    ],
+    "otherCards": [
+      { "code": "TKDN", "subtitle": "Tingkat Komponen Dalam Negeri", "desc": "Certified domestic content level, supporting Indonesia's national industry program." },
+      { "code": "BKI", "subtitle": "Biro Klasifikasi Indonesia", "desc": "Certified to meet Indonesian marine and industrial classification standards, ensuring quality, safety, and reliability for protective coating applications." }
+    ]
+  },
+  "distribution": {
+    "eyebrow": "Distribution & Market Reach",
+    "heading": "Nationwide Network",
+    "lede": "Reaching every corner of the Indonesian archipelago.",
+    "mapAria": "Stylized map of Indonesia showing VK distribution coverage across Sumatra, Java and Bali, Kalimantan, Sulawesi, and Papua",
+    "mapLabels": { "sumatra": "Sumatra", "java": "Java & Bali", "kalimantan": "Kalimantan", "sulawesi": "Sulawesi", "papua": "Papua" },
+    "regions": [
+      {
+        "title": "Sumatra",
+        "items": [
+          { "region": "North Sumatra", "cities": "Medan" },
+          { "region": "Riau", "cities": "Pekanbaru" },
+          { "region": "West Sumatra", "cities": "Padang" },
+          { "region": "Jambi", "cities": "" },
+          { "region": "Lampung", "cities": "Bandar Lampung" }
+        ]
+      },
+      {
+        "title": "Java & Bali",
+        "items": [
+          { "region": "DKI Jakarta / Banten", "cities": "Greater Jakarta (Jabodetabek)" },
+          { "region": "West Java", "cities": "Bandung" },
+          { "region": "Central Java", "cities": "Semarang" },
+          { "region": "East Java", "cities": "Surabaya" },
+          { "region": "Bali", "cities": "Denpasar" },
+          { "region": "West Nusa Tenggara (NTB)", "cities": "Lombok / Mataram" },
+          { "region": "East Nusa Tenggara (NTT)", "cities": "Kupang" }
+        ]
+      },
+      {
+        "title": "Kalimantan",
+        "items": [
+          { "region": "West Kalimantan", "cities": "Pontianak" },
+          { "region": "East Kalimantan", "cities": "Samarinda / Balikpapan" }
+        ]
+      },
+      {
+        "title": "Sulawesi",
+        "items": [
+          { "region": "Sulawesi Selatan", "cities": "Makassar" }
+        ]
+      },
+      {
+        "title": "Papua",
+        "items": [
+          { "region": "Papua", "cities": "Jayapura" },
+          { "region": "South Papua / Southern West Papua Region", "cities": "Merauke" }
+        ]
+      }
+    ]
+  },
+  "ctaBand": {
+    "label": "Join Our Client Ecosystem",
+    "heading": "Partner with Indonesia's most experienced coating manufacturer."
+  }
+}

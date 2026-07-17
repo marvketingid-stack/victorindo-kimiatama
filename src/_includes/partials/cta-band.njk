@@ -1,0 +1,15 @@
+{%- set t = ui[lang] %}
+{%- set c = pagedata[lang][pageKey] %}
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container cta-band-inner">
+    <div>
+      <span class="label-caps">{{ c.ctaBand.label }}</span>
+      <h2>{{ c.ctaBand.heading }}</h2>
+    </div>
+    <div class="actions">
+      <a class="btn btn-outline-light" href="{{ site.profilePdf }}" download>{{ t.ctaDownload }}</a>
+      <a class="btn btn-dark" style="border-color:#fff;" href="{{ '/' if lang == 'en' else '/id/' }}contact.html">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
