@@ -1,0 +1,45 @@
+# Deploy ke Hostinger via FTP — OPSIONAL, alternatif dari hosting Netlify.
+#
+# Cara mengaktifkan (tim IT):
+# 1. Di repo GitHub → Settings → Secrets and variables → Actions → New repository secret,
+#    buat 3 secret berikut (nilai ada di hPanel Hostinger → Files → FTP Accounts):
+#      HOSTINGER_FTP_SERVER   (mis. ftp.victorindokimiatama.com atau IP)
+#      HOSTINGER_FTP_USERNAME
+#      HOSTINGER_FTP_PASSWORD
+# 2. Jalankan manual dari tab Actions → "Deploy to Hostinger" → Run workflow,
+#    atau hapus tanda komentar pada blok `push` di bawah agar otomatis setiap publish CMS.
+#
+# Catatan: jika memakai jalur ini sebagai satu-satunya hosting, login /admin butuh
+# OAuth provider pengganti Netlify — lihat HANDOVER.md §Opsi Hosting.
+
+name: Deploy to Hostinger
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install & build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: _site/
+          server-dir: public_html/

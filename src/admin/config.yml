@@ -594,3 +594,16 @@ collections:
           - { label: "URL Embed Google Maps", name: "mapEmbedUrl", widget: "string" }
           - { label: "ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string" }
           - { label: "File PDF Profil Perusahaan", name: "profilePdf", widget: "string" }
+      - label: "Peta Distribusi (halaman Klien)"
+        name: "distribution"
+        file: "src/_data/distribution.json"
+        fields:
+          - { label: "URL Embed Google My Maps (opsional — jika diisi, menggantikan peta bawaan)", name: "embedUrl", widget: "string", required: false, default: "", hint: "Buat peta di mymaps.google.com → Share → Embed on my site → salin URL src iframe-nya" }
+          - label: "Titik Kota"
+            name: "points"
+            widget: "list"
+            fields:
+              - { label: "Nama Kota", name: "name", widget: "string" }
+              - { label: "Provinsi/Wilayah", name: "region", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
+              - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
