@@ -44,3 +44,6 @@ jobs:
           local-dir: _site/
           # Akun FTP "deploy@" sudah di-scope ke public_html, jadi upload ke root akun ini.
           server-dir: ./
+          # Bersihkan public_html dulu (hapus sisa WordPress lama) tiap deploy, lalu isi ulang.
+          # Hasilnya folder selalu = cerminan persis hasil build, tanpa file nyasar.
+          dangerous-clean-slate: true
