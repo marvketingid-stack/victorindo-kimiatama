@@ -4,7 +4,11 @@ backend:
   name: github
   repo: marvketingid-stack/victorindo-kimiatama
   branch: main
+  # "Satpam login" = Netlify (gratis, cuma buat login; website di-host di Hostinger).
   base_url: https://api.netlify.com
+  # Kenalin satpam login ke website: walau /admin diakses dari domain Hostinger,
+  # login tetap diarahkan ke site Netlify yang punya setelan OAuth GitHub.
+  site_domain: victorindo-kimiatama.netlify.app
 
 # Saat diakses dari localhost + `npx decap-server` berjalan, pakai backend lokal (tanpa login GitHub)
 local_backend: true

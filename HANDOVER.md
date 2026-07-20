@@ -80,6 +80,14 @@ seperti WordPress dulu, dan bisa di-host di mana saja, termasuk Hostinger yang s
 Netlify dipakai saat pengembangan karena gratis dan otomatis menjalankan build setiap kali
 editor menekan Publish di CMS. Pilih salah satu:
 
+> **✅ KEPUTUSAN PROYEK (Juli 2026): Opsi C — Hosting di Hostinger, Netlify hanya untuk login /admin.**
+> Website + domain + email di Hostinger (auto-deploy via GitHub Actions FTP). Site Netlify
+> `victorindo-kimiatama` DIPERTAHANKAN hanya sebagai gateway OAuth login CMS (tidak meng-host
+> situs asli). Karena itu `src/admin/config.yml` sudah diberi `site_domain: victorindo-kimiatama.netlify.app`
+> agar login tetap jalan walau /admin diakses dari domain Hostinger. Langkah aktivasi: (1) set FTP
+> secrets di GitHub + aktifkan workflow deploy-hostinger.yml; (2) install GitHub OAuth provider di
+> site Netlify (Access & security → OAuth). Detail di bawah.
+
 **Opsi A — Tetap Netlify (paling sederhana, rekomendasi):**
 - Hosting situs gratis di Netlify; Hostinger tetap dipakai untuk domain + email.
 - Alur CMS jalan penuh tanpa setup tambahan (Publish → build → live ±1 menit).
