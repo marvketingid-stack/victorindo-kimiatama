@@ -33,7 +33,13 @@ slugEn: clients.html
       <h3>{{ group.title }}</h3>
       <div class="client-grid">
         {%- for client in group.clients %}
-        <div class="client-cell reveal"><span class="cname">{{ client.name }}</span><span class="csub">{{ client.sub }}</span></div>
+        <div class="client-cell reveal">
+          {%- if client.logo %}
+          <span class="clogo"><img src="{{ client.logo }}" alt="Logo {{ client.name }}" loading="lazy"></span>
+          {%- endif %}
+          <span class="cname">{{ client.name }}</span>
+          <span class="csub">{{ client.sub }}</span>
+        </div>
         {%- endfor %}
       </div>
     </div>

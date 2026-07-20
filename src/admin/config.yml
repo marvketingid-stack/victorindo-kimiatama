@@ -421,6 +421,7 @@ x_schemas:
           fields:
             - { label: "Nama", name: "name", widget: "string" }
             - { label: "Kategori", name: "sub", widget: "string" }
+            - { label: "Logo", name: "logo", widget: "image", required: false }
     - label: "Sertifikasi"
       name: "certs"
       widget: "object"

@@ -13,41 +13,121 @@
     {
       "title": "Otomotif & Transportasi",
       "clients": [
-        { "name": "PT Laksana Bus Manufaktur", "sub": "Manufaktur Bus" },
-        { "name": "PT Mekar Armada Jaya", "sub": "Karoseri" },
-        { "name": "HIBA Group", "sub": "Transportasi" },
-        { "name": "SAIC-GM-Wuling Automobile Co., Ltd.", "sub": "OEM Otomotif" },
-        { "name": "PT Handal Indonesia Motor", "sub": "Perakitan Kendaraan" }
+        {
+          "name": "PT Laksana Bus Manufaktur",
+          "sub": "Manufaktur Bus",
+          "logo": "/assets/img/clients/laksana.webp"
+        },
+        {
+          "name": "PT Mekar Armada Jaya",
+          "sub": "Karoseri",
+          "logo": "/assets/img/clients/mekar-armada.webp"
+        },
+        {
+          "name": "HIBA Group",
+          "sub": "Transportasi",
+          "logo": "/assets/img/clients/hiba-group.webp"
+        },
+        {
+          "name": "SAIC-GM-Wuling Automobile Co., Ltd.",
+          "sub": "OEM Otomotif",
+          "logo": "/assets/img/clients/wuling.webp"
+        },
+        {
+          "name": "PT Handal Indonesia Motor",
+          "sub": "Perakitan Kendaraan",
+          "logo": "/assets/img/clients/handal-indonesia-motor.webp"
+        }
       ]
     },
     {
       "title": "Industri & Energi",
       "clients": [
-        { "name": "PT Pertamina Trading & Services", "sub": "Minyak & Gas" },
-        { "name": "Danone", "sub": "Manufaktur" }
+        {
+          "name": "PT Pertamina Trading & Services",
+          "sub": "Minyak & Gas",
+          "logo": "/assets/img/clients/pertamina.webp"
+        },
+        {
+          "name": "Danone",
+          "sub": "Manufaktur",
+          "logo": "/assets/img/clients/danone.webp"
+        }
       ]
     },
     {
       "title": "Arsitektural & Komersial",
       "clients": [
-        { "name": "FOX Lite Cikarang", "sub": "Hospitality" },
-        { "name": "Swiss-Belinn Hotel Cikarang", "sub": "Hospitality" },
-        { "name": "RS Kanker Dharmais", "sub": "Kesehatan" },
-        { "name": "Lippo Malls Investment Trust", "sub": "Komersial" },
-        { "name": "MT Haryono Residence Jakarta", "sub": "Residensial" }
+        {
+          "name": "FOX Lite Cikarang",
+          "sub": "Hospitality",
+          "logo": "/assets/img/clients/fox-lite.webp"
+        },
+        {
+          "name": "Swiss-Belinn Hotel Cikarang",
+          "sub": "Hospitality",
+          "logo": "/assets/img/clients/swiss-belinn.webp"
+        },
+        {
+          "name": "RS Kanker Dharmais",
+          "sub": "Kesehatan",
+          "logo": "/assets/img/clients/rs-dharmais.webp"
+        },
+        {
+          "name": "Lippo Malls Investment Trust",
+          "sub": "Komersial",
+          "logo": "/assets/img/clients/lippo-malls.webp"
+        },
+        {
+          "name": "MT Haryono Residence Jakarta",
+          "sub": "Residensial",
+          "logo": "/assets/img/clients/mt-haryono.webp"
+        }
       ]
     },
     {
       "title": "Mitra Perjalanan Pertumbuhan",
       "clients": [
-        { "name": "PT Toyota Astra Motor (TAM)", "sub": "OEM Otomotif" },
-        { "name": "PT Isuzu Astra Motor Indonesia", "sub": "OEM Otomotif" },
-        { "name": "Suzuki (Sub-Con)", "sub": "OEM Otomotif" },
-        { "name": "PT LG Electronics Indonesia", "sub": "Elektronik" },
-        { "name": "New Armada Karoseri", "sub": "Karoseri" },
-        { "name": "PT Hartono Istana Teknologi", "sub": "Elektronik" },
-        { "name": "Transjakarta", "sub": "Transportasi Publik" },
-        { "name": "PT KJS (Kreasindo Jayatama Sukses)", "sub": "Industri" }
+        {
+          "name": "PT Toyota Astra Motor (TAM)",
+          "sub": "OEM Otomotif",
+          "logo": "/assets/img/clients/toyota-astra.webp"
+        },
+        {
+          "name": "PT Isuzu Astra Motor Indonesia",
+          "sub": "OEM Otomotif",
+          "logo": "/assets/img/clients/isuzu-astra.webp"
+        },
+        {
+          "name": "Suzuki (Sub-Con)",
+          "sub": "OEM Otomotif",
+          "logo": "/assets/img/clients/suzuki.webp"
+        },
+        {
+          "name": "PT LG Electronics Indonesia",
+          "sub": "Elektronik",
+          "logo": "/assets/img/clients/lg-electronics.webp"
+        },
+        {
+          "name": "New Armada Karoseri",
+          "sub": "Karoseri",
+          "logo": "/assets/img/clients/new-armada.webp"
+        },
+        {
+          "name": "PT Hartono Istana Teknologi",
+          "sub": "Elektronik",
+          "logo": "/assets/img/clients/hartono-istana.webp"
+        },
+        {
+          "name": "Transjakarta",
+          "sub": "Transportasi Publik",
+          "logo": "/assets/img/clients/transjakarta.webp"
+        },
+        {
+          "name": "PT KJS (Kreasindo Jayatama Sukses)",
+          "sub": "Industri",
+          "logo": "/assets/img/clients/kjs.webp"
+        }
       ]
     }
   ],
@@ -56,13 +136,33 @@
     "heading": "Tersertifikasi untuk Keunggulan",
     "lede": "Sertifikasi tiga ISO kami menunjukkan komitmen teguh kami terhadap manajemen mutu, tanggung jawab lingkungan, serta kesehatan & keselamatan kerja.",
     "isoCards": [
-      { "code": "ISO 9001", "subtitle": "Sistem Manajemen Mutu", "desc": "Memastikan produk dan proses secara konsisten memenuhi standar pelanggan dan regulasi." },
-      { "code": "ISO 14001", "subtitle": "Sistem Manajemen Lingkungan", "desc": "Menunjukkan komitmen kami untuk meminimalkan dampak lingkungan melalui manufaktur yang bertanggung jawab." },
-      { "code": "ISO 45001", "subtitle": "Kesehatan & Keselamatan Kerja", "desc": "Melindungi tenaga kerja kami melalui manajemen kesehatan dan keselamatan kerja yang efektif." }
+      {
+        "code": "ISO 9001",
+        "subtitle": "Sistem Manajemen Mutu",
+        "desc": "Memastikan produk dan proses secara konsisten memenuhi standar pelanggan dan regulasi."
+      },
+      {
+        "code": "ISO 14001",
+        "subtitle": "Sistem Manajemen Lingkungan",
+        "desc": "Menunjukkan komitmen kami untuk meminimalkan dampak lingkungan melalui manufaktur yang bertanggung jawab."
+      },
+      {
+        "code": "ISO 45001",
+        "subtitle": "Kesehatan & Keselamatan Kerja",
+        "desc": "Melindungi tenaga kerja kami melalui manajemen kesehatan dan keselamatan kerja yang efektif."
+      }
     ],
     "otherCards": [
-      { "code": "TKDN", "subtitle": "Tingkat Komponen Dalam Negeri", "desc": "Tingkat kandungan dalam negeri tersertifikasi, mendukung program industri nasional Indonesia." },
-      { "code": "BKI", "subtitle": "Biro Klasifikasi Indonesia", "desc": "Tersertifikasi memenuhi standar klasifikasi marine dan industri Indonesia, menjamin kualitas, keselamatan, dan keandalan untuk aplikasi coating protektif." }
+      {
+        "code": "TKDN",
+        "subtitle": "Tingkat Komponen Dalam Negeri",
+        "desc": "Tingkat kandungan dalam negeri tersertifikasi, mendukung program industri nasional Indonesia."
+      },
+      {
+        "code": "BKI",
+        "subtitle": "Biro Klasifikasi Indonesia",
+        "desc": "Tersertifikasi memenuhi standar klasifikasi marine dan industri Indonesia, menjamin kualitas, keselamatan, dan keandalan untuk aplikasi coating protektif."
+      }
     ]
   },
   "distribution": {
@@ -70,48 +170,105 @@
     "heading": "Jaringan Nasional",
     "lede": "Menjangkau setiap penjuru Nusantara.",
     "mapAria": "Peta bergaya Indonesia menampilkan cakupan distribusi VK di Sumatera, Jawa dan Bali, Kalimantan, Sulawesi, dan Papua",
-    "mapLabels": { "sumatra": "Sumatera", "java": "Jawa & Bali", "kalimantan": "Kalimantan", "sulawesi": "Sulawesi", "papua": "Papua" },
+    "mapLabels": {
+      "sumatra": "Sumatera",
+      "java": "Jawa & Bali",
+      "kalimantan": "Kalimantan",
+      "sulawesi": "Sulawesi",
+      "papua": "Papua"
+    },
     "regions": [
       {
         "title": "Sumatera",
         "items": [
-          { "region": "Sumatera Utara", "cities": "Medan" },
-          { "region": "Riau", "cities": "Pekanbaru" },
-          { "region": "Sumatera Barat", "cities": "Padang" },
-          { "region": "Jambi", "cities": "" },
-          { "region": "Lampung", "cities": "Bandar Lampung" }
+          {
+            "region": "Sumatera Utara",
+            "cities": "Medan"
+          },
+          {
+            "region": "Riau",
+            "cities": "Pekanbaru"
+          },
+          {
+            "region": "Sumatera Barat",
+            "cities": "Padang"
+          },
+          {
+            "region": "Jambi",
+            "cities": ""
+          },
+          {
+            "region": "Lampung",
+            "cities": "Bandar Lampung"
+          }
         ]
       },
       {
         "title": "Jawa & Bali",
         "items": [
-          { "region": "DKI Jakarta / Banten", "cities": "Jabodetabek" },
-          { "region": "Jawa Barat", "cities": "Bandung" },
-          { "region": "Jawa Tengah", "cities": "Semarang" },
-          { "region": "Jawa Timur", "cities": "Surabaya" },
-          { "region": "Bali", "cities": "Denpasar" },
-          { "region": "Nusa Tenggara Barat (NTB)", "cities": "Lombok / Mataram" },
-          { "region": "Nusa Tenggara Timur (NTT)", "cities": "Kupang" }
+          {
+            "region": "DKI Jakarta / Banten",
+            "cities": "Jabodetabek"
+          },
+          {
+            "region": "Jawa Barat",
+            "cities": "Bandung"
+          },
+          {
+            "region": "Jawa Tengah",
+            "cities": "Semarang"
+          },
+          {
+            "region": "Jawa Timur",
+            "cities": "Surabaya"
+          },
+          {
+            "region": "Bali",
+            "cities": "Denpasar"
+          },
+          {
+            "region": "Nusa Tenggara Barat (NTB)",
+            "cities": "Lombok / Mataram"
+          },
+          {
+            "region": "Nusa Tenggara Timur (NTT)",
+            "cities": "Kupang"
+          }
         ]
       },
       {
         "title": "Kalimantan",
         "items": [
-          { "region": "Kalimantan Barat", "cities": "Pontianak" },
-          { "region": "Kalimantan Timur", "cities": "Samarinda / Balikpapan" }
+          {
+            "region": "Kalimantan Barat",
+            "cities": "Pontianak"
+          },
+          {
+            "region": "Kalimantan Timur",
+            "cities": "Samarinda / Balikpapan"
+          }
         ]
       },
       {
         "title": "Sulawesi",
         "items": [
-          { "region": "Sulawesi Selatan", "cities": "Makassar" }
+          {
+            "region": "Sulawesi Selatan",
+            "cities": "Makassar"
+          }
         ]
       },
       {
         "title": "Papua",
         "items": [
-          { "region": "Papua", "cities": "Jayapura" },
-          { "region": "Papua Selatan / Papua Barat Daya", "cities": "Merauke" }
+          {
+            "region": "Papua",
+            "cities": "Jayapura"
+          },
+          {
+            "region": "Papua Selatan / Papua Barat Daya",
+            "cities": "Merauke"
+          }
         ]
       }
     ]
