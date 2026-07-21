@@ -187,3 +187,24 @@ agar muncul di halaman admin.
   tinggal isi field *"Tahun / Label"* tiap milestone lewat /admin.
 - Semua foto sudah dioptimasi ke format **WebP** + *lazy loading*. Bila mengunggah foto baru
   lewat /admin, usahakan lebar maksimal ±1920px dan ukuran < 300KB agar situs tetap ringan.
+
+## 12. Struktur URL
+
+URL memakai format folder tanpa `.html`, dan slug versi Indonesia dilokalkan:
+
+| Halaman | English | Indonesia |
+|---|---|---|
+| Beranda | `/` | `/id/` |
+| About | `/about/` | `/id/tentang-kami/` |
+| Products | `/products/` | `/id/produk/` |
+| Manufacturing | `/manufacturing/` | `/id/manufaktur/` |
+| Industries | `/industries/` | `/id/industri/` |
+| Clients | `/clients/` | `/id/klien/` |
+| Contact | `/contact/` | `/id/kontak/` |
+
+Seluruh alamat didefinisikan **satu tempat** di `src/_data/routes.json` (`url` untuk link,
+`file` untuk permalink). Mengubah slug di file itu otomatis mengubah semua link di situs —
+jangan menulis URL secara manual di template.
+
+URL lama berakhiran `.html` di-*redirect* permanen (301) lewat `src/.htaccess`, yang juga
+mengatur kompresi, cache aset, dan halaman `404.html`.

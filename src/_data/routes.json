@@ -1,0 +1,32 @@
+{
+  "_comment": "Peta alamat (URL) semua halaman, satu sumber kebenaran. 'url' dipakai untuk link di template, 'file' dipakai untuk permalink Eleventy. Kalau mengubah slug di sini, seluruh link di situs ikut berubah otomatis.",
+
+  "home": {
+    "en": { "url": "/", "file": "index.html" },
+    "id": { "url": "/id/", "file": "id/index.html" }
+  },
+  "about": {
+    "en": { "url": "/about/", "file": "about/index.html" },
+    "id": { "url": "/id/tentang-kami/", "file": "id/tentang-kami/index.html" }
+  },
+  "products": {
+    "en": { "url": "/products/", "file": "products/index.html" },
+    "id": { "url": "/id/produk/", "file": "id/produk/index.html" }
+  },
+  "manufacturing": {
+    "en": { "url": "/manufacturing/", "file": "manufacturing/index.html" },
+    "id": { "url": "/id/manufaktur/", "file": "id/manufaktur/index.html" }
+  },
+  "industries": {
+    "en": { "url": "/industries/", "file": "industries/index.html" },
+    "id": { "url": "/id/industri/", "file": "id/industri/index.html" }
+  },
+  "clients": {
+    "en": { "url": "/clients/", "file": "clients/index.html" },
+    "id": { "url": "/id/klien/", "file": "id/klien/index.html" }
+  },
+  "contact": {
+    "en": { "url": "/contact/", "file": "contact/index.html" },
+    "id": { "url": "/id/kontak/", "file": "id/kontak/index.html" }
+  }
+}

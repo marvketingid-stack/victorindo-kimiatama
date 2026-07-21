@@ -1,0 +1,33 @@
+---
+permalink: "404.html"
+layout: layouts/base.njk
+lang: "en"
+title: "Page Not Found"
+description: "The page you are looking for could not be found."
+eleventyExcludeFromCollections: true
+---
+<section class="section" style="padding-top:96px;padding-bottom:96px;">
+  <div class="container">
+    <div style="max-width:640px;">
+      <span class="eyebrow">Error 404</span>
+      <h1 class="headline-lg">Page Not Found<br><span class="text-muted" style="font-weight:600;font-size:24px;line-height:34px;">Halaman Tidak Ditemukan</span></h1>
+      <p class="body-md mt-24 text-muted">
+        The page you are looking for may have been moved or no longer exists.<br>
+        <em>Halaman yang Anda cari mungkin telah dipindahkan atau sudah tidak tersedia.</em>
+      </p>
+      <div class="hero-ctas mt-32" style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="{{ routes.home.en.url }}">Back to Homepage <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-outline" href="{{ routes.home.id.url }}">Ke Beranda <span class="arrow">&rarr;</span></a>
+      </div>
+      <div class="mt-48">
+        <p class="label-caps text-muted mb-16">Popular Pages</p>
+        <ul class="spec-list">
+          <li><span class="k">About Us</span><span class="v"><a href="{{ routes.about.en.url }}">{{ routes.about.en.url }}</a></span></li>
+          <li><span class="k">Products &amp; Services</span><span class="v"><a href="{{ routes.products.en.url }}">{{ routes.products.en.url }}</a></span></li>
+          <li><span class="k">Manufacturing &amp; Quality</span><span class="v"><a href="{{ routes.manufacturing.en.url }}">{{ routes.manufacturing.en.url }}</a></span></li>
+          <li><span class="k">Contact Us</span><span class="v"><a href="{{ routes.contact.en.url }}">{{ routes.contact.en.url }}</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

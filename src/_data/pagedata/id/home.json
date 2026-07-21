@@ -97,17 +97,47 @@
   "trust": {
     "ariaLabel": "Dipercaya perusahaan terkemuka",
     "label": "Rekam Jejak Terbukti — Dipercaya Perusahaan Terkemuka",
-    "names": [
-      "Laksana Bus Manufaktur",
-      "Mekar Armada Jaya",
-      "HIBA Group",
-      "SAIC-GM-Wuling",
-      "Handal Indonesia Motor",
-      "Pertamina Trading & Services",
-      "Danone",
-      "Swiss-Belinn Cikarang",
-      "RS Kanker Dharmais",
-      "Lippo Malls"
+    "items": [
+      {
+        "name": "Laksana Bus Manufaktur",
+        "logo": "/assets/img/clients/laksana.webp"
+      },
+      {
+        "name": "Mekar Armada Jaya",
+        "logo": "/assets/img/clients/mekar-armada.webp"
+      },
+      {
+        "name": "HIBA Group",
+        "logo": "/assets/img/clients/hiba-group.webp"
+      },
+      {
+        "name": "SAIC-GM-Wuling",
+        "logo": "/assets/img/clients/wuling.webp"
+      },
+      {
+        "name": "Handal Indonesia Motor",
+        "logo": "/assets/img/clients/handal-indonesia-motor.webp"
+      },
+      {
+        "name": "Pertamina Trading & Services",
+        "logo": "/assets/img/clients/pertamina.webp"
+      },
+      {
+        "name": "Danone",
+        "logo": "/assets/img/clients/danone.webp"
+      },
+      {
+        "name": "Swiss-Belinn Cikarang",
+        "logo": "/assets/img/clients/swiss-belinn.webp"
+      },
+      {
+        "name": "RS Kanker Dharmais",
+        "logo": "/assets/img/clients/rs-dharmais.webp"
+      },
+      {
+        "name": "Lippo Malls",
+        "logo": "/assets/img/clients/lippo-malls.webp"
+      }
     ]
   },
   "hero": {

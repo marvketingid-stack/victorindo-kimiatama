@@ -52,7 +52,7 @@
 2. Isi:
    - **Bahasa:** Indonesia atau English
    - **Slug URL:** alamat halaman — **huruf kecil semua, tanpa spasi**, pakai tanda hubung.
-     Contoh: `berita-pabrik-baru` → jadi `victorindokimiatama.com/berita-pabrik-baru.html`
+     Contoh: `berita-pabrik-baru` → jadi `victorindokimiatama.com/berita-pabrik-baru/`
    - **Judul Halaman**, **Deskripsi**, **Foto Utama** (opsional)
    - **Isi Halaman:** ketik bebas, bisa dikasih judul, daftar, tebal/miring, foto, tabel
 3. Klik **Publish**

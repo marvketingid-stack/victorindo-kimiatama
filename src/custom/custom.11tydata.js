@@ -3,7 +3,7 @@ module.exports = {
   eleventyComputed: {
     permalink: (data) => {
       if (!data.slug) return false;
-      return (data.lang === "id" ? "id/" : "") + data.slug + ".html";
+      return (data.lang === "id" ? "id/" : "") + data.slug + "/index.html";
     }
   }
 };

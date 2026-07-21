@@ -17,10 +17,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
-{%- if slugEn %}
-<link rel="alternate" hreflang="en" href="{{ site.baseUrl }}/{{ slugEn }}">
-<link rel="alternate" hreflang="id" href="{{ site.baseUrl }}/id/{{ slugEn }}">
-<link rel="alternate" hreflang="x-default" href="{{ site.baseUrl }}/{{ slugEn }}">
+{%- set alt = routes[pageKey] if pageKey and routes[pageKey] else null %}
+{%- if alt %}
+<link rel="canonical" href="{{ site.baseUrl }}{{ alt[lang].url }}">
+<link rel="alternate" hreflang="en" href="{{ site.baseUrl }}{{ alt.en.url }}">
+<link rel="alternate" hreflang="id" href="{{ site.baseUrl }}{{ alt.id.url }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.baseUrl }}{{ alt.en.url }}">
 {%- endif %}
 {%- block head %}{% endblock %}
 </head>
@@ -29,7 +31,7 @@
 
 <header class="topnav">
   <div class="container topnav-inner">
-    <a class="brand" href="{{ root }}index.html">
+    <a class="brand" href="{{ routes.home[lang].url }}">
       <img src="/assets/img/logo-vk.png" alt="{{ t.a11y.logoAlt }}">
       <span class="brand-text">
         <span class="brand-name">PT VICTORINDO KIMIATAMA</span>
@@ -37,23 +39,23 @@
       </span>
     </a>
     <nav class="nav-links" aria-label="{{ t.a11y.primaryNav }}">
-      <a href="{{ root }}about.html"{% if pageKey == "about" %} class="active"{% endif %}>{{ t.nav.about }}</a>
-      <a href="{{ root }}products.html"{% if pageKey == "products" %} class="active"{% endif %}>{{ t.nav.products }}</a>
-      <a href="{{ root }}manufacturing.html"{% if pageKey == "manufacturing" %} class="active"{% endif %}>{{ t.nav.manufacturing }}</a>
-      <a href="{{ root }}industries.html"{% if pageKey == "industries" %} class="active"{% endif %}>{{ t.nav.industries }}</a>
-      <a href="{{ root }}clients.html"{% if pageKey == "clients" %} class="active"{% endif %}>{{ t.nav.clients }}</a>
-      <a href="{{ root }}contact.html" class="nav-contact">{{ t.nav.contact }}</a>
+      <a href="{{ routes.about[lang].url }}"{% if pageKey == "about" %} class="active"{% endif %}>{{ t.nav.about }}</a>
+      <a href="{{ routes.products[lang].url }}"{% if pageKey == "products" %} class="active"{% endif %}>{{ t.nav.products }}</a>
+      <a href="{{ routes.manufacturing[lang].url }}"{% if pageKey == "manufacturing" %} class="active"{% endif %}>{{ t.nav.manufacturing }}</a>
+      <a href="{{ routes.industries[lang].url }}"{% if pageKey == "industries" %} class="active"{% endif %}>{{ t.nav.industries }}</a>
+      <a href="{{ routes.clients[lang].url }}"{% if pageKey == "clients" %} class="active"{% endif %}>{{ t.nav.clients }}</a>
+      <a href="{{ routes.contact[lang].url }}" class="nav-contact">{{ t.nav.contact }}</a>
     </nav>
     <div class="lang-toggle" aria-label="Language / Bahasa">
-      {%- if slugEn %}
-      <a href="/{{ slugEn }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
-      <a href="/id/{{ slugEn }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
+      {%- if alt %}
+      <a href="{{ alt.en.url }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
+      <a href="{{ alt.id.url }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
       {%- else %}
-      <a href="/index.html"{% if lang == "en" %} class="active"{% endif %}>EN</a>
-      <a href="/id/index.html"{% if lang == "id" %} class="active"{% endif %}>ID</a>
+      <a href="{{ routes.home.en.url }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
+      <a href="{{ routes.home.id.url }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
       {%- endif %}
     </div>
-    <div class="nav-cta"><a class="btn btn-primary" href="{{ root }}contact.html">{{ t.nav.contact }}</a></div>
+    <div class="nav-cta"><a class="btn btn-primary" href="{{ routes.contact[lang].url }}">{{ t.nav.contact }}</a></div>
     <button class="nav-toggle" aria-label="{{ t.a11y.toggleNav }}" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -79,21 +81,21 @@
       <div>
         <h4>{{ t.footer.navigation }}</h4>
         <ul>
-          <li><a href="{{ root }}index.html">{{ t.nav.home }}</a></li>
-          <li><a href="{{ root }}about.html">{{ t.nav.about }}</a></li>
-          <li><a href="{{ root }}products.html">{{ t.nav.products }}</a></li>
-          <li><a href="{{ root }}manufacturing.html">{{ t.nav.manufacturingFull }}</a></li>
-          <li><a href="{{ root }}industries.html">{{ t.nav.industries }}</a></li>
-          <li><a href="{{ root }}clients.html">{{ t.nav.clients }}</a></li>
-          <li><a href="{{ root }}contact.html">{{ t.nav.contact }}</a></li>
+          <li><a href="{{ routes.home[lang].url }}">{{ t.nav.home }}</a></li>
+          <li><a href="{{ routes.about[lang].url }}">{{ t.nav.about }}</a></li>
+          <li><a href="{{ routes.products[lang].url }}">{{ t.nav.products }}</a></li>
+          <li><a href="{{ routes.manufacturing[lang].url }}">{{ t.nav.manufacturingFull }}</a></li>
+          <li><a href="{{ routes.industries[lang].url }}">{{ t.nav.industries }}</a></li>
+          <li><a href="{{ routes.clients[lang].url }}">{{ t.nav.clients }}</a></li>
+          <li><a href="{{ routes.contact[lang].url }}">{{ t.nav.contact }}</a></li>
         </ul>
       </div>
       <div>
         <h4>{{ t.footer.sectors }}</h4>
         <ul>
-          <li><a href="{{ root }}products.html#automotive">{{ t.footer.sectorAutomotive }}</a></li>
-          <li><a href="{{ root }}products.html#marine">{{ t.footer.sectorMarine }}</a></li>
-          <li><a href="{{ root }}products.html#architectural">{{ t.footer.sectorArchitectural }}</a></li>
+          <li><a href="{{ routes.products[lang].url }}#automotive">{{ t.footer.sectorAutomotive }}</a></li>
+          <li><a href="{{ routes.products[lang].url }}#marine">{{ t.footer.sectorMarine }}</a></li>
+          <li><a href="{{ routes.products[lang].url }}#architectural">{{ t.footer.sectorArchitectural }}</a></li>
         </ul>
       </div>
       <div>

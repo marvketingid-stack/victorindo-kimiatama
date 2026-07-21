@@ -3,10 +3,9 @@ pagination:
   data: langs
   size: 1
   alias: lang
-permalink: "{% if lang == 'en' %}clients.html{% else %}id/clients.html{% endif %}"
+permalink: "{{ routes.clients[lang].file }}"
 layout: layouts/base.njk
 pageKey: clients
-slugEn: clients.html
 ---
 {%- set t = ui[lang] %}
 {%- set c = pagedata[lang][pageKey] %}

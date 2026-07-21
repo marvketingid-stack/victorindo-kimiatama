@@ -14,7 +14,7 @@
     var pref = localStorage.getItem('vk-lang');
     var isRootIndex = /^\/(index\.html)?$/.test(window.location.pathname);
     if (pref === 'id' && LANG === 'en' && isRootIndex) {
-      window.location.replace('id/index.html');
+      window.location.replace('/id/');
     }
   } catch (e) { /* private mode */ }
 

@@ -273,15 +273,21 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
 .trust-strip { border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); background: var(--surface-container-lowest); }
 .trust-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
 .trust-cell {
-  padding: 28px 16px; text-align: center;
+  padding: 26px 16px; text-align: center;
   border-left: 1px solid var(--card-border);
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; min-width: 0;
 }
 .trust-cell:first-child, .trust-cell:nth-child(5n+1) { border-left: none; }
+.trust-cell img {
+  max-height: 46px; max-width: 130px; width: auto; object-fit: contain;
+  filter: grayscale(1); opacity: .72; transition: filter .2s ease, opacity .2s ease;
+}
+.trust-cell:hover img { filter: grayscale(0); opacity: 1; }
 .trust-cell span {
-  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px;
-  letter-spacing: 0.04em; color: var(--industrial-grey); text-transform: uppercase;
-  filter: grayscale(1);
+  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11.5px;
+  line-height: 16px; letter-spacing: 0.04em; color: var(--industrial-grey);
+  text-transform: uppercase; overflow-wrap: break-word;
 }
 .trust-cell:nth-child(n+6) { border-top: 1px solid var(--card-border); }
 

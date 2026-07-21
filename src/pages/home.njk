@@ -3,10 +3,9 @@ pagination:
   data: langs
   size: 1
   alias: lang
-permalink: "{% if lang == 'en' %}index.html{% else %}id/index.html{% endif %}"
+permalink: "{{ routes.home[lang].file }}"
 layout: layouts/base.njk
 pageKey: home
-slugEn: index.html
 ---
 {%- set t = ui[lang] %}
 {%- set c = pagedata[lang][pageKey] %}
@@ -23,7 +22,7 @@ slugEn: index.html
       <h1 class="headline-xl">{{ c.hero.heading }}</h1>
       <p class="lede">{{ c.hero.lede }}</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="{{ root }}contact.html">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-primary" href="{{ routes.contact[lang].url }}">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
         <a class="btn btn-outline-light" href="{{ site.profilePdf }}" download>{{ t.ctaDownload }}</a>
       </div>
     </div>
@@ -59,7 +58,7 @@ slugEn: index.html
           {%- endfor %}
         </div>
         <div class="mt-32">
-          <a class="btn btn-outline" href="{{ root }}about.html">{{ c.story.cta }} <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-outline" href="{{ routes.about[lang].url }}">{{ c.story.cta }} <span class="arrow">&rarr;</span></a>
         </div>
       </div>
       <div class="media reveal">
@@ -90,7 +89,7 @@ slugEn: index.html
             <span class="chip">{{ chip }}</span>
             {%- endfor %}
           </div>
-          <div class="more"><a class="btn btn-outline" href="{{ root }}products.html#{{ card.anchor }}">{{ c.sectors.ctaLabel }} <span class="arrow">&rarr;</span></a></div>
+          <div class="more"><a class="btn btn-outline" href="{{ routes.products[lang].url }}#{{ card.anchor }}">{{ c.sectors.ctaLabel }} <span class="arrow">&rarr;</span></a></div>
         </div>
       </article>
       {%- endfor %}
@@ -115,7 +114,7 @@ slugEn: index.html
           {%- endfor %}
         </div>
         <div class="mt-32">
-          <a class="btn btn-outline" href="{{ root }}manufacturing.html">{{ c.manufacturing.cta }} <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-outline" href="{{ routes.manufacturing[lang].url }}">{{ c.manufacturing.cta }} <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -127,8 +126,13 @@ slugEn: index.html
   <div class="container" style="padding-top:40px;padding-bottom:40px;">
     <p class="label-caps text-muted mb-24" style="text-align:center;">{{ c.trust.label }}</p>
     <div class="trust-grid">
-      {%- for name in c.trust.names %}
-      <div class="trust-cell"><span>{{ name }}</span></div>
+      {%- for item in c.trust.items %}
+      <div class="trust-cell">
+        {%- if item.logo %}
+        <img src="{{ item.logo }}" alt="Logo {{ item.name }}" loading="lazy">
+        {%- endif %}
+        <span>{{ item.name }}</span>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -151,7 +155,7 @@ slugEn: index.html
       {%- endfor %}
     </div>
     <div class="mt-48" style="text-align:center;">
-      <a class="btn btn-outline" href="{{ root }}clients.html#certifications">{{ c.certs.cta }} <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-outline" href="{{ routes.clients[lang].url }}#certifications">{{ c.certs.cta }} <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>

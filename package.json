@@ -4,7 +4,8 @@
   "private": true,
   "description": "PT Victorindo Kimiatama corporate website — Eleventy + Decap CMS",
   "scripts": {
-    "build": "eleventy",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\"",
+    "build": "npm run clean && eleventy",
     "serve": "eleventy --serve --port=8735"
   },
   "devDependencies": {

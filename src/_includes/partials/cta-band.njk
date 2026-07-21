@@ -9,7 +9,7 @@
     </div>
     <div class="actions">
       <a class="btn btn-outline-light" href="{{ site.profilePdf }}" download>{{ t.ctaDownload }}</a>
-      <a class="btn btn-dark" style="border-color:#fff;" href="{{ '/' if lang == 'en' else '/id/' }}contact.html">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-dark" style="border-color:#fff;" href="{{ routes.contact[lang].url }}">{{ t.ctaConsult }} <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>

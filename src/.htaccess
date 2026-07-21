@@ -1,0 +1,52 @@
+# PT Victorindo Kimiatama — konfigurasi Apache/LiteSpeed (cPanel Hostinger)
+# File ini ikut ter-upload ke public_html setiap deploy.
+
+# ---------------------------------------------------------------
+# 1. Redirect permanen dari URL lama (.html) ke URL baru yang bersih.
+#    Menjaga link lama yang sudah terlanjur dibagikan tetap berfungsi.
+# ---------------------------------------------------------------
+Redirect 301 /index.html               /
+Redirect 301 /about.html               /about/
+Redirect 301 /products.html            /products/
+Redirect 301 /manufacturing.html       /manufacturing/
+Redirect 301 /industries.html          /industries/
+Redirect 301 /clients.html             /clients/
+Redirect 301 /contact.html             /contact/
+
+Redirect 301 /id/index.html            /id/
+Redirect 301 /id/about.html            /id/tentang-kami/
+Redirect 301 /id/products.html         /id/produk/
+Redirect 301 /id/manufacturing.html    /id/manufaktur/
+Redirect 301 /id/industries.html       /id/industri/
+Redirect 301 /id/clients.html          /id/klien/
+Redirect 301 /id/contact.html          /id/kontak/
+
+# ---------------------------------------------------------------
+# 2. Halaman 404 memakai desain situs
+# ---------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------
+# 3. Kompresi (mempercepat waktu muat)
+# ---------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------
+# 4. Cache browser untuk aset statis (gambar/CSS/JS/font)
+#    HTML sengaja tidak di-cache lama agar perubahan CMS cepat terlihat.
+# ---------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp                "access plus 6 months"
+  ExpiresByType image/png                 "access plus 6 months"
+  ExpiresByType image/jpeg                "access plus 6 months"
+  ExpiresByType image/svg+xml             "access plus 6 months"
+  ExpiresByType application/pdf           "access plus 1 month"
+  ExpiresByType text/css                  "access plus 1 week"
+  ExpiresByType application/javascript    "access plus 1 week"
+  ExpiresByType text/html                 "access plus 0 seconds"
+</IfModule>
