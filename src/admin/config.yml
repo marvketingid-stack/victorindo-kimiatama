@@ -1,5 +1,5 @@
 # Decap CMS — PT Victorindo Kimiatama
-# Admin: https://victorindo-kimiatama.netlify.app/admin/
+# Admin: https://victorindokimiatama.com/admin/
 backend:
   name: github
   repo: marvketingid-stack/victorindo-kimiatama
@@ -15,9 +15,9 @@ local_backend: true
 
 media_folder: "src/assets/img"
 public_folder: "/assets/img"
-site_url: https://victorindo-kimiatama.netlify.app
-display_url: https://victorindo-kimiatama.netlify.app
-logo_url: https://victorindo-kimiatama.netlify.app/assets/img/logo-vk.png
+site_url: https://victorindokimiatama.com
+display_url: https://victorindokimiatama.com
+logo_url: https://victorindokimiatama.com/assets/img/logo-vk.png
 locale: id
 
 # ---------- Field schema definitions (dipakai ulang EN & ID) ----------

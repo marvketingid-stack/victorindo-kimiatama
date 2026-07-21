@@ -16,8 +16,9 @@ name: Deploy to Hostinger
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [main]
+  # Auto-deploy: tiap ada perubahan (termasuk Publish dari /admin), langsung naik ke Hostinger.
+  push:
+    branches: [main]
 
 jobs:
   build-deploy:
