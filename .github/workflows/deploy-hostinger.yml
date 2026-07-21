@@ -45,6 +45,9 @@ jobs:
           local-dir: _site/
           # Akun FTP "deploy@" sudah di-scope ke public_html, jadi upload ke root akun ini.
           server-dir: ./
-          # Bersihkan public_html dulu (hapus sisa WordPress lama) tiap deploy, lalu isi ulang.
-          # Hasilnya folder selalu = cerminan persis hasil build, tanpa file nyasar.
-          dangerous-clean-slate: true
+          # CATATAN: dangerous-clean-slate SENGAJA DIMATIKAN.
+          # Sempat dipakai sekali (Juli 2026) untuk membersihkan sisa WordPress lama.
+          # Kalau diaktifkan, tiap deploy folder dikosongkan dulu -> situs DOWN ~1 menit.
+          # Tanpa ini, deploy bersifat incremental (hanya file berubah) = tanpa downtime.
+          # Aktifkan lagi HANYA bila perlu reset total isi public_html.
+          # dangerous-clean-slate: true
