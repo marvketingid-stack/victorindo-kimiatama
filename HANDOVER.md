@@ -208,3 +208,23 @@ jangan menulis URL secara manual di template.
 
 URL lama berakhiran `.html` di-*redirect* permanen (301) lewat `src/.htaccess`, yang juga
 mengatur kompresi, cache aset, dan halaman `404.html`.
+
+## 13. Panel Pratinjau di Halaman Admin (PENTING untuk perawatan)
+
+Panel kanan di `/admin` menampilkan konten memakai **markup + CSS website asli**, sehingga
+editor melihat hasil sesungguhnya sambil mengetik. Ini diatur oleh
+`src/admin/preview-templates.js`.
+
+> ⚠️ **Konsekuensi yang harus disadari:** markup halaman kini ada di **dua tempat** —
+> `src/pages/*.njk` (yang tayang di website) dan `src/admin/preview-templates.js`
+> (yang tampil di pratinjau). **Kalau mengubah struktur/kelas CSS di file .njk,
+> ubah juga di preview-templates.js.** Kalau tidak, pratinjau akan menyesatkan editor
+> (melihat A, hasilnya B).
+>
+> Bila beban ini dinilai tidak sepadan, file `preview-templates.js` boleh **dihapus**
+> beserta baris `<script>` pemanggilnya di `src/admin/index.html`. Admin tetap
+> berfungsi 100%; pratinjau hanya kembali ke tampilan bawaan Decap (daftar field polos).
+
+Tampilan antarmuka admin (warna, font, sudut siku) diatur oleh blok `<style>` di
+`src/admin/index.html` — murni kosmetik dan juga aman dihapus bila suatu saat
+pembaruan Decap membuatnya tampak aneh.

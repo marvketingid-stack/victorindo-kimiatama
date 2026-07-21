@@ -37,8 +37,10 @@
 3. Bagian-bagiannya bisa dibuka-tutup (klik judul bagiannya). Ubah isian yang diinginkan:
    - Kolom teks → langsung ketik
    - Kolom foto → klik fotonya → **Upload** foto baru atau pilih dari Media
-4. Setelah selesai, klik **Publish** (kanan atas) → **Publish now**
-5. **Tunggu 1–2 menit**, lalu buka websitenya → perubahan sudah tampil.
+4. Lihat **panel kanan** — itu pratinjau tampilan asli website, berubah mengikuti ketikan Anda.
+   Ada juga tautan **View Live** di atas untuk membuka halaman aslinya di tab baru.
+5. Setelah selesai, klik **Publish** (kanan atas) → **Publish now**
+6. **Tunggu 1–2 menit**, lalu buka websitenya → perubahan sudah tampil.
 
 > ⚠️ **PALING PENTING:** website ini punya **2 bahasa**. Kalau Anda mengubah sesuatu di
 > versi Indonesia, **ubah juga padanannya di versi English** (atau sebaliknya). Kalau tidak,
