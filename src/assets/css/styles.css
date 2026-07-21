@@ -213,7 +213,10 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
 /* ---------- Stats ---------- */
 .stat-band { background: var(--primary-container); color: #fff; }
 .stat-band-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.stat-cell { padding: 40px 32px; border-left: 1px solid rgba(255,255,255,.18); }
+/* min-width:0 wajib: tanpa ini kata panjang (mis. "Nationwide") memaksa kolom grid
+   melebar melebihi layar dan memunculkan scroll horizontal di HP. */
+.stat-cell { padding: 40px 32px; border-left: 1px solid rgba(255,255,255,.18); min-width: 0; }
+.stat-cell .stat-lg, .stat-cell .label-caps { overflow-wrap: break-word; }
 .stat-cell:first-child { border-left: none; }
 .stat-cell .stat-lg { color: #fff; }
 .stat-cell .label-caps { color: #e9b8b1; margin-top: 8px; display: block; }
@@ -569,8 +572,21 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
   .hero-inner { padding: 72px 0; }
   .page-hero-inner { padding: 48px 0; }
   .topnav.open .nav-links { padding: 16px var(--margin-mobile) 24px; }
-  .brand-name { font-size: 13px; }
-  .brand-tag { font-size: 8.5px; }
+
+  /* Header mobile: cegah nama brand menabrak toggle bahasa / tombol menu.
+     Nama dibiarkan turun ke baris kedua; tagline disembunyikan (ruang terbatas). */
+  .topnav-inner { gap: 10px; }
+  .brand { gap: 9px; min-width: 0; flex: 1 1 auto; }
+  .brand img { width: 34px; height: 34px; flex-shrink: 0; }
+  .brand-text { min-width: 0; }
+  .brand-name {
+    font-size: 12px; line-height: 14px;
+    white-space: normal; overflow-wrap: break-word;
+  }
+  .brand-tag { display: none; }
+  .lang-toggle { flex-shrink: 0; }
+  .lang-toggle a { padding: 6px 9px; font-size: 10.5px; }
+  .nav-toggle { width: 40px; height: 40px; flex-shrink: 0; }
   .grid-2, .grid-3, .grid-4, .portfolio-grid, .equip-grid, .split, .form-grid { grid-template-columns: 1fr; }
   .client-grid { grid-template-columns: repeat(2, 1fr); }
   .region-grid { grid-template-columns: 1fr 1fr; }
@@ -584,6 +600,7 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
   .footer-main { grid-template-columns: 1fr; gap: 36px; }
   .form-panel { padding: 24px; }
   .cta-band h2 { font-size: 26px; line-height: 34px; }
-  .stat-cell { padding: 28px 20px; }
+  .stat-cell { padding: 24px 16px; }
+  .stat-lg { font-size: 26px; line-height: 32px; }
   .map-wrap { padding: 16px; }
 }
