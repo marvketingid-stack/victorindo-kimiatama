@@ -5,7 +5,7 @@
   },
   "hero": {
     "kicker": "Coating Solutions Manufacturer",
-    "heading": "Indonesia's Trusted Paint & Coating Specialist Since 1978 [AUDIT-TEST]",
+    "heading": "Indonesia's Trusted Paint & Coating Specialist Since 1978",
     "lede": "PT Victorindo Kimiatama is Indonesia's first trusted specialist in automotive paint and coating solutions — one of Indonesia's long-established coating manufacturers, delivering excellent coating products across multiple industries.",
     "image": "/assets/img/factory-aerial.webp",
     "imageAlt": "Aerial view of the PT Victorindo Kimiatama manufacturing facility in Karawang, West Java"
@@ -28,10 +28,6 @@
       {
         "value": "Nationwide",
         "label": "Distribution Network"
-      },
-      {
-        "value": "AUDIT",
-        "label": "Temporary Test Item"
       }
     ]
   },
