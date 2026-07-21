@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v={{ assetVersion.css }}">
 {%- set alt = routes[pageKey] if pageKey and routes[pageKey] else null %}
 {%- if alt %}
 <link rel="canonical" href="{{ site.baseUrl }}{{ alt[lang].url }}">
@@ -112,7 +112,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v={{ assetVersion.js }}"></script>
 <!-- Elfsight WhatsApp Chat -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <div class="elfsight-app-{{ site.whatsappWidgetId }}"></div>
