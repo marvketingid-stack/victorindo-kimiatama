@@ -6,8 +6,148 @@
 <meta name="robots" content="noindex">
 <title>Admin — PT Victorindo Kimiatama</title>
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  /* ==========================================================
+     Branding halaman admin — mengikuti design system
+     "Industrial Integrity" milik PT Victorindo Kimiatama.
+
+     CATATAN UNTUK TIM IT:
+     Ini hanya lapisan tampilan (kosmetik). Kalau suatu saat Decap CMS
+     diperbarui dan ada bagian yang terlihat aneh, blok <style> ini boleh
+     dihapus seluruhnya — fungsi admin tetap berjalan 100% normal,
+     hanya kembali ke tampilan bawaan Decap.
+     ========================================================== */
+
+  :root {
+    --vk-crimson: #9A1208;
+    --vk-rust: #D63F13;
+    --vk-dark: #1A1A1A;
+    --vk-cream: #F9F6F1;
+    --vk-surface: #FAF9F9;
+    --vk-border: #D1D1D1;
+  }
+
+  /* --- Tipografi --- */
+  body, input, textarea, select, button, [class*="css-"] {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+    letter-spacing: -0.01em;
+  }
+
+  /* --- Bentuk: sudut siku 0px, ciri khas design system VK --- */
+  button, input, textarea, select,
+  [class*="Card"], [class*="card"],
+  [class*="Button"], [class*="Widget"],
+  [class*="Control"], [class*="Modal"],
+  [class*="Dropdown"], [class*="Toolbar"] button {
+    border-radius: 0 !important;
+  }
+
+  /* --- Latar aplikasi --- */
+  body { background-color: var(--vk-surface); }
+
+  /* --- Layar login: panel gelap bermerek dengan foto pabrik --- */
+  [class*="StyledAuthenticationPage"], [class*="AuthenticationPage"] {
+    background-color: var(--vk-dark) !important;
+    background-image:
+      linear-gradient(rgba(26,26,26,.92), rgba(26,26,26,.92)),
+      url('/assets/img/factory-aerial.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* --- Tombol utama (Login / Publish / Save) jadi crimson --- */
+  [class*="LoginButton"],
+  [class*="PublishButton"],
+  [class*="ToolbarButton"][class*="primary"],
+  button[class*="primary"], a[class*="primary"],
+  button[type="submit"] {
+    background-color: var(--vk-crimson) !important;
+    background-image: none !important;
+    border: 2px solid var(--vk-crimson) !important;
+    color: #fff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+    transition: background-color .18s ease, border-color .18s ease !important;
+  }
+  [class*="LoginButton"]:hover,
+  [class*="PublishButton"]:hover,
+  button[class*="primary"]:hover, a[class*="primary"]:hover,
+  button[type="submit"]:hover {
+    background-color: var(--vk-rust) !important;
+    border-color: var(--vk-rust) !important;
+  }
+
+  /* --- Garis aksen crimson di header aplikasi --- */
+  [class*="AppHeader"], header[class*="Header"] {
+    border-bottom: 3px solid var(--vk-crimson) !important;
+    background-color: var(--vk-dark) !important;
+  }
+  [class*="AppHeader"] a, [class*="AppHeader"] button,
+  header[class*="Header"] a { color: #fff !important; }
+
+  /* --- Judul koleksi & kartu --- */
+  [class*="CollectionTop"] h1, [class*="collectionTop"] h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+  }
+
+  /* --- Label field: gaya teknis (mono, kapital) sesuai design system --- */
+  label[class*="FieldLabel"], [class*="fieldLabel"] {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #554240 !important;
+  }
+
+  /* --- Field aktif: garis bawah crimson (meniru form di website) --- */
+  input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    border-color: var(--vk-dark) !important;
+    box-shadow: inset 0 -2px 0 var(--vk-crimson) !important;
+  }
+
+  /* --- Panel bantuan kecil di pojok bawah --- */
+  #vk-admin-help {
+    position: fixed; left: 14px; bottom: 14px; z-index: 9999;
+    background: var(--vk-cream); border: 1px solid var(--vk-border);
+    border-left: 3px solid var(--vk-crimson);
+    padding: 10px 14px; max-width: 300px;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; line-height: 17px;
+    color: #554240; box-shadow: none;
+  }
+  #vk-admin-help strong {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--vk-crimson);
+    display: block; margin-bottom: 3px;
+  }
+  #vk-admin-help button {
+    position: absolute; top: 4px; right: 6px; background: none; border: none;
+    cursor: pointer; font-size: 15px; line-height: 1; color: #8b8888;
+  }
+  @media (max-width: 900px) { #vk-admin-help { display: none; } }
+</style>
 </head>
 <body>
+
+<!-- Pengingat singkat untuk editor -->
+<div id="vk-admin-help">
+  <button type="button" aria-label="Tutup" onclick="this.parentNode.remove()">&times;</button>
+  <strong>Pengingat</strong>
+  Perubahan tampil di website ±1–2 menit setelah <em>Publish</em>.
+  Kalau mengubah versi Indonesia, ubah juga versi English (dan sebaliknya).
+</div>
+
 <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>

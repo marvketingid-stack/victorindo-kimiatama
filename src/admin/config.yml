@@ -548,25 +548,25 @@ collections:
     label: "Halaman (Bahasa Indonesia)"
     description: "Edit teks & foto halaman versi Bahasa Indonesia"
     files:
-      - { label: "Beranda", name: "home", file: "src/_data/pagedata/id/home.json", fields: *home_fields }
-      - { label: "Tentang Kami", name: "about", file: "src/_data/pagedata/id/about.json", fields: *about_fields }
-      - { label: "Produk & Layanan", name: "products", file: "src/_data/pagedata/id/products.json", fields: *products_fields }
-      - { label: "Manufaktur & Kualitas", name: "manufacturing", file: "src/_data/pagedata/id/manufacturing.json", fields: *manufacturing_fields }
-      - { label: "Industri", name: "industries", file: "src/_data/pagedata/id/industries.json", fields: *industries_fields }
-      - { label: "Klien", name: "clients", file: "src/_data/pagedata/id/clients.json", fields: *clients_fields }
-      - { label: "Hubungi Kami", name: "contact", file: "src/_data/pagedata/id/contact.json", fields: *contact_fields }
+      - { label: "Beranda", name: "home", file: "src/_data/pagedata/id/home.json", preview_path: "id/", fields: *home_fields }
+      - { label: "Tentang Kami", name: "about", file: "src/_data/pagedata/id/about.json", preview_path: "id/tentang-kami/", fields: *about_fields }
+      - { label: "Produk & Layanan", name: "products", file: "src/_data/pagedata/id/products.json", preview_path: "id/produk/", fields: *products_fields }
+      - { label: "Manufaktur & Kualitas", name: "manufacturing", file: "src/_data/pagedata/id/manufacturing.json", preview_path: "id/manufaktur/", fields: *manufacturing_fields }
+      - { label: "Industri", name: "industries", file: "src/_data/pagedata/id/industries.json", preview_path: "id/industri/", fields: *industries_fields }
+      - { label: "Klien", name: "clients", file: "src/_data/pagedata/id/clients.json", preview_path: "id/klien/", fields: *clients_fields }
+      - { label: "Hubungi Kami", name: "contact", file: "src/_data/pagedata/id/contact.json", preview_path: "id/kontak/", fields: *contact_fields }
 
   - name: "pages_en"
     label: "Halaman (English)"
     description: "Edit teks & foto halaman versi English"
     files:
-      - { label: "Home", name: "home", file: "src/_data/pagedata/en/home.json", fields: *home_fields }
-      - { label: "About Us", name: "about", file: "src/_data/pagedata/en/about.json", fields: *about_fields }
-      - { label: "Products & Services", name: "products", file: "src/_data/pagedata/en/products.json", fields: *products_fields }
-      - { label: "Manufacturing & Quality", name: "manufacturing", file: "src/_data/pagedata/en/manufacturing.json", fields: *manufacturing_fields }
-      - { label: "Industries", name: "industries", file: "src/_data/pagedata/en/industries.json", fields: *industries_fields }
-      - { label: "Clients", name: "clients", file: "src/_data/pagedata/en/clients.json", fields: *clients_fields }
-      - { label: "Contact Us", name: "contact", file: "src/_data/pagedata/en/contact.json", fields: *contact_fields }
+      - { label: "Home", name: "home", file: "src/_data/pagedata/en/home.json", preview_path: "", fields: *home_fields }
+      - { label: "About Us", name: "about", file: "src/_data/pagedata/en/about.json", preview_path: "about/", fields: *about_fields }
+      - { label: "Products & Services", name: "products", file: "src/_data/pagedata/en/products.json", preview_path: "products/", fields: *products_fields }
+      - { label: "Manufacturing & Quality", name: "manufacturing", file: "src/_data/pagedata/en/manufacturing.json", preview_path: "manufacturing/", fields: *manufacturing_fields }
+      - { label: "Industries", name: "industries", file: "src/_data/pagedata/en/industries.json", preview_path: "industries/", fields: *industries_fields }
+      - { label: "Clients", name: "clients", file: "src/_data/pagedata/en/clients.json", preview_path: "clients/", fields: *clients_fields }
+      - { label: "Contact Us", name: "contact", file: "src/_data/pagedata/en/contact.json", preview_path: "contact/", fields: *contact_fields }
 
   - name: "custom_pages"
     label: "Halaman Baru"
