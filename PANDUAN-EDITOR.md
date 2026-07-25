@@ -122,3 +122,34 @@ Menu **Teks UI (Menu, Tombol, Footer)** — ubah nama menu, teks tombol, tagline
 
 **Halaman Berita/Promo:** halaman baru yang dibuat lewat "Halaman Baru" otomatis muncul di
 `victorindokimiatama.com/news/` (EN) dan `/id/berita/` (ID), dan sudah ada link "Berita & Promo" di footer.
+
+
+---
+
+## 9. Mengaktifkan Email Formulir Kontak
+
+Secara default, formulir "Contact Us" hanya membuka aplikasi email pengunjung — pesan **tidak**
+otomatis masuk ke inbox perusahaan. Untuk membuat pesan benar-benar terkirim ke email:
+
+1. Buka **web3forms.com** (gratis, tidak perlu daftar akun).
+2. Masukkan email tujuan: **info@victorindokimiatama.com** → klik "Create Access Key".
+3. Sebuah **Access Key** dikirim ke email itu. Salin key tersebut.
+4. Buka **/admin → Pengaturan Situs → Info Perusahaan & Kontak → "Kunci Formulir Kontak"**.
+5. Tempel Access Key → **Publish**.
+
+Setelah itu, setiap pengunjung yang mengisi formulir → pesannya langsung masuk ke
+**info@victorindokimiatama.com**. Untuk mengganti email tujuan, daftarkan Access Key baru
+dengan email lain di web3forms.com, lalu ganti key-nya di admin.
+
+---
+
+## 10. Mengganti File Company Profile (PDF)
+
+Tombol "Download Company Profile" di seluruh situs mengambil dari satu file yang sama.
+Untuk mengganti dengan versi baru:
+
+1. Buka **/admin → Pengaturan Situs → Info Perusahaan & Kontak**.
+2. Cari field **"File PDF Profil Perusahaan"**.
+3. Klik area file → **upload PDF baru** (drag-drop). File lama otomatis tergantikan.
+4. **Publish.** Semua tombol download di situs otomatis memakai PDF yang baru — tidak perlu
+   mengubah apa pun secara manual.

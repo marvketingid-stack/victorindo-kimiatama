@@ -69,7 +69,9 @@ pageKey: contact
       <div>
         <span class="eyebrow">{{ c.form.eyebrow }}</span>
         <h2 class="headline-md mb-24">{{ c.form.heading }}</h2>
-        <form class="form-panel reveal" id="inquiry-form" novalidate>
+        <form class="form-panel reveal" id="inquiry-form" novalidate data-web3-key="{{ site.contactFormKey }}" data-lang="{{ lang }}">
+          <input type="hidden" name="access_key" value="{{ site.contactFormKey }}">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;">
           <div class="form-grid">
             <div class="form-field" data-field="name">
               <label for="f-name">{{ c.form.nameLabel }} <span class="req">*</span></label>
@@ -110,6 +112,7 @@ pageKey: contact
           </div>
           <p class="form-note">{{ c.form.note | replace("*", '<span class="text-crimson">*</span>') | safe }}</p>
           <div class="form-success" id="form-success">{{ c.form.success | safe }}</div>
+          <div class="form-error" id="form-error">{{ "Maaf, pesan gagal terkirim. Coba lagi, atau email langsung ke" if lang == "id" else "Sorry, your message could not be sent. Please try again, or email us directly at" }} <strong>info@victorindokimiatama.com</strong>.</div>
         </form>
       </div>
     </div>

@@ -610,6 +610,7 @@ collections:
           - { label: "URL Embed Google Maps", name: "mapEmbedUrl", widget: "string" }
           - { label: "ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string" }
           - { label: "File PDF Profil Perusahaan (drag-drop untuk ganti)", name: "profilePdf", widget: "file", media_folder: "/src/assets/docs", public_folder: "/assets/docs" }
+          - { label: "Kunci Formulir Kontak (Web3Forms Access Key)", name: "contactFormKey", widget: "string", required: false, default: "", hint: "Buka web3forms.com, masukkan email info@victorindokimiatama.com, salin Access Key yang dikirim ke email itu, tempel di sini. Tanpa ini, form kontak hanya membuka aplikasi email pengunjung (tidak mengirim ke inbox)." }
           - { label: "Logo Navbar (PNG/SVG transparan)", name: "logo", widget: "image" }
           - { label: "Wordmark Footer (versi putih)", name: "logoWordmark", widget: "image" }
           - { label: "Favicon (ikon tab browser, kotak)", name: "favicon", widget: "image" }

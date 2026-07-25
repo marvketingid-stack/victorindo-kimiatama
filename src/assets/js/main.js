@@ -71,8 +71,16 @@
       if (field) field.classList.toggle('invalid', invalid);
       return !invalid;
     };
+    var successEl = document.getElementById('form-success');
+    var errorEl = document.getElementById('form-error');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.innerHTML : '';
+
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
+      if (successEl) successEl.classList.remove('show');
+      if (errorEl) errorEl.classList.remove('show');
+
       var name = form.elements['name'].value.trim();
       var email = form.elements['email'].value.trim();
       var industry = form.elements['industry'].value;
@@ -92,14 +100,51 @@
       var company = form.elements['company'].value.trim();
       var phone = form.elements['phone'].value.trim();
       var subject = (LANG === 'id' ? 'Permintaan Konsultasi Teknis — ' : 'Technical Consultation Request — ') + (company || name);
-      var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email +
-        '\nPhone: ' + phone + '\nIndustry: ' + industry + '\n\nMessage:\n' + message;
-      window.location.href = 'mailto:info@victorindokimiatama.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var key = form.getAttribute('data-web3-key');
 
-      var success = document.getElementById('form-success');
-      if (success) success.classList.add('show');
-      form.reset();
+      /* Tanpa access key -> fallback ke mailto (buka aplikasi email pengunjung) */
+      if (!key) {
+        var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email +
+          '\nPhone: ' + phone + '\nIndustry: ' + industry + '\n\nMessage:\n' + message;
+        window.location.href = 'mailto:info@victorindokimiatama.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        if (successEl) successEl.classList.add('show');
+        form.reset();
+        return;
+      }
+
+      /* Dengan access key -> kirim ke Web3Forms, pesan masuk ke inbox VK */
+      var sending = LANG === 'id' ? 'Mengirim…' : 'Sending…';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = sending; }
+
+      var payload = new FormData();
+      payload.append('access_key', key);
+      payload.append('subject', subject);
+      payload.append('from_name', name + (company ? ' (' + company + ')' : ''));
+      payload.append('Nama', name);
+      payload.append('Perusahaan', company);
+      payload.append('Email', email);
+      payload.append('Telepon', phone);
+      payload.append('Industri', industry);
+      payload.append('Pesan', message);
+      payload.append('botcheck', form.elements['botcheck'] && form.elements['botcheck'].checked ? 'true' : '');
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: payload
+      }).then(function (res) { return res.json(); }).then(function (data) {
+        if (data.success) {
+          if (successEl) successEl.classList.add('show');
+          form.reset();
+        } else {
+          if (errorEl) errorEl.classList.add('show');
+        }
+      }).catch(function () {
+        if (errorEl) errorEl.classList.add('show');
+      }).then(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = submitLabel; }
+      });
     });
   }
 

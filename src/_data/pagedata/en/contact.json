@@ -51,7 +51,7 @@
     "messageError": "Please describe your requirement (min. 10 characters).",
     "submit": "Submit Inquiry",
     "note": "Fields marked * are required. Our technical team typically responds within one business day.",
-    "success": "Thank you — your email client has been opened with your inquiry. If it did not open, please email us directly at <strong>info@victorindokimiatama.com</strong>."
+    "success": "Thank you — your message has been sent. Our technical team will respond within one business day."
   },
   "location": {
     "eyebrow": "Factory Location",

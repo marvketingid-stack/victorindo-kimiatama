@@ -98,10 +98,12 @@ Mencabut akses: hapus orang tersebut dari daftar Collaborators. Efektif seketika
   (`1fe47c4b-b489-4504-94d1-1b8095756233`), yang bisa diganti via **/admin → Pengaturan Situs**.
   ⚠️ Jangan tambahkan atribut `data-elfsight-app-lazy` pada kode embed — dengan atribut itu
   widget tidak pernah muncul (sudah pernah terjadi).
-- **Form kontak:** saat ini validasi di browser lalu membuka aplikasi email pengguna
-  (mailto ke info@victorindokimiatama.com). **Belum ada backend penyimpan submission.**
-  Opsi upgrade: layanan form pihak ketiga (Formspree/Web3Forms) atau script PHP sederhana
-  di cPanel — keduanya cukup mengubah `src/pages/contact.njk`.
+- **Form kontak (Web3Forms):** kiriman form dikirim ke inbox lewat Web3Forms (gratis, 250/bulan,
+  tanpa akun). AKTIVASI: buka web3forms.com → masukkan `info@victorindokimiatama.com` → Access Key
+  dikirim ke email itu → tempel di /admin → Pengaturan Situs → "Kunci Formulir Kontak". Tanpa key,
+  form otomatis fallback ke `mailto:` (membuka aplikasi email pengunjung). Ganti email tujuan =
+  daftarkan Access Key baru dengan email lain. Lihat `src/assets/js/main.js` (fungsi submit) dan
+  `src/pages/contact.njk`. Sudah ada honeypot anti-spam (field `botcheck`).
 - **Peta distribusi (halaman Clients):** peta interaktif Leaflet + OpenStreetMap (gratis,
   tanpa API key), 19 titik kota yang bisa diedit via **/admin → Pengaturan Situs → Peta Distribusi**.
   Bila ingin memakai **Google My Maps**: buat peta di mymaps.google.com dengan akun Google
