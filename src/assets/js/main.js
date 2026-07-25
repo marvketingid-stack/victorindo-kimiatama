@@ -88,11 +88,9 @@
 
       var ok = true;
       ok = setInvalid('name', name.length < 2) && ok;
+      /* Terima email apa pun yang formatnya valid (termasuk gmail/yahoo/dll) */
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      var freeDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com', 'aol.com', 'ymail.com'];
-      var domain = email.split('@')[1] ? email.split('@')[1].toLowerCase() : '';
-      var corporate = emailOk && freeDomains.indexOf(domain) === -1;
-      ok = setInvalid('email', !corporate) && ok;
+      ok = setInvalid('email', !emailOk) && ok;
       ok = setInvalid('industry', industry === '') && ok;
       ok = setInvalid('message', message.length < 10) && ok;
       if (!ok) return;
