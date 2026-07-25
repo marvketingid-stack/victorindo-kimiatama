@@ -6,13 +6,17 @@
 {%- set t = ui[lang] %}
 {%- set c = pagedata[lang][pageKey] if pageKey else null %}
 {%- if c %}
-<title>{{ c.meta.title }}</title>
-<meta name="description" content="{{ c.meta.description }}">
+{%- set pageTitle = c.meta.title %}
+{%- set pageDesc = c.meta.description %}
+{%- set shareImg = c.meta.shareImage or site.defaultShareImage %}
 {%- else %}
-<title>{{ title }} — {{ site.companyName }}</title>
-<meta name="description" content="{{ description }}">
+{%- set pageTitle = title + " — " + site.companyName %}
+{%- set pageDesc = description %}
+{%- set shareImg = heroImage or site.defaultShareImage %}
 {%- endif %}
-<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="icon" type="image/png" href="{{ site.favicon }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -24,7 +28,37 @@
 <link rel="alternate" hreflang="id" href="{{ site.baseUrl }}{{ alt.id.url }}">
 <link rel="alternate" hreflang="x-default" href="{{ site.baseUrl }}{{ alt.en.url }}">
 {%- endif %}
+<!-- Open Graph / social share preview (Item 5) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.companyName }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:locale" content="{{ 'id_ID' if lang == 'id' else 'en_US' }}">
+{%- if shareImg %}
+<meta property="og:image" content="{{ site.baseUrl }}{{ shareImg }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ site.baseUrl }}{{ shareImg }}">
+{%- endif %}
+{%- set bc = site.brandColors %}
+{%- if bc and (bc.crimson or bc.rust or bc.primaryContainer) %}
+<!-- Override warna brand dari Pengaturan Situs (Item 9). Kosongkan untuk memakai default. -->
+<style>:root{
+  {%- if bc.crimson %}--brand-crimson:{{ bc.crimson }};--surface-tint:{{ bc.crimson }};{% endif %}
+  {%- if bc.rust %}--brand-rust:{{ bc.rust }};{% endif %}
+  {%- if bc.primaryContainer %}--primary-container:{{ bc.primaryContainer }};{% endif %}
+}</style>
+{%- endif %}
 {%- block head %}{% endblock %}
+{%- if site.googleAnalyticsId %}
+<!-- Google Analytics (GA4) — ID diatur di Pengaturan Situs (Item 6) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalyticsId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.googleAnalyticsId }}');
+</script>
+{%- endif %}
 </head>
 <body>
 {%- set root = "/" if lang == "en" else "/id/" %}
@@ -32,7 +66,7 @@
 <header class="topnav">
   <div class="container topnav-inner">
     <a class="brand" href="{{ routes.home[lang].url }}">
-      <img src="/assets/img/logo-vk.png" alt="{{ t.a11y.logoAlt }}">
+      <img src="{{ site.logo }}" alt="{{ t.a11y.logoAlt }}">
       <span class="brand-text">
         <span class="brand-name">PT VICTORINDO KIMIATAMA</span>
         <span class="brand-tag">{{ t.brandTag | replace("·", "&middot;") | safe }}</span>
@@ -68,7 +102,7 @@
   <div class="container">
     <div class="footer-main">
       <div class="footer-brand">
-        <img src="/assets/img/logo-wordmark-white.svg" alt="{{ t.a11y.wordmarkAlt }}">
+        <img src="{{ site.logoWordmark }}" alt="{{ t.a11y.wordmarkAlt }}">
         <p>{{ t.footer.quote }}</p>
         <div class="footer-iso">
           <span class="chip">ISO 9001</span>
@@ -77,6 +111,16 @@
           <span class="chip">TKDN</span>
           <span class="chip">BKI</span>
         </div>
+        {%- set soc = site.social %}
+        {%- if soc and (soc.instagram or soc.linkedin or soc.facebook or soc.youtube or soc.tiktok) %}
+        <div class="footer-social" aria-label="Media sosial">
+          {%- if soc.instagram %}<a href="{{ soc.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>{% endif %}
+          {%- if soc.linkedin %}<a href="{{ soc.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>{% endif %}
+          {%- if soc.facebook %}<a href="{{ soc.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></svg></a>{% endif %}
+          {%- if soc.youtube %}<a href="{{ soc.youtube }}" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5v5l4-2.5z" fill="currentColor" stroke="none"/></svg></a>{% endif %}
+          {%- if soc.tiktok %}<a href="{{ soc.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M15 4c.5 2.5 2 4 4.5 4.2M15 4v9.5a3.5 3.5 0 1 1-3-3.46M15 4h-3"/></svg></a>{% endif %}
+        </div>
+        {%- endif %}
       </div>
       <div>
         <h4>{{ t.footer.navigation }}</h4>
@@ -88,6 +132,7 @@
           <li><a href="{{ routes.industries[lang].url }}">{{ t.nav.industries }}</a></li>
           <li><a href="{{ routes.clients[lang].url }}">{{ t.nav.clients }}</a></li>
           <li><a href="{{ routes.contact[lang].url }}">{{ t.nav.contact }}</a></li>
+          <li><a href="{{ routes.news[lang].url }}">{{ "Berita & Promo" if lang == "id" else "News & Updates" }}</a></li>
         </ul>
       </div>
       <div>

@@ -28,5 +28,9 @@
   "contact": {
     "en": { "url": "/contact/", "file": "contact/index.html" },
     "id": { "url": "/id/kontak/", "file": "id/kontak/index.html" }
+  },
+  "news": {
+    "en": { "url": "/news/", "file": "news/index.html" },
+    "id": { "url": "/id/berita/", "file": "id/berita/index.html" }
   }
 }

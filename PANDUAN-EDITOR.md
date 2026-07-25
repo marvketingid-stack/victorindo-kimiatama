@@ -39,8 +39,14 @@
    - Kolom foto → klik fotonya → **Upload** foto baru atau pilih dari Media
 4. Lihat **panel kanan** — itu pratinjau tampilan asli website, berubah mengikuti ketikan Anda.
    Ada juga tautan **View Live** di atas untuk membuka halaman aslinya di tab baru.
-5. Setelah selesai, klik **Publish** (kanan atas) → **Publish now**
-6. **Tunggu 1–2 menit**, lalu buka websitenya → perubahan sudah tampil.
+5. Setelah selesai, simpan. Perubahan masuk sebagai **Draft** dulu (belum tayang).
+6. Buka tab **Workflow** (menu atas) → geser kartu ke **Ready**, atau di dalam editor ubah
+   status ke **Ready**, lalu klik **Publish → Publish now**.
+7. **Tunggu 1–2 menit**, lalu buka websitenya → perubahan sudah tampil.
+
+> 💡 **Kenapa ada tahap Draft?** Supaya ada kesempatan "cek dulu" sebelum konten benar-benar
+> tayang ke publik — mirip draft di Instagram sebelum posting. Kalau ada beberapa editor,
+> ini mencegah typo langsung terlihat pengunjung.
 
 > ⚠️ **PALING PENTING:** website ini punya **2 bahasa**. Kalau Anda mengubah sesuatu di
 > versi Indonesia, **ubah juga padanannya di versi English** (atau sebaliknya). Kalau tidak,
@@ -97,3 +103,22 @@ Di menu yang sama juga ada:
 
 > 💡 **Tenang, tidak bisa "merusak" website.** Setiap perubahan tersimpan riwayatnya dan
 > selalu bisa dikembalikan oleh tim IT. Kalau ragu, tanya dulu sebelum Publish.
+
+
+---
+
+## 8. Fitur Pengaturan Situs (Baru)
+
+Di menu **Pengaturan Situs → Info Perusahaan & Kontak** kini bisa diatur tanpa developer:
+
+- **Logo, Wordmark & Favicon** — ganti logo navbar, logo putih footer, dan ikon tab browser (favicon) — cukup upload gambar baru.
+- **File PDF Profil Perusahaan** — drag-drop PDF baru langsung (menimpa yang lama), tidak perlu ketik alamat file.
+- **Media Sosial** — isi URL Instagram/LinkedIn/Facebook/YouTube/TikTok → ikonnya otomatis muncul di footer. Kosongkan yang tidak dipakai.
+- **Google Analytics** — tempel Measurement ID (mis. `G-XXXXXXX`) untuk mengaktifkan pelacakan pengunjung. Kosongkan untuk mematikan.
+- **Warna Brand** — (opsional, hati-hati) ubah warna merah utama situs pakai kode hex. Kosongkan = warna default.
+- **Foto Preview Share** — di tiap halaman ada field "Gambar Preview Share" (di blok Meta/SEO) — gambar yang muncul saat link dibagikan ke WhatsApp/LinkedIn.
+
+Menu **Teks UI (Menu, Tombol, Footer)** — ubah nama menu, teks tombol, tagline, dan kutipan footer (EN & ID).
+
+**Halaman Berita/Promo:** halaman baru yang dibuat lewat "Halaman Baru" otomatis muncul di
+`victorindokimiatama.com/news/` (EN) dan `/id/berita/` (ID), dan sudah ada link "Berita & Promo" di footer.

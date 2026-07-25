@@ -499,6 +499,14 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
 .footer .faddr + .faddr { margin-top: 14px; }
 .footer-iso { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
 .footer-iso .chip { border-color: #4a4a4a; color: #cfcccc; background: transparent; }
+.footer-social { display: flex; gap: 10px; margin-top: 20px; }
+.footer-social a {
+  width: 38px; height: 38px; border: 1px solid #4a4a4a;
+  display: flex; align-items: center; justify-content: center;
+  color: #cfcccc; transition: all .15s ease;
+}
+.footer-social a:hover { background: var(--brand-crimson); border-color: var(--brand-crimson); color: #fff; }
+.footer-social svg { width: 18px; height: 18px; stroke: currentColor; }
 .footer-bottom { border-top: 1px solid #333; padding: 22px 0; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer-bottom p { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #8b8888; text-transform: uppercase; }
 

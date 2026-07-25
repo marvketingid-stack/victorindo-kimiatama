@@ -13,6 +13,11 @@ backend:
 # Saat diakses dari localhost + `npx decap-server` berjalan, pakai backend lokal (tanpa login GitHub)
 local_backend: true
 
+# Alur kerja editorial: perubahan jadi DRAFT dulu, tidak langsung tayang.
+# Editor mengubah status Draft → In Review → Ready, lalu klik Publish untuk menayangkan.
+# Beri jeda "cek dulu" sebelum konten live ke publik.
+publish_mode: editorial_workflow
+
 media_folder: "src/assets/img"
 public_folder: "/assets/img"
 site_url: https://victorindokimiatama.com
@@ -30,6 +35,7 @@ x_schemas:
     fields:
       - { label: "Judul Tab Browser", name: "title", widget: "string" }
       - { label: "Deskripsi (Google)", name: "description", widget: "text" }
+      - { label: "Gambar Preview Share (opsional)", name: "shareImage", widget: "image", required: false, hint: "Muncul saat link dibagikan ke WhatsApp/LinkedIn/Facebook. Ukuran ideal 1200×630px. Kosong = pakai foto default situs." }
   page_hero: &page_hero
     label: "Hero Halaman"
     name: "hero"
@@ -603,7 +609,31 @@ collections:
           - { label: "Website (URL)", name: "websiteUrl", widget: "string" }
           - { label: "URL Embed Google Maps", name: "mapEmbedUrl", widget: "string" }
           - { label: "ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string" }
-          - { label: "File PDF Profil Perusahaan", name: "profilePdf", widget: "string" }
+          - { label: "File PDF Profil Perusahaan (drag-drop untuk ganti)", name: "profilePdf", widget: "file", media_folder: "/src/assets/docs", public_folder: "/assets/docs" }
+          - { label: "Logo Navbar (PNG/SVG transparan)", name: "logo", widget: "image" }
+          - { label: "Wordmark Footer (versi putih)", name: "logoWordmark", widget: "image" }
+          - { label: "Favicon (ikon tab browser, kotak)", name: "favicon", widget: "image" }
+          - { label: "Foto Default Preview Share Sosmed", name: "defaultShareImage", widget: "image", hint: "Dipakai saat halaman dibagikan ke sosmed jika halaman itu tidak punya gambar share sendiri." }
+          - label: "Media Sosial (opsional — ikon muncul di footer bila diisi)"
+            name: "social"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Instagram (URL lengkap)", name: "instagram", widget: "string", required: false, default: "" }
+              - { label: "LinkedIn (URL lengkap)", name: "linkedin", widget: "string", required: false, default: "" }
+              - { label: "Facebook (URL lengkap)", name: "facebook", widget: "string", required: false, default: "" }
+              - { label: "YouTube (URL lengkap)", name: "youtube", widget: "string", required: false, default: "" }
+              - { label: "TikTok (URL lengkap)", name: "tiktok", widget: "string", required: false, default: "" }
+          - { label: "Google Analytics Measurement ID (mis. G-XXXXXXX)", name: "googleAnalyticsId", widget: "string", required: false, default: "", hint: "Ambil dari Google Analytics (GA4). Kosongkan untuk mematikan pelacakan." }
+          - label: "Warna Brand (opsional — kosongkan untuk memakai default)"
+            name: "brandColors"
+            widget: "object"
+            collapsed: true
+            hint: "PERINGATAN: mengisi ini mengubah warna di SELURUH situs. Gunakan kode hex (mis. #9A1208). Salah warna bisa membuat situs sulit dibaca."
+            fields:
+              - { label: "Merah Utama (crimson)", name: "crimson", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex 6 digit, mis. #9A1208"] }
+              - { label: "Merah Terang (rust, untuk hover)", name: "rust", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex, mis. #D63F13"] }
+              - { label: "Merah Gelap (banner CTA)", name: "primaryContainer", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex, mis. #4A0404"] }
       - label: "Peta Distribusi (halaman Klien)"
         name: "distribution"
         file: "src/_data/distribution.json"
@@ -617,3 +647,55 @@ collections:
               - { label: "Provinsi/Wilayah", name: "region", widget: "string" }
               - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
               - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
+      - label: "Teks UI (Menu, Tombol, Footer)"
+        name: "ui_labels"
+        file: "src/_data/ui.json"
+        description: "Teks kecil yang tersebar di seluruh situs: nama menu, teks tombol, tagline, kutipan footer."
+        fields:
+          - label: "English"
+            name: "en"
+            widget: "object"
+            fields: &ui_lang_fields
+              - { label: "Tagline Brand (di bawah logo)", name: "brandTag", widget: "string" }
+              - label: "Menu Navigasi"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Beranda", name: "home", widget: "string" }
+                  - { label: "Tentang", name: "about", widget: "string" }
+                  - { label: "Produk", name: "products", widget: "string" }
+                  - { label: "Manufaktur (menu atas)", name: "manufacturing", widget: "string" }
+                  - { label: "Manufaktur (versi panjang, footer)", name: "manufacturingFull", widget: "string" }
+                  - { label: "Industri", name: "industries", widget: "string" }
+                  - { label: "Klien", name: "clients", widget: "string" }
+                  - { label: "Kontak", name: "contact", widget: "string" }
+              - { label: "Tombol: Konsultasi Teknis", name: "ctaConsult", widget: "string" }
+              - { label: "Tombol: Unduh Profil Perusahaan", name: "ctaDownload", widget: "string" }
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Kutipan", name: "quote", widget: "text" }
+                  - { label: "Judul: Navigasi", name: "navigation", widget: "string" }
+                  - { label: "Judul: Sektor Bisnis", name: "sectors", widget: "string" }
+                  - { label: "Judul: Kantor Pusat", name: "office", widget: "string" }
+                  - { label: "Link: Cat Otomotif", name: "sectorAutomotive", widget: "string" }
+                  - { label: "Link: Marine/Protective", name: "sectorMarine", widget: "string" }
+                  - { label: "Link: Cat Arsitektural", name: "sectorArchitectural", widget: "string" }
+                  - { label: "Label Telepon", name: "telp", widget: "string" }
+                  - { label: "Label Email", name: "email", widget: "string" }
+                  - { label: "Teks Hak Cipta", name: "rights", widget: "string" }
+                  - { label: "Teks 'Since 1978'", name: "since", widget: "string" }
+              - label: "Teks Aksesibilitas (untuk pembaca layar)"
+                name: "a11y"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Label Navigasi Utama", name: "primaryNav", widget: "string" }
+                  - { label: "Tombol Buka Menu", name: "toggleNav", widget: "string" }
+                  - { label: "Alt Logo", name: "logoAlt", widget: "string" }
+                  - { label: "Alt Wordmark", name: "wordmarkAlt", widget: "string" }
+          - label: "Bahasa Indonesia"
+            name: "id"
+            widget: "object"
+            fields: *ui_lang_fields

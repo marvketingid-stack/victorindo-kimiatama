@@ -228,3 +228,30 @@ editor melihat hasil sesungguhnya sambil mengetik. Ini diatur oleh
 Tampilan antarmuka admin (warna, font, sudut siku) diatur oleh blok `<style>` di
 `src/admin/index.html` — murni kosmetik dan juga aman dihapus bila suatu saat
 pembaruan Decap membuatnya tampak aneh.
+
+
+## 14. Penambahan Kelengkapan CMS (Juli 2026)
+
+Menanggapi dokumen "Rekomendasi Kelengkapan Admin CMS", 10 item ditambahkan:
+
+| # | Fitur | Lokasi kode |
+|---|---|---|
+| 1 | Teks UI (menu/tombol/footer) editable | collection `ui_labels` → `src/_data/ui.json` |
+| 2 | Logo/wordmark/favicon editable | field image di Settings → `site.json` (logo, logoWordmark, favicon); dibaca di `base.njk` |
+| 3 | PDF company profile via upload | `profilePdf` widget `file` (media_folder `/src/assets/docs`) |
+| 4 | Link media sosial | `site.social.*` → ikon di footer `base.njk` (muncul bila diisi) |
+| 5 | og:image per halaman | field `shareImage` di blok Meta/SEO tiap halaman + `site.defaultShareImage`; tag di `base.njk` |
+| 6 | Google Analytics (GA4) | `site.googleAnalyticsId` → script gtag di `base.njk` (aktif hanya bila diisi) |
+| 7 | Halaman indeks Berita/Promo | `src/pages/news.njk` (route `news` EN `/news/`, ID `/id/berita/`) melisting `collections.customPage`; link di footer |
+| 8 | Editorial workflow (Draft→Publish) | `publish_mode: editorial_workflow` di `config.yml` |
+| 9 | Warna brand editable | `site.brandColors.*` → override CSS variable di `<style>` `base.njk` (kosong = default) |
+| 10 | sitemap.xml & robots.txt | `src/sitemap.njk` (dari `routes.json` + custom pages) & `src/robots.njk` |
+
+**Catatan editorial_workflow:** publish kini lewat tahap Draft → Ready → Publish. Saat "Publish",
+Decap membuat lalu merge branch ke `main` → memicu deploy. Draft ada di branch terpisah
+(tidak ter-deploy). Bila tim ingin publish langsung tanpa tahap review, hapus baris
+`publish_mode: editorial_workflow` di `config.yml`.
+
+**Catatan warna brand:** CSS memakai variabel `--brand-crimson`, `--brand-rust`,
+`--primary-container`. Field di Settings hanya meng-override tiga ini via inline `<style>`.
+Aman dikosongkan kapan saja untuk kembali ke warna default.
