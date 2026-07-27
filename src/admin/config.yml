@@ -578,6 +578,8 @@ collections:
     label: "📰 Berita / Halaman Baru"
     label_singular: "Halaman"
     description: "Buat halaman baru (berita, promo, pengumuman). Otomatis muncul di halaman Berita situs."
+    editor:
+      preview: false
     folder: "src/custom"
     create: true
     extension: "md"
@@ -594,6 +596,10 @@ collections:
 
   - name: "settings"
     label: "⚙️ Pengaturan Situs"
+    # Panel pratinjau dimatikan: halaman ini berisi setelan (logo, kontak, teks),
+    # bukan "halaman" — pratinjau teks mentah malah membingungkan. Form jadi lebar penuh.
+    editor:
+      preview: false
     files:
       - label: "🏢 Logo, Kontak & Info Perusahaan"
         name: "site"
