@@ -107,24 +107,35 @@ Di menu yang sama juga ada:
 
 ---
 
-## 8. Fitur Pengaturan Situs (Baru)
+## 8. Pengaturan Situs — Logo, Tagline, Kontak, dsb
 
-Di menu **Pengaturan Situs → Info Perusahaan & Kontak** kini bisa diatur tanpa developer:
+Buka menu **⚙️ Pengaturan Situs → 🏢 Logo, Kontak & Info Perusahaan**. Field disusun dari
+yang paling sering diubah (logo di paling atas) sampai yang teknis (di bawah, bertanda ⚙️).
 
-- **Logo, Wordmark & Favicon** — ganti logo navbar, logo putih footer, dan ikon tab browser (favicon) — cukup upload gambar baru.
-- **File PDF Profil Perusahaan** — drag-drop PDF baru langsung (menimpa yang lama), tidak perlu ketik alamat file.
-- **Media Sosial** — isi URL Instagram/LinkedIn/Facebook/YouTube/TikTok → ikonnya otomatis muncul di footer. Kosongkan yang tidak dipakai.
-- **Google Analytics** — tempel Measurement ID (mis. `G-XXXXXXX`) untuk mengaktifkan pelacakan pengunjung. Kosongkan untuk mematikan.
-- **Warna Brand** — (opsional, hati-hati) ubah warna merah utama situs pakai kode hex. Kosongkan = warna default.
-- **Foto Preview Share** — di tiap halaman ada field "Gambar Preview Share" (di blok Meta/SEO) — gambar yang muncul saat link dibagikan ke WhatsApp/LinkedIn.
+**Ganti Logo (paling sering):**
+1. Field paling atas: **🖼️ Logo Website (pojok kiri atas)**.
+2. **Seret & lepas** file logo baru ke kotaknya (atau klik untuk memilih file dari komputer).
+3. **Publish.** Logo langsung berganti di seluruh situs.
+> Sama caranya untuk **Logo Footer** (versi putih) dan **Favicon** (ikon tab browser) — semua drag-and-drop.
 
-Menu **Teks UI (Menu, Tombol, Footer)** — ubah nama menu, teks tombol, tagline, dan kutipan footer (EN & ID).
+**Ganti Tagline** (teks kecil "Since 1978 · Proven Results" di bawah logo):
+- Buka menu **✏️ Teks Menu, Tombol & Tagline** → bagian English & Indonesia → field **🏷️ Tagline**.
 
-**Halaman Berita/Promo:** halaman baru yang dibuat lewat "Halaman Baru" otomatis muncul di
-`victorindokimiatama.com/news/` (EN) dan `/id/berita/` (ID), dan sudah ada link "Berita & Promo" di footer.
+**Field lain di Pengaturan Situs:**
+- **🏢 Nama, 📞 Telepon, ✉️ Email, 📍 Alamat** — langsung ketik.
+- **📄 File Company Profile (PDF)** — drag-drop PDF baru untuk menggantikan yang lama.
+- **🔗 Media Sosial** — tempel URL Instagram/LinkedIn/dll → ikon otomatis muncul di footer. Kosongkan yang tidak dipakai.
+- **🖼️ Foto Default Saat Link Dibagikan** — gambar yang muncul saat link situs di-share ke WhatsApp/LinkedIn.
+- **Bagian bertanda ⚙️ (paling bawah)** — pengaturan teknis (Google Analytics, kunci form kontak, dll). Biasanya diatur tim IT, jarang perlu disentuh.
 
+**Teks menu, tombol & footer:** menu **✏️ Teks Menu, Tombol & Tagline** — ubah nama menu (About/Produk/dll),
+teks tombol, tagline, dan tulisan footer. **Isi versi English DAN Indonesia.**
 
----
+**Halaman Berita/Promo:** halaman yang dibuat lewat **📰 Berita / Halaman Baru** otomatis muncul di
+`victorindokimiatama.com/news/` (EN) & `/id/berita/` (ID), dan ada link "Berita & Promo" di footer.
+
+> 💡 **Kotak upload** ditandai kotak garis putus-putus merah — tinggal **seret file dari komputer
+> dan lepas di kotak itu**, atau klik untuk memilih. Berlaku untuk semua foto, logo, dan PDF.
 
 ## 9. Mengaktifkan Email Formulir Kontak
 

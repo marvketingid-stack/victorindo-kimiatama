@@ -551,8 +551,8 @@ x_schemas:
 # ---------- Collections ----------
 collections:
   - name: "pages_id"
-    label: "Halaman (Bahasa Indonesia)"
-    description: "Edit teks & foto halaman versi Bahasa Indonesia"
+    label: "📄 Halaman Situs — Bahasa Indonesia"
+    description: "Edit teks & foto tiap halaman (versi Bahasa Indonesia)."
     files:
       - { label: "Beranda", name: "home", file: "src/_data/pagedata/id/home.json", preview_path: "id/", fields: *home_fields }
       - { label: "Tentang Kami", name: "about", file: "src/_data/pagedata/id/about.json", preview_path: "id/tentang-kami/", fields: *about_fields }
@@ -563,8 +563,8 @@ collections:
       - { label: "Hubungi Kami", name: "contact", file: "src/_data/pagedata/id/contact.json", preview_path: "id/kontak/", fields: *contact_fields }
 
   - name: "pages_en"
-    label: "Halaman (English)"
-    description: "Edit teks & foto halaman versi English"
+    label: "📄 Halaman Situs — English"
+    description: "Edit teks & foto tiap halaman (versi English)."
     files:
       - { label: "Home", name: "home", file: "src/_data/pagedata/en/home.json", preview_path: "", fields: *home_fields }
       - { label: "About Us", name: "about", file: "src/_data/pagedata/en/about.json", preview_path: "about/", fields: *about_fields }
@@ -575,9 +575,9 @@ collections:
       - { label: "Contact Us", name: "contact", file: "src/_data/pagedata/en/contact.json", preview_path: "contact/", fields: *contact_fields }
 
   - name: "custom_pages"
-    label: "Halaman Baru"
+    label: "📰 Berita / Halaman Baru"
     label_singular: "Halaman"
-    description: "Tambah halaman baru di luar 7 halaman utama (mis. berita, promo, halaman produk khusus)"
+    description: "Buat halaman baru (berita, promo, pengumuman). Otomatis muncul di halaman Berita situs."
     folder: "src/custom"
     create: true
     extension: "md"
@@ -593,49 +593,63 @@ collections:
       - { label: "Isi Halaman", name: "body", widget: "markdown" }
 
   - name: "settings"
-    label: "Pengaturan Situs"
+    label: "⚙️ Pengaturan Situs"
     files:
-      - label: "Info Perusahaan & Kontak"
+      - label: "🏢 Logo, Kontak & Info Perusahaan"
         name: "site"
         file: "src/_data/site.json"
+        description: "Ganti logo, favicon, nomor telepon, alamat, email, dan file company profile. Bagian teknis ada di paling bawah (jarang perlu diubah)."
         fields:
-          - { label: "Base URL Situs (ganti saat pindah domain)", name: "baseUrl", widget: "string" }
-          - { label: "Nama Perusahaan", name: "companyName", widget: "string" }
-          - { label: "Telepon (tampilan)", name: "phone", widget: "string" }
-          - { label: "Telepon (link tel:)", name: "phoneHref", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Alamat", name: "address", widget: "text" }
-          - { label: "Website (tampilan)", name: "websiteLabel", widget: "string" }
-          - { label: "Website (URL)", name: "websiteUrl", widget: "string" }
-          - { label: "URL Embed Google Maps", name: "mapEmbedUrl", widget: "string" }
-          - { label: "ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string" }
-          - { label: "File PDF Profil Perusahaan (drag-drop untuk ganti)", name: "profilePdf", widget: "file", media_folder: "/src/assets/docs", public_folder: "/assets/docs" }
-          - { label: "Kunci Formulir Kontak (Web3Forms Access Key)", name: "contactFormKey", widget: "string", required: false, default: "", hint: "Buka web3forms.com, masukkan email info@victorindokimiatama.com, salin Access Key yang dikirim ke email itu, tempel di sini. Tanpa ini, form kontak hanya membuka aplikasi email pengunjung (tidak mengirim ke inbox)." }
-          - { label: "Logo Navbar (PNG/SVG transparan)", name: "logo", widget: "image" }
-          - { label: "Wordmark Footer (versi putih)", name: "logoWordmark", widget: "image" }
-          - { label: "Favicon (ikon tab browser, kotak)", name: "favicon", widget: "image" }
-          - { label: "Foto Default Preview Share Sosmed", name: "defaultShareImage", widget: "image", hint: "Dipakai saat halaman dibagikan ke sosmed jika halaman itu tidak punya gambar share sendiri." }
-          - label: "Media Sosial (opsional — ikon muncul di footer bila diisi)"
+          # ————— LOGO & IKON (paling sering diganti — ditaruh paling atas) —————
+          - { label: "🖼️ Logo Website (pojok kiri atas)", name: "logo", widget: "image", hint: "Seret & lepas (drag-drop) file logo baru ke kotak ini, atau klik untuk memilih file. Gunakan PNG/SVG dengan latar transparan." }
+          - { label: "🖼️ Logo Footer (versi putih, untuk latar gelap)", name: "logoWordmark", widget: "image", hint: "Logo versi putih yang muncul di bagian bawah situs (footer). Seret & lepas file baru untuk mengganti." }
+          - { label: "🔖 Favicon (ikon kecil di tab browser)", name: "favicon", widget: "image", hint: "Ikon kotak kecil yang muncul di tab browser. Ukuran ideal 64×64px. Seret & lepas untuk mengganti." }
+
+          # ————— INFO PERUSAHAAN —————
+          - { label: "🏢 Nama Perusahaan", name: "companyName", widget: "string" }
+          - { label: "📞 Nomor Telepon (yang tampil di situs)", name: "phone", widget: "string", hint: "Contoh: +62 822-8000-5809" }
+          - { label: "✉️ Email", name: "email", widget: "string" }
+          - { label: "📍 Alamat Lengkap", name: "address", widget: "text" }
+          - { label: "🌐 Website (teks yang tampil)", name: "websiteLabel", widget: "string", hint: "Contoh: www.victorindokimiatama.com" }
+          - { label: "🌐 Website (alamat lengkap dengan https://)", name: "websiteUrl", widget: "string" }
+
+          # ————— DOKUMEN —————
+          - { label: "📄 File Company Profile (PDF)", name: "profilePdf", widget: "file", media_folder: "/src/assets/docs", public_folder: "/assets/docs", hint: "Seret & lepas file PDF company profile terbaru ke sini untuk mengganti yang lama. Semua tombol \"Download Company Profile\" otomatis memakai file baru." }
+
+          # ————— MEDIA SOSIAL —————
+          - label: "🔗 Media Sosial (ikon otomatis muncul di footer)"
             name: "social"
             widget: "object"
-            collapsed: true
+            collapsed: false
+            summary: "Isi yang punya, kosongkan yang tidak dipakai"
             fields:
-              - { label: "Instagram (URL lengkap)", name: "instagram", widget: "string", required: false, default: "" }
-              - { label: "LinkedIn (URL lengkap)", name: "linkedin", widget: "string", required: false, default: "" }
-              - { label: "Facebook (URL lengkap)", name: "facebook", widget: "string", required: false, default: "" }
-              - { label: "YouTube (URL lengkap)", name: "youtube", widget: "string", required: false, default: "" }
-              - { label: "TikTok (URL lengkap)", name: "tiktok", widget: "string", required: false, default: "" }
-          - { label: "Google Analytics Measurement ID (mis. G-XXXXXXX)", name: "googleAnalyticsId", widget: "string", required: false, default: "", hint: "Ambil dari Google Analytics (GA4). Kosongkan untuk mematikan pelacakan." }
-          - label: "Warna Brand (opsional — kosongkan untuk memakai default)"
+              - { label: "Instagram (tempel alamat lengkap)", name: "instagram", widget: "string", required: false, default: "", hint: "Contoh: https://instagram.com/namaakun" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false, default: "" }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false, default: "" }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false, default: "" }
+              - { label: "TikTok", name: "tiktok", widget: "string", required: false, default: "" }
+
+          # ————— FOTO PREVIEW SHARE —————
+          - { label: "🖼️ Foto Default Saat Link Dibagikan", name: "defaultShareImage", widget: "image", hint: "Gambar yang muncul ketika alamat situs dibagikan ke WhatsApp/LinkedIn. Seret & lepas untuk mengganti." }
+
+          # ————— PENGATURAN TEKNIS (jarang diubah — di paling bawah, tetap flat agar tidak mematahkan situs) —————
+          # Ditandai ⚙️ = teknis. Field tetap flat (bukan object) supaya struktur site.json tidak berubah.
+          - { label: "⚙️ Kunci Formulir Kontak (agar pesan masuk email)", name: "contactFormKey", widget: "string", required: false, default: "", hint: "TEKNIS. Agar pesan form kontak masuk ke email: buka web3forms.com → masukkan email info@victorindokimiatama.com → salin Access Key → tempel di sini." }
+          - { label: "⚙️ Google Analytics ID (mis. G-XXXXXXX)", name: "googleAnalyticsId", widget: "string", required: false, default: "", hint: "Untuk melacak jumlah pengunjung. Kosongkan untuk mematikan." }
+          - { label: "⚙️ ID Widget WhatsApp (Elfsight)", name: "whatsappWidgetId", widget: "string", hint: "ID widget tombol chat WhatsApp dari dashboard Elfsight." }
+          - { label: "⚙️ URL Embed Google Maps (peta di halaman Kontak)", name: "mapEmbedUrl", widget: "string" }
+          - { label: "⚙️ Nomor Telepon untuk Tombol Klik", name: "phoneHref", widget: "string", hint: "Sama seperti nomor telepon di atas tapi tanpa spasi, format: tel:+6282280005809 — agar bisa langsung ditelepon saat diklik di HP." }
+          - { label: "⚙️ Alamat Situs / Base URL", name: "baseUrl", widget: "string", hint: "JANGAN diubah kecuali pindah domain. Contoh: https://victorindokimiatama.com" }
+          - label: "🎨 Warna Brand (opsional — hati-hati)"
             name: "brandColors"
             widget: "object"
             collapsed: true
-            hint: "PERINGATAN: mengisi ini mengubah warna di SELURUH situs. Gunakan kode hex (mis. #9A1208). Salah warna bisa membuat situs sulit dibaca."
+            hint: "PERINGATAN: mengisi ini mengubah warna di SELURUH situs. Kosongkan = warna default. Gunakan kode hex, mis. #9A1208. Salah warna bisa membuat situs sulit dibaca."
             fields:
-              - { label: "Merah Utama (crimson)", name: "crimson", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex 6 digit, mis. #9A1208"] }
-              - { label: "Merah Terang (rust, untuk hover)", name: "rust", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex, mis. #D63F13"] }
+              - { label: "Merah Utama", name: "crimson", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex 6 digit, mis. #9A1208"] }
+              - { label: "Merah Terang (untuk efek hover)", name: "rust", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex, mis. #D63F13"] }
               - { label: "Merah Gelap (banner CTA)", name: "primaryContainer", widget: "string", required: false, default: "", pattern: ["^(#([0-9a-fA-F]{6})?)?$", "Kosong atau kode hex, mis. #4A0404"] }
-      - label: "Peta Distribusi (halaman Klien)"
+      - label: "🗺️ Peta Distribusi (halaman Klien)"
         name: "distribution"
         file: "src/_data/distribution.json"
         fields:
@@ -648,16 +662,16 @@ collections:
               - { label: "Provinsi/Wilayah", name: "region", widget: "string" }
               - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
               - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
-      - label: "Teks UI (Menu, Tombol, Footer)"
+      - label: "✏️ Teks Menu, Tombol & Tagline"
         name: "ui_labels"
         file: "src/_data/ui.json"
-        description: "Teks kecil yang tersebar di seluruh situs: nama menu, teks tombol, tagline, kutipan footer."
+        description: "Ubah nama menu (About/Produk/dll), teks tombol, tagline di bawah logo, dan tulisan di footer. Isi versi English DAN Indonesia."
         fields:
           - label: "English"
             name: "en"
             widget: "object"
             fields: &ui_lang_fields
-              - { label: "Tagline Brand (di bawah logo)", name: "brandTag", widget: "string" }
+              - { label: "🏷️ Tagline (teks kecil di bawah logo)", name: "brandTag", widget: "string", hint: "Contoh: Since 1978 · Proven Results" }
               - label: "Menu Navigasi"
                 name: "nav"
                 widget: "object"

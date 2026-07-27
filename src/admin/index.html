@@ -136,6 +136,24 @@
     cursor: pointer; font-size: 15px; line-height: 1; color: #8b8888;
   }
   @media (max-width: 900px) { #vk-admin-help { display: none; } }
+
+  /* --- Area upload KOSONG: dibuat seperti "drop zone" besar (class vk-upload-btn
+         ditambahkan via JS di bawah, karena class asli Decap tidak terbaca) --- */
+  .vk-upload-btn {
+    border: 2px dashed var(--vk-crimson) !important;
+    background: var(--vk-cream) !important;
+    color: var(--vk-crimson) !important;
+    min-height: 90px !important;
+    width: 100% !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    border-radius: 0 !important;
+  }
+  .vk-upload-btn:hover { background: #f0ebe2 !important; border-color: var(--vk-rust) !important; }
+  /* Pratinjau gambar yang sudah diupload diberi bingkai tegas */
+  [class*="StyledImage"] { border: 1px solid var(--vk-border) !important; max-height: 160px !important; }
 </style>
 </head>
 <body>
@@ -152,5 +170,22 @@
 <!-- Panel pratinjau memakai markup + CSS website asli. Lihat catatan perawatan
      di dalam file preview-templates.js sebelum mengubah template halaman. -->
 <script src="/admin/preview-templates.js"></script>
+<!-- Tooltip "seret & lepas" pada tombol upload gambar/file (bantu editor non-teknis) -->
+<script>
+  (function () {
+    setInterval(function () {
+      document.querySelectorAll('button').forEach(function (b) {
+        if (b.dataset.vkHinted) return;
+        var txt = b.textContent.trim().toLowerCase();
+        var isChoose = /^(choose|upload|insert|pilih)/.test(txt) && /(image|file|gambar)/.test(txt);
+        if (!isChoose) return;
+        b.dataset.vkHinted = '1';
+        b.setAttribute('title', 'Seret & lepas file ke sini, atau klik untuk memilih');
+        /* tombol "Choose an image/file" (bukan "different") = area kosong -> jadikan drop zone besar */
+        if (!/different/.test(txt)) b.classList.add('vk-upload-btn');
+      });
+    }, 1200);
+  })();
+</script>
 </body>
 </html>
