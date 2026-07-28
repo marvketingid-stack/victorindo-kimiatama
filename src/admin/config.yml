@@ -596,10 +596,8 @@ collections:
 
   - name: "settings"
     label: "⚙️ Pengaturan Situs"
-    # Panel pratinjau dimatikan: halaman ini berisi setelan (logo, kontak, teks),
-    # bukan "halaman" — pratinjau teks mentah malah membingungkan. Form jadi lebar penuh.
-    editor:
-      preview: false
+    # Pratinjau AKTIF dengan template visual khusus (lihat renderSettings di
+    # preview-templates.js) — menampilkan navbar/footer/tab/kartu share, bukan teks mentah.
     files:
       - label: "🏢 Logo, Kontak & Info Perusahaan"
         name: "site"

@@ -412,13 +412,139 @@
     );
   }
 
+  /* ================= PENGATURAN SITUS (preview visual, bukan teks mentah) ================= */
+
+  /* Ambil URL gambar — pakai getAsset agar gambar yang BARU diupload (belum disimpan) tetap tampil */
+  function asset(props, path) {
+    if (!path) return '';
+    try { var a = props.getAsset(path); if (a) return (a.toString ? a.toString() : a) || path; } catch (e) {}
+    return path;
+  }
+
+  /* Blok berlabel: kotak caption crimson + isi pratinjau */
+  function labeled(caption, note, inner) {
+    return '<div style="margin-bottom:30px;">' +
+      '<div style="font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9A1208;padding:9px 12px;background:#F9F6F1;border-left:3px solid #9A1208;">' + caption + '</div>' +
+      (note ? '<p style="font-size:12px;color:#777;margin:8px 2px 12px;font-family:Inter,sans-serif;">' + note + '</p>' : '<div style="height:12px;"></div>') +
+      inner + '</div>';
+  }
+
+  function socialIconsPreview(soc) {
+    soc = soc || {};
+    var keys = ['instagram', 'linkedin', 'facebook', 'youtube', 'tiktok'];
+    var on = keys.filter(function (k) { return soc[k]; });
+    if (!on.length) return '<p style="font-size:12px;color:#999;font-family:Inter,sans-serif;">(Belum ada media sosial diisi — ikon tidak muncul di footer.)</p>';
+    return '<div class="footer-social" style="margin-top:0;">' + on.map(function (k) {
+      return '<a href="#" style="pointer-events:none;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" style="width:18px;height:18px;stroke:currentColor;"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/></svg></a>';
+    }).join('') + '</div>';
+  }
+
+  function renderSiteSettings(d, props) {
+    var logo = asset(props, d.logo);
+    var wordmark = asset(props, d.logoWordmark);
+    var favicon = asset(props, d.favicon);
+    var share = asset(props, d.defaultShareImage);
+    var name = esc(d.companyName || 'PT Victorindo Kimiatama');
+    var host = esc((d.baseUrl || 'https://victorindokimiatama.com').replace(/^https?:\/\//, '').replace(/\/$/, ''));
+
+    /* 1. Navbar (memakai kelas .topnav asli → tampil persis seperti di situs) */
+    var navbar = '<header class="topnav" style="position:static;"><div class="container topnav-inner">' +
+      '<a class="brand" href="#" style="pointer-events:none;"><img src="' + esc(logo) + '" alt="Logo">' +
+      '<span class="brand-text"><span class="brand-name">PT VICTORINDO KIMIATAMA</span>' +
+      '<span class="brand-tag">SINCE 1978 &middot; PROVEN RESULTS</span></span></a>' +
+      '<nav class="nav-links"><a>About Us</a><a>Products</a><a>Manufacturing</a><a>Industries</a><a>Clients</a></nav>' +
+      '<div class="nav-cta"><span class="btn btn-primary">Contact Us</span></div>' +
+      '</div></header>';
+
+    /* 2. Footer (kelas .footer asli) dengan wordmark + ikon sosmed */
+    var footer = '<footer class="footer"><div class="container"><div class="footer-main" style="grid-template-columns:1fr;padding:40px 0;">' +
+      '<div class="footer-brand"><img src="' + esc(wordmark) + '" alt="Wordmark" style="width:210px;">' +
+      '<p>"Menghadirkan solusi coating berkualitas tinggi, inovatif, dan tersertifikasi…"</p>' +
+      socialIconsPreview(d.social) + '</div></div></div></footer>';
+
+    /* 3. Favicon di tab browser (mockup) */
+    var tab = '<div style="display:inline-flex;align-items:center;gap:8px;background:#e3e2e2;border:1px solid #c9c8c8;border-bottom:none;border-radius:9px 9px 0 0;padding:9px 14px;max-width:300px;font-family:Inter,sans-serif;">' +
+      (favicon ? '<img src="' + esc(favicon) + '" style="width:16px;height:16px;object-fit:contain;">' : '<span style="width:16px;height:16px;background:#ccc;border-radius:3px;"></span>') +
+      '<span style="font-size:12.5px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + name + '</span>' +
+      '<span style="margin-left:8px;color:#999;font-size:14px;">&times;</span></div>';
+
+    /* 4. Kartu preview saat link dibagikan (gaya WhatsApp/LinkedIn) */
+    var card = '<div style="max-width:400px;border:1px solid #dcdcdc;border-radius:10px;overflow:hidden;font-family:Inter,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06);">' +
+      (share ? '<img src="' + esc(share) + '" style="width:100%;height:190px;object-fit:cover;display:block;">' : '<div style="height:190px;background:#eee;display:flex;align-items:center;justify-content:center;color:#aaa;">(belum ada gambar)</div>') +
+      '<div style="padding:11px 15px;background:#f7f7f7;">' +
+      '<div style="font-size:11px;color:#8a8a8a;text-transform:uppercase;letter-spacing:.03em;">' + host + '</div>' +
+      '<div style="font-weight:700;font-size:14.5px;color:#1a1a1a;margin-top:3px;">' + name + '</div>' +
+      '<div style="font-size:12.5px;color:#555;margin-top:2px;">Indonesia\'s Trusted Paint &amp; Coating Specialist Since 1978</div>' +
+      '</div></div>';
+
+    /* 5. Info kontak */
+    var contact = '<div class="info-block" style="max-width:460px;">' +
+      '<div class="info-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>' +
+      '<div><h4>Alamat</h4><p>' + esc(d.address) + '</p></div></div>' +
+      '<div class="info-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>' +
+      '<div><h4>Telepon</h4><p>' + esc(d.phone) + '</p></div></div>' +
+      '<div class="info-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 6 9-6"/></svg></div>' +
+      '<div><h4>Email</h4><p>' + esc(d.email) + '</p></div></div></div>';
+
+    /* 6. File PDF */
+    var pdfName = (d.profilePdf || '').split('/').pop() || '(belum ada file)';
+    var pdf = '<div style="display:inline-flex;align-items:center;gap:12px;border:1px solid #D1D1D1;border-left:3px solid #9A1208;padding:14px 18px;font-family:Inter,sans-serif;background:#fff;">' +
+      '<span style="font-size:22px;">📄</span><div><div style="font-weight:700;font-size:13px;color:#1a1a1a;">' + esc(pdfName) + '</div>' +
+      '<div style="font-size:11px;color:#888;">Dipakai oleh semua tombol "Download Company Profile"</div></div></div>';
+
+    return '<div class="vk-preview-body" style="padding:26px 24px;">' +
+      '<h2 style="font-family:Montserrat,sans-serif;font-size:20px;font-weight:800;margin-bottom:4px;color:#1a1c1c;">Pratinjau Tampilan Situs</h2>' +
+      '<p style="color:#666;font-size:13px;margin-bottom:26px;font-family:Inter,sans-serif;">Panel ini menunjukkan <b>di mana setiap logo &amp; info Anda muncul</b> di website. Saat Anda ganti gambar di sebelah kiri, pratinjau di sini ikut berubah.</p>' +
+      labeled('🖼️ Logo Website', 'Muncul di pojok kiri atas SEMUA halaman (navbar).', navbar) +
+      labeled('🖼️ Logo Footer (versi putih) + Media Sosial', 'Muncul di bagian bawah SEMUA halaman.', footer) +
+      labeled('🔖 Favicon', 'Ikon kecil di tab browser.', tab) +
+      labeled('🖼️ Foto Saat Link Dibagikan', 'Tampil saat alamat situs dibagikan ke WhatsApp / LinkedIn / Facebook.', card) +
+      labeled('📄 File Company Profile', '', pdf) +
+      labeled('📞 Info Kontak', 'Muncul di halaman Kontak dan footer.', contact) +
+      '</div>';
+  }
+
+  function renderUiLabels(d, props) {
+    function block(lang, u) {
+      u = u || {}; var nav = u.nav || {}, f = u.footer || {};
+      var navbar = '<header class="topnav" style="position:static;"><div class="container topnav-inner">' +
+        '<a class="brand" href="#" style="pointer-events:none;"><span class="brand-text">' +
+        '<span class="brand-name">PT VICTORINDO KIMIATAMA</span>' +
+        '<span class="brand-tag">' + esc(u.brandTag) + '</span></span></a>' +
+        '<nav class="nav-links"><a>' + esc(nav.about) + '</a><a>' + esc(nav.products) + '</a><a>' + esc(nav.manufacturing) + '</a><a>' + esc(nav.industries) + '</a><a>' + esc(nav.clients) + '</a></nav>' +
+        '<div class="nav-cta"><span class="btn btn-primary">' + esc(nav.contact) + '</span></div></div></header>';
+      var footer = '<footer class="footer"><div class="container"><div class="footer-main" style="grid-template-columns:1fr 1fr;padding:34px 0;">' +
+        '<div><h4>' + esc(f.navigation) + '</h4><ul><li><a>' + esc(nav.home) + '</a></li><li><a>' + esc(nav.about) + '</a></li><li><a>' + esc(nav.products) + '</a></li><li><a>' + esc(nav.contact) + '</a></li></ul></div>' +
+        '<div><h4>' + esc(f.sectors) + '</h4><ul><li><a>' + esc(f.sectorAutomotive) + '</a></li><li><a>' + esc(f.sectorMarine) + '</a></li><li><a>' + esc(f.sectorArchitectural) + '</a></li></ul></div>' +
+        '</div></div></footer>';
+      return labeled('🔤 ' + lang.toUpperCase() + ' — Menu Atas (Navbar) + Tagline', 'Nama menu &amp; tagline yang tampil di header.', navbar) +
+        labeled('🔤 ' + lang.toUpperCase() + ' — Footer', 'Judul &amp; link di footer.', footer);
+    }
+    return '<div class="vk-preview-body" style="padding:26px 24px;">' +
+      '<h2 style="font-family:Montserrat,sans-serif;font-size:20px;font-weight:800;margin-bottom:4px;color:#1a1c1c;">Pratinjau Menu, Tombol &amp; Footer</h2>' +
+      '<p style="color:#666;font-size:13px;margin-bottom:26px;font-family:Inter,sans-serif;">Beginilah teks yang Anda ubah tampil di navbar &amp; footer situs.</p>' +
+      block('English', d.en) + '<div style="height:8px;"></div>' + block('Indonesia', d.id) +
+      '</div>';
+  }
+
+  function renderDistribution(d, props) {
+    var pts = arr(d.points);
+    var list = pts.map(function (p) {
+      return '<div class="client-cell" style="min-height:auto;padding:12px;"><span class="cname" style="font-size:13px;">' + esc(p.name) + '</span><span class="csub">' + esc(p.region) + '</span></div>';
+    }).join('');
+    return '<div class="vk-preview-body" style="padding:26px 24px;">' +
+      '<h2 style="font-family:Montserrat,sans-serif;font-size:20px;font-weight:800;margin-bottom:4px;color:#1a1c1c;">Pratinjau Peta Distribusi</h2>' +
+      '<p style="color:#666;font-size:13px;margin-bottom:20px;font-family:Inter,sans-serif;">' + pts.length + ' titik kota ini muncul sebagai penanda di peta halaman <b>Klien</b>.</p>' +
+      '<div class="client-grid" style="grid-template-columns:1fr 1fr;">' + list + '</div></div>';
+  }
+
   /* ---------------- daftarkan ke CMS ---------------- */
   function preview(renderer) {
     return function (props) {
       var data = {};
       try { data = props.entry.getIn(['data']).toJS(); } catch (e) { data = {}; }
       var html = '';
-      try { html = renderer(data); }
+      try { html = renderer(data, props); }
       catch (err) { html = '<p style="padding:24px;font-family:monospace;color:#9A1208;">Pratinjau gagal dirender: ' + esc(err.message) + '</p>'; }
       return h('div', { dangerouslySetInnerHTML: { __html: html } });
     };
@@ -427,7 +553,9 @@
   var map = {
     home: renderHome, about: renderAbout, products: renderProducts,
     manufacturing: renderManufacturing, industries: renderIndustries,
-    clients: renderClients, contact: renderContact
+    clients: renderClients, contact: renderContact,
+    /* Collection "settings" bertipe files → preview didaftarkan per NAMA FILE: */
+    site: renderSiteSettings, ui_labels: renderUiLabels, distribution: renderDistribution
   };
   Object.keys(map).forEach(function (name) {
     CMS.registerPreviewTemplate(name, preview(map[name]));

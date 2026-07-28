@@ -115,8 +115,11 @@ yang paling sering diubah (logo di paling atas) sampai yang teknis (di bawah, be
 **Ganti Logo (paling sering):**
 1. Field paling atas: **🖼️ Logo Website (pojok kiri atas)**.
 2. **Seret & lepas** file logo baru ke kotaknya (atau klik untuk memilih file dari komputer).
-3. **Publish.** Logo langsung berganti di seluruh situs.
-> Sama caranya untuk **Logo Footer** (versi putih) dan **Favicon** (ikon tab browser) — semua drag-and-drop.
+3. Lihat **panel kanan** — ada pratinjau visual yang menunjukkan **di mana logo itu muncul**
+   (navbar atas, footer, favicon tab, kartu share). Panel ini berubah otomatis saat Anda ganti gambar.
+4. **Publish.** Logo langsung berganti di seluruh situs.
+> Sama caranya untuk **Logo Footer** (versi putih) dan **Favicon** (ikon tab browser) — semua drag-and-drop,
+> dan semuanya langsung terlihat di pratinjau kanan.
 
 **Ganti Tagline** (teks kecil "Since 1978 · Proven Results" di bawah logo):
 - Buka menu **✏️ Teks Menu, Tombol & Tagline** → bagian English & Indonesia → field **🏷️ Tagline**.
