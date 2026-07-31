@@ -13,6 +13,12 @@ layout: layouts/base.njk
       </nav>
       {%- if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
       <h1 class="headline-lg">{{ title }}</h1>
+      {%- if date or topics %}
+      <div class="news-meta">
+        {%- if date %}<time datetime="{{ date | dateISO }}">{{ date | newsDate(lang) }}</time>{% endif %}
+        {%- if topics %}{% for tp in topics %}<span class="news-tag">{{ tp }}</span>{% endfor %}{% endif %}
+      </div>
+      {%- endif %}
       {%- if description %}<p class="lede">{{ description }}</p>{% endif %}
     </div>
   </div>

@@ -538,6 +538,64 @@
       '<div class="client-grid" style="grid-template-columns:1fr 1fr;">' + list + '</div></div>';
   }
 
+  /* ================= BERITA / HALAMAN BARU (pratinjau = artikel asli) ================= */
+
+  var MONTHS_ID = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  function fmtDate(v, lang) {
+    if (!v) return '';
+    var dt = (v instanceof Date) ? v : new Date(v);
+    if (isNaN(dt)) return '';
+    var m = (lang === 'en' ? MONTHS_EN : MONTHS_ID)[dt.getMonth()];
+    return lang === 'en'
+      ? m + ' ' + dt.getDate() + ', ' + dt.getFullYear()
+      : dt.getDate() + ' ' + m + ' ' + dt.getFullYear();
+  }
+
+  /* Renderer khusus: header (HTML string) + isi markdown asli (widgetFor) sebagai node React,
+     supaya isi berita tampil PERSIS seperti di website (font, judul, daftar, tabel, foto). */
+  function renderNewsPreview(props) {
+    var d = {};
+    try { d = props.entry.getIn(['data']).toJS(); } catch (e) { d = {}; }
+    var lang = d.lang === 'en' ? 'en' : 'id';
+    var homeLabel = lang === 'en' ? 'Home' : 'Beranda';
+    var title = d.title || (lang === 'en' ? '(Article title)' : '(Judul berita)');
+    var heroImage = asset(props, d.heroImage);
+
+    var tags = arr(d.topics).map(function (t) {
+      return '<span class="news-tag">' + esc(t) + '</span>';
+    }).join('');
+    var dateStr = fmtDate(d.date, lang);
+    var metaRow = (dateStr || tags)
+      ? '<div class="news-meta">' + (dateStr ? '<time>' + esc(dateStr) + '</time>' : '') + tags + '</div>'
+      : '';
+
+    var heroHtml =
+      '<section class="page-hero"><div class="container"><div class="page-hero-inner">' +
+        '<nav class="breadcrumb"><a href="#" style="pointer-events:none;">' + esc(homeLabel) + '</a>' +
+        '<span class="sep">/</span><span class="current">' + esc(title) + '</span></nav>' +
+        (d.eyebrow ? '<span class="eyebrow">' + esc(d.eyebrow) + '</span>' : '') +
+        '<h1 class="headline-lg">' + esc(title) + '</h1>' +
+        metaRow +
+        (d.description ? '<p class="lede">' + esc(d.description) + '</p>' : '') +
+      '</div></div></section>';
+
+    var heroImg = heroImage
+      ? h('div', { className: 'media', style: { border: '2px solid var(--stroke-dark)', maxWidth: '960px', margin: '0 0 48px' } },
+          h('img', { src: heroImage, alt: d.heroImageAlt || title }))
+      : null;
+
+    return h('div', { className: 'vk-preview-body' },
+      h('div', { dangerouslySetInnerHTML: { __html: heroHtml } }),
+      h('section', { className: 'section' },
+        h('div', { className: 'container' },
+          heroImg,
+          h('div', { className: 'prose' }, props.widgetFor('body'))
+        )
+      )
+    );
+  }
+
   /* ---------------- daftarkan ke CMS ---------------- */
   function preview(renderer) {
     return function (props) {
@@ -560,4 +618,9 @@
   Object.keys(map).forEach(function (name) {
     CMS.registerPreviewTemplate(name, preview(map[name]));
   });
+
+  /* Koleksi folder "Berita / Halaman Baru" → daftarkan per NAMA KOLEKSI (custom_pages).
+     Renderer ini mengembalikan node React langsung (bukan string) agar isi markdown
+     tampil hidup lewat widgetFor('body'). */
+  CMS.registerPreviewTemplate('custom_pages', renderNewsPreview);
 })();

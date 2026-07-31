@@ -29,14 +29,11 @@ eleventyExcludeFromCollections: true
 
 <section class="section">
   <div class="container">
-    {%- set posts = collections.customPage | reverse %}
-    {%- set count = 0 %}
-    {%- for post in posts %}{% if post.data.lang == lang %}{% set count = count + 1 %}{% endif %}{% endfor %}
+    {%- set posts = (collections.customPage or []) | byLang(lang) | newest %}
 
-    {%- if count > 0 %}
+    {%- if posts | length %}
     <div class="portfolio-grid">
       {%- for post in posts %}
-      {%- if post.data.lang == lang %}
       <article class="portfolio-item">
         {%- if post.data.heroImage %}
         <a class="media" href="{{ post.url }}"><img src="{{ post.data.heroImage }}" alt="{{ post.data.heroImageAlt or post.data.title }}" loading="lazy"></a>
@@ -44,11 +41,11 @@ eleventyExcludeFromCollections: true
         <div class="caption">
           {%- if post.data.eyebrow %}<span class="cat">{{ post.data.eyebrow }}</span>{% endif %}
           <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          {%- if post.data.date %}<span class="news-card-date">{{ post.data.date | newsDate(lang) }}</span>{% endif %}
           {%- if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
           <div class="mt-16"><a class="btn btn-outline" href="{{ post.url }}">{{ "Baca Selengkapnya" if isID else "Read More" }} <span class="arrow">&rarr;</span></a></div>
         </div>
       </article>
-      {%- endif %}
       {%- endfor %}
     </div>
     {%- else %}

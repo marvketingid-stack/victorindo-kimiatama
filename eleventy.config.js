@@ -8,6 +8,33 @@ module.exports = function (eleventyConfig) {
     return (d instanceof Date ? d : new Date()).toISOString().slice(0, 10);
   });
 
+  // Tanggal terbaca-manusia untuk berita, mis. "31 Juli 2026" (id) / "July 31, 2026" (en)
+  var MONTHS = {
+    id: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+    en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  };
+  eleventyConfig.addFilter("newsDate", function (d, lang) {
+    var dt = d instanceof Date ? d : new Date(d);
+    if (isNaN(dt)) return "";
+    var m = MONTHS[lang === "en" ? "en" : "id"][dt.getUTCMonth()];
+    return lang === "en"
+      ? m + " " + dt.getUTCDate() + ", " + dt.getUTCFullYear()
+      : dt.getUTCDate() + " " + m + " " + dt.getUTCFullYear();
+  });
+
+  // Helper berita: saring per bahasa, urutkan terbaru dulu, ambil N teratas.
+  eleventyConfig.addFilter("byLang", function (arr, lang) {
+    return (arr || []).filter(function (p) { return p.data && p.data.lang === lang; });
+  });
+  eleventyConfig.addFilter("newest", function (arr) {
+    return (arr || []).slice().sort(function (a, b) {
+      return (b.date ? b.date.getTime() : 0) - (a.date ? a.date.getTime() : 0);
+    });
+  });
+  eleventyConfig.addFilter("head", function (arr, n) {
+    return (arr || []).slice(0, n);
+  });
+
   return {
     dir: {
       input: "src",

@@ -1,6 +1,7 @@
 ---
 lang: id
 slug: situs-baru-diluncurkan
+date: 2026-07-25
 title: Situs Web Baru PT Victorindo Kimiatama Resmi Diluncurkan
 description: PT Victorindo Kimiatama meluncurkan situs web resmi yang baru, menghadirkan informasi produk, kapasitas manufaktur, dan profil perusahaan yang lebih lengkap dan mudah diakses.
 eyebrow: Pengumuman

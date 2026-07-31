@@ -1,6 +1,7 @@
 ---
 lang: en
 slug: new-website-launch
+date: 2026-07-25
 title: PT Victorindo Kimiatama Officially Launches New Website
 description: PT Victorindo Kimiatama has launched a new official website, offering more complete and accessible information about our products, manufacturing capacity, and company profile.
 eyebrow: Announcement

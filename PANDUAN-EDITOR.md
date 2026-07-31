@@ -54,19 +54,31 @@
 
 ---
 
-## 4. Menambah Halaman Baru
+## 4. Menambah Berita / Halaman Baru
 
-1. Klik menu **Halaman Baru** → tombol **New Halaman**
-2. Isi:
-   - **Bahasa:** Indonesia atau English
-   - **Slug URL:** alamat halaman — **huruf kecil semua, tanpa spasi**, pakai tanda hubung.
-     Contoh: `berita-pabrik-baru` → jadi `victorindokimiatama.com/berita-pabrik-baru/`
-   - **Judul Halaman**, **Deskripsi**, **Foto Utama** (opsional)
-   - **Isi Halaman:** ketik bebas, bisa dikasih judul, daftar, tebal/miring, foto, tabel
-3. Klik **Publish**
+1. Klik menu **📰 Berita / Halaman Baru** → tombol **New Berita**
+2. Isi form (urut dari atas):
+   - **🌐 Bahasa:** Indonesia atau English
+   - **📝 Judul Berita**
+   - **📅 Tanggal Terbit:** menentukan urutan — berita terbaru tampil paling atas
+   - **🔖 Kategori:** label merah kecil di atas judul (mis. Pengumuman, Promo, Acara)
+   - **✍️ Ringkasan Singkat:** 1–2 kalimat untuk kartu daftar berita
+   - **🖼️ Foto Utama (Cover):** seret & lepas foto sampul (opsional)
+   - **🏷️ Tag:** kata kunci pengelompokan (opsional)
+   - **📄 Isi Berita:** ketik bebas — subjudul, daftar, tebal/miring, foto, tabel.
+     Layout & font **otomatis rapi** mengikuti desain situs.
+3. **Lihat panel kanan** — itu **pratinjau artikel persis seperti yang akan dilihat
+   pengunjung** (judul, tanggal, foto, dan isi lengkap). Berubah otomatis saat Anda mengetik.
+4. Setelah cek di pratinjau, simpan → geser status ke **Ready** → **Publish**.
 
-> Halaman baru **tidak otomatis muncul di menu navigasi atas**. Kalau ingin dimasukkan ke
-> menu, minta bantuan tim IT (perlu sedikit ubah kode).
+> ✅ **Otomatis masuk menu "Berita" di navbar.** Begitu sebuah berita di-publish, judulnya
+> langsung muncul di **dropdown menu Berita** (panah ke bawah) di bagian atas situs — urut
+> dari yang terbaru. Tidak perlu mengubah menu secara manual. Slug/alamat URL dibuat otomatis
+> dari judul, jadi Anda **tidak perlu mengisi slug** lagi.
+
+> ℹ️ Berita **berbahasa Indonesia** muncul di menu Berita saat situs dalam mode **ID**, dan
+> berita **English** saat mode **EN**. Kalau ingin sebuah berita tampil di dua bahasa, buat
+> dua entri (satu ID, satu EN).
 
 ---
 
