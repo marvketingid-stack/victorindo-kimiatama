@@ -596,7 +596,51 @@ collections:
       - { label: "🖼️ Foto Utama (Cover)", name: "heroImage", widget: "image", required: false, hint: "Seret & lepas foto sampul. Tampil besar di atas artikel dan sebagai gambar kartu. Ukuran ideal ±1200px, di bawah 300 KB." }
       - { label: "🖼️ Teks Alt Foto (deskripsi singkat foto)", name: "heroImageAlt", widget: "string", required: false }
       - { label: "🏷️ Tag (opsional)", name: "topics", widget: "list", required: false, default: [], hint: "Kata kunci untuk pengelompokan, mis. produk, karawang, iso. Tekan Enter tiap tag." }
-      - { label: "📄 Isi Berita", name: "body", widget: "markdown", hint: "Tulis isi berita. Bisa tambah subjudul, daftar, tebal/miring, foto tambahan, dan tabel. Layout & font otomatis rapi mengikuti desain situs." }
+      - label: "🧱 Susunan Isi Berita — tambah Teks & Foto sesuka Anda"
+        name: "blocks"
+        widget: "list"
+        label_singular: "Blok"
+        required: false
+        collapsed: false
+        summary: "{{fields.type}}"
+        hint: "Klik tombol biru 'Tambah Susunan Isi Berita' di bawah, lalu pilih jenis blok (Teks, Foto, dll). Susun sebebas Anda — misalnya: Foto → Teks → Foto lagi. Seret ikon titik-titik untuk mengubah urutan."
+        types:
+          - label: "📝 Teks / Paragraf"
+            name: "text"
+            widget: "object"
+            summary: "📝 Teks"
+            fields:
+              - { label: "Isi Teks", name: "content", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list", "heading-two", "heading-three", "quote"], editor_components: [], hint: "Ketik paragraf di sini. Pakai tombol di atas kotak untuk tebal, miring, daftar, atau subjudul." }
+          - label: "🖼️ Foto (satu foto lebar)"
+            name: "image"
+            widget: "object"
+            summary: "🖼️ Foto: {{fields.caption}}"
+            fields:
+              - { label: "Foto", name: "image", widget: "image", hint: "Seret & lepas foto ke sini, atau klik untuk memilih. Kompres dulu agar di bawah 300 KB." }
+              - { label: "Keterangan Foto (opsional, tampil di bawah foto)", name: "caption", widget: "string", required: false }
+              - { label: "Teks Alt (deskripsi singkat untuk Google/aksesibilitas)", name: "alt", widget: "string", required: false }
+          - label: "🖼️🖼️ Dua Foto Sejajar"
+            name: "twoImages"
+            widget: "object"
+            summary: "🖼️🖼️ Dua Foto"
+            fields:
+              - { label: "Foto Kiri", name: "imageLeft", widget: "image" }
+              - { label: "Foto Kanan", name: "imageRight", widget: "image" }
+              - { label: "Keterangan (opsional, di bawah kedua foto)", name: "caption", widget: "string", required: false }
+          - label: "📰 Subjudul"
+            name: "heading"
+            widget: "object"
+            summary: "📰 {{fields.text}}"
+            fields:
+              - { label: "Teks Subjudul", name: "text", widget: "string" }
+          - label: "❝ Kutipan / Sorotan"
+            name: "quote"
+            widget: "object"
+            summary: "❝ {{fields.text}}"
+            fields:
+              - { label: "Teks Kutipan", name: "text", widget: "text" }
+              - { label: "Sumber / Nama (opsional)", name: "cite", widget: "string", required: false }
+      - { label: "📄 Isi Lama (Markdown) — biarkan kosong untuk berita baru", name: "body", widget: "markdown", required: false, hint: "Kolom lama. Berita baru cukup pakai 'Susunan Isi Berita' di atas. Jika kolom ini terisi DAN Susunan di atas kosong, maka kolom ini yang dipakai." }
 
   - name: "settings"
     label: "⚙️ Pengaturan Situs"

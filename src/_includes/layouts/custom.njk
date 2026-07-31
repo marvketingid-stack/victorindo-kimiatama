@@ -31,8 +31,39 @@ layout: layouts/base.njk
       <img src="{{ heroImage }}" alt="{{ heroImageAlt or title }}">
     </div>
     {%- endif %}
+
+    {%- if blocks and blocks.length %}
+    <div class="article-body">
+      {%- for b in blocks %}
+      {%- if b.type == "text" %}
+        <div class="prose">{{ b.content | markdownify | safe }}</div>
+      {%- elif b.type == "heading" %}
+        <h2 class="article-heading">{{ b.text }}</h2>
+      {%- elif b.type == "image" %}
+        <figure class="article-figure">
+          <img src="{{ b.image }}" alt="{{ b.alt or b.caption or title }}" loading="lazy">
+          {%- if b.caption %}<figcaption>{{ b.caption }}</figcaption>{% endif %}
+        </figure>
+      {%- elif b.type == "twoImages" %}
+        <figure class="article-figure article-figure-two">
+          <div class="two-up">
+            <img src="{{ b.imageLeft }}" alt="{{ b.caption or title }}" loading="lazy">
+            <img src="{{ b.imageRight }}" alt="{{ b.caption or title }}" loading="lazy">
+          </div>
+          {%- if b.caption %}<figcaption>{{ b.caption }}</figcaption>{% endif %}
+        </figure>
+      {%- elif b.type == "quote" %}
+        <blockquote class="article-quote">
+          <p>{{ b.text }}</p>
+          {%- if b.cite %}<cite>{{ b.cite }}</cite>{% endif %}
+        </blockquote>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    {%- else %}
     <div class="prose">
 {{ content | safe }}
     </div>
+    {%- endif %}
   </div>
 </section>

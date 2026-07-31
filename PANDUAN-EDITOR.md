@@ -63,13 +63,30 @@
    - **📅 Tanggal Terbit:** menentukan urutan — berita terbaru tampil paling atas
    - **🔖 Kategori:** label merah kecil di atas judul (mis. Pengumuman, Promo, Acara)
    - **✍️ Ringkasan Singkat:** 1–2 kalimat untuk kartu daftar berita
-   - **🖼️ Foto Utama (Cover):** seret & lepas foto sampul (opsional)
+   - **🖼️ Foto Utama (Cover):** seret & lepas foto sampul yang tampil paling atas (opsional)
    - **🏷️ Tag:** kata kunci pengelompokan (opsional)
-   - **📄 Isi Berita:** ketik bebas — subjudul, daftar, tebal/miring, foto, tabel.
-     Layout & font **otomatis rapi** mengikuti desain situs.
-3. **Lihat panel kanan** — itu **pratinjau artikel persis seperti yang akan dilihat
-   pengunjung** (judul, tanggal, foto, dan isi lengkap). Berubah otomatis saat Anda mengetik.
-4. Setelah cek di pratinjau, simpan → geser status ke **Ready** → **Publish**.
+   - **🧱 Susunan Isi Berita:** ini bagian utama — lihat langkah di bawah.
+3. **Menyusun isi berita (bisa tambah foto sebanyak-banyaknya, di mana saja):**
+   - Klik tombol **"Tambah Susunan Isi Berita"** → muncul pilihan jenis blok:
+     - **📝 Teks / Paragraf** — tulis paragraf. Ada tombol untuk tebal, miring, daftar, subjudul.
+     - **🖼️ Foto** — satu foto lebar + keterangan (caption) opsional.
+     - **🖼️🖼️ Dua Foto Sejajar** — dua foto berdampingan.
+     - **📰 Subjudul** — judul bagian.
+     - **❝ Kutipan** — teks sorotan besar.
+   - **Tambah blok sebanyak yang Anda mau, dalam urutan bebas.** Contoh persis seperti yang
+     diminta: tambah blok **Foto** → tambah blok **Teks** → tambah blok **Foto** lagi → **Teks** lagi.
+   - **Mengubah urutan:** seret ikon titik-titik (⠿) di sisi setiap blok ke atas/bawah.
+   - **Menghapus blok:** klik ikon tempat sampah di blok itu.
+4. **Lihat panel kanan** — itu **pratinjau artikel persis seperti yang akan dilihat pengunjung**
+   (judul, tanggal, semua foto & teks pada posisinya). Berubah otomatis saat Anda menyusun blok.
+5. Setelah cek di pratinjau, simpan → geser status ke **Ready** → **Publish**.
+
+> 🖼️ **Ingin foto—teks—foto—teks berselang-seling?** Gampang: tinggal tambah blok Foto lalu
+> blok Teks bergantian. Setiap foto otomatis rapi (ukuran, bingkai, jarak) mengikuti desain situs —
+> Anda tidak perlu mengatur tata letak sama sekali.
+
+> ℹ️ Kolom **"Isi Lama (Markdown)"** di paling bawah hanya untuk berita lama. Untuk berita baru,
+> **biarkan kosong** dan cukup pakai **Susunan Isi Berita** di atas.
 
 > ✅ **Otomatis masuk menu "Berita" di navbar.** Begitu sebuah berita di-publish, judulnya
 > langsung muncul di **dropdown menu Berita** (panah ke bawah) di bagian atas situs — urut

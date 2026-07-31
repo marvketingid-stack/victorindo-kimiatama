@@ -552,8 +552,67 @@
       : dt.getDate() + ' ' + m + ' ' + dt.getFullYear();
   }
 
-  /* Renderer khusus: header (HTML string) + isi markdown asli (widgetFor) sebagai node React,
-     supaya isi berita tampil PERSIS seperti di website (font, judul, daftar, tabel, foto). */
+  /* Markdown-ringkas → HTML untuk blok "Teks" di pratinjau (judul, tebal, miring, daftar,
+     tautan, kutipan). Cukup untuk kebutuhan editor; situs asli tetap memakai markdown penuh. */
+  function inlineMd(s) {
+    return esc(s)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>')
+      .replace(/_([^_\n]+)_/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$1">$1</a>');
+  }
+  function mdLite(src) {
+    var lines = String(src == null ? '' : src).replace(/\r/g, '').split('\n');
+    var out = [], para = [], list = null; // list = 'ul' | 'ol'
+    function flushPara() { if (para.length) { out.push('<p>' + inlineMd(para.join(' ')) + '</p>'); para = []; } }
+    function flushList() { if (list) { out.push('</' + list + '>'); list = null; } }
+    lines.forEach(function (ln) {
+      var t = ln.trim();
+      var mH = /^(#{2,3})\s+(.*)$/.exec(t);
+      var mU = /^[-*]\s+(.*)$/.exec(t);
+      var mO = /^\d+\.\s+(.*)$/.exec(t);
+      if (t === '') { flushPara(); flushList(); }
+      else if (mH) { flushPara(); flushList(); out.push('<h' + (mH[1].length) + '>' + inlineMd(mH[2]) + '</h' + (mH[1].length) + '>'); }
+      else if (t.charAt(0) === '>') { flushPara(); flushList(); out.push('<blockquote>' + inlineMd(t.replace(/^>\s?/, '')) + '</blockquote>'); }
+      else if (mU) { flushPara(); if (list !== 'ul') { flushList(); out.push('<ul>'); list = 'ul'; } out.push('<li>' + inlineMd(mU[1]) + '</li>'); }
+      else if (mO) { flushPara(); if (list !== 'ol') { flushList(); out.push('<ol>'); list = 'ol'; } out.push('<li>' + inlineMd(mO[1]) + '</li>'); }
+      else { if (list) flushList(); para.push(t); }
+    });
+    flushPara(); flushList();
+    return out.join('');
+  }
+
+  /* Susun blok konten (Teks/Foto/dll) menjadi HTML — cermin dari custom.njk */
+  function blocksToHtml(blocks, props, fallbackAlt) {
+    return arr(blocks).map(function (b) {
+      b = b || {};
+      if (b.type === 'text') return '<div class="prose">' + mdLite(b.content) + '</div>';
+      if (b.type === 'heading') return '<h2 class="article-heading">' + esc(b.text) + '</h2>';
+      if (b.type === 'image') {
+        var src = asset(props, b.image);
+        return '<figure class="article-figure">' +
+          (src ? '<img src="' + esc(src) + '" alt="' + esc(b.alt || b.caption || fallbackAlt) + '">'
+               : '<div style="height:180px;background:#eee;display:flex;align-items:center;justify-content:center;color:#aaa;font-family:Inter,sans-serif;">(pilih foto)</div>') +
+          (b.caption ? '<figcaption>' + esc(b.caption) + '</figcaption>' : '') + '</figure>';
+      }
+      if (b.type === 'twoImages') {
+        var l = asset(props, b.imageLeft), r = asset(props, b.imageRight);
+        return '<figure class="article-figure article-figure-two"><div class="two-up">' +
+          (l ? '<img src="' + esc(l) + '" alt="' + esc(b.caption || fallbackAlt) + '">' : '<div style="background:#eee;min-height:150px;"></div>') +
+          (r ? '<img src="' + esc(r) + '" alt="' + esc(b.caption || fallbackAlt) + '">' : '<div style="background:#eee;min-height:150px;"></div>') +
+          '</div>' + (b.caption ? '<figcaption>' + esc(b.caption) + '</figcaption>' : '') + '</figure>';
+      }
+      if (b.type === 'quote') {
+        return '<blockquote class="article-quote"><p>' + esc(b.text) + '</p>' +
+          (b.cite ? '<cite>' + esc(b.cite) + '</cite>' : '') + '</blockquote>';
+      }
+      return '';
+    }).join('');
+  }
+
+  /* Renderer khusus: header + isi berita (blok Teks/Foto atau markdown lama) sebagai node
+     React, supaya isi tampil PERSIS seperti di website (font, judul, daftar, foto). */
   function renderNewsPreview(props) {
     var d = {};
     try { d = props.entry.getIn(['data']).toJS(); } catch (e) { d = {}; }
@@ -581,15 +640,26 @@
       '</div></div></section>';
 
     var heroImg = heroImage
-      ? h('div', { className: 'media', style: { border: '2px solid var(--stroke-dark)', maxWidth: '960px', margin: '0 0 48px' } },
-          h('img', { src: heroImage, alt: d.heroImageAlt || title }))
-      : null;
+      ? '<div class="media" style="border:2px solid var(--stroke-dark);max-width:960px;margin:0 0 48px;"><img src="' + esc(heroImage) + '" alt="' + esc(d.heroImageAlt || title) + '"></div>'
+      : '';
 
+    var hasBlocks = arr(d.blocks).length > 0;
+
+    /* Isi berita: kalau memakai blok (cara baru) → render dari blok. Kalau tidak, jatuh
+       ke markdown lama (widgetFor('body')) supaya berita lama tetap tampil hidup. */
+    if (hasBlocks) {
+      var bodyHtml = '<section class="section"><div class="container">' + heroImg +
+        '<div class="article-body">' + blocksToHtml(d.blocks, props, title) + '</div></div></section>';
+      return h('div', { className: 'vk-preview-body' },
+        h('div', { dangerouslySetInnerHTML: { __html: heroHtml } }),
+        h('div', { dangerouslySetInnerHTML: { __html: bodyHtml } })
+      );
+    }
     return h('div', { className: 'vk-preview-body' },
       h('div', { dangerouslySetInnerHTML: { __html: heroHtml } }),
       h('section', { className: 'section' },
         h('div', { className: 'container' },
-          heroImg,
+          h('div', { dangerouslySetInnerHTML: { __html: heroImg } }),
           h('div', { className: 'prose' }, props.widgetFor('body'))
         )
       )

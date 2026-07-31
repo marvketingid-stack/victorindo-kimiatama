@@ -1,5 +1,12 @@
+var markdownIt = require("markdown-it")({ html: true, linkify: true, breaks: false });
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+
+  // Ubah teks Markdown (mis. isi blok "Teks") menjadi HTML.
+  eleventyConfig.addFilter("markdownify", function (s) {
+    return s ? markdownIt.render(String(s)) : "";
+  });
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
 
