@@ -1,6 +1,6 @@
 {
   "en": {
-    "brandTag": "Since 1978 · Proven Results",
+    "brandTag": "Since 1978 · Proven Result",
     "nav": {
       "home": "Home",
       "about": "About Us",
@@ -14,17 +14,17 @@
     "ctaConsult": "Request a Technical Consultation",
     "ctaDownload": "Download Company Profile",
     "footer": {
-      "quote": "\"To deliver high-quality, innovative, durable, and certified coating solutions that empower industries across Indonesia.\"",
-      "navigation": "Navigation",
-      "sectors": "Business Sectors",
-      "office": "Head Office & Factory",
-      "sectorAutomotive": "Automotive Paints",
       "sectorMarine": "Marine, Offshore & Protective",
-      "sectorArchitectural": "Architectural Coatings",
+      "sectors": "Business Sectors",
+      "navigation": "Navigation",
       "telp": "Telp.",
-      "email": "Email",
       "rights": "All rights reserved.",
-      "since": "Since 1978 · Proven Results"
+      "sectorArchitectural": "Architectural Coatings",
+      "since": "Since 1978 · Proven Results",
+      "sectorAutomotive": "Automotive Paints",
+      "quote": "\"To deliver high-quality, innovative, durable, and certified coating solutions that empower industries across Indonesia.\"",
+      "office": "Head Office & Factory",
+      "email": "Email"
     },
     "a11y": {
       "primaryNav": "Primary",
@@ -48,17 +48,17 @@
     "ctaConsult": "Ajukan Konsultasi Teknis",
     "ctaDownload": "Unduh Profil Perusahaan",
     "footer": {
-      "quote": "\"Menghadirkan solusi coating berkualitas tinggi, inovatif, tahan lama, dan tersertifikasi yang memberdayakan industri di seluruh Indonesia.\"",
-      "navigation": "Navigasi",
-      "sectors": "Sektor Bisnis",
-      "office": "Kantor Pusat & Pabrik",
-      "sectorAutomotive": "Cat Otomotif",
       "sectorMarine": "Marine, Offshore & Protective",
-      "sectorArchitectural": "Cat Arsitektural",
+      "sectors": "Sektor Bisnis",
+      "navigation": "Navigasi",
       "telp": "Telp.",
-      "email": "Email",
       "rights": "Seluruh hak cipta.",
-      "since": "Since 1978 · Proven Results"
+      "sectorArchitectural": "Cat Arsitektural",
+      "since": "Since 1978 · Proven Results",
+      "sectorAutomotive": "Cat Otomotif",
+      "quote": "\"Menghadirkan solusi coating berkualitas tinggi, inovatif, tahan lama, dan tersertifikasi yang memberdayakan industri di seluruh Indonesia.\"",
+      "office": "Kantor Pusat & Pabrik",
+      "email": "Email"
     },
     "a11y": {
       "primaryNav": "Utama",
