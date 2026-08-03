@@ -577,7 +577,7 @@ collections:
   - name: "custom_pages"
     label: "📰 Berita / Halaman Baru"
     label_singular: "Berita"
-    description: "Tulis berita, promo, atau pengumuman baru. Semua otomatis mengikuti tampilan & branding situs, muncul di halaman Berita, dan masuk ke menu \"Berita\" di navbar. Lihat pratinjau di panel kanan sebelum Publish."
+    description: "Tulis berita, promo, atau pengumuman. Satu entri = SATU bahasa. Untuk tampil dua bahasa, buat DUA entri (satu Indonesia, satu English) — cara termudah, dan bisa dihubungkan lewat 'Kode Penghubung' agar tombol EN/ID di artikel langsung pindah ke versi bahasa lain. Pratinjau ada di panel kanan sebelum Publish."
     # Pratinjau AKTIF: panel kanan menampilkan artikel PERSIS seperti yang dilihat
     # pengunjung (lihat renderNewsPreview di preview-templates.js).
     folder: "src/custom"
@@ -588,7 +588,8 @@ collections:
     summary: "{{title}}  ·  {{lang}}  ·  {{date | date('DD MMM YYYY')}}"
     sortable_fields: ["date", "title"]
     fields:
-      - { label: "🌐 Bahasa", name: "lang", widget: "select", options: [{ label: "Bahasa Indonesia", value: "id" }, { label: "English", value: "en" }], default: "id", hint: "Berita berbahasa Indonesia muncul di menu Berita versi ID; English di versi EN." }
+      - { label: "🌐 Bahasa", name: "lang", widget: "select", options: [{ label: "Bahasa Indonesia", value: "id" }, { label: "English", value: "en" }], default: "id", hint: "Berita berbahasa Indonesia muncul di menu Berita versi ID; English di versi EN. Untuk dua bahasa, buat dua entri." }
+      - { label: "🔗 Kode Penghubung Versi Bahasa Lain (opsional)", name: "translationKey", widget: "string", required: false, default: "", hint: "Isi kode yang SAMA di entri Indonesia dan entri English untuk berita yang sama (mis. peluncuran-2026). Gunanya: tombol EN/ID di halaman artikel langsung pindah ke versi bahasa lain. Kosongkan jika berita ini hanya satu bahasa." }
       - { label: "📝 Judul Berita", name: "title", widget: "string", hint: "Judul utama yang tampil besar di atas artikel dan di daftar berita." }
       - { label: "📅 Tanggal Terbit", name: "date", widget: "datetime", date_format: "DD-MM-YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false, hint: "Menentukan urutan berita (terbaru tampil paling atas di menu & daftar)." }
       - { label: "🔖 Kategori (Label Kecil)", name: "eyebrow", widget: "string", required: false, default: "Berita", hint: "Contoh: Pengumuman, Promo, Acara. Tampil sebagai label merah kecil di atas judul." }

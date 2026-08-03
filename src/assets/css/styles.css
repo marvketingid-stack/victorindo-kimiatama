@@ -152,7 +152,7 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
   position: relative;
   font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
   letter-spacing: 0.02em; color: var(--on-surface); padding: 6px 0;
-  transition: color .15s ease;
+  transition: color .15s ease; white-space: nowrap;
 }
 .nav-links a::after {
   content: ""; position: absolute; left: 0; bottom: -2px;
@@ -621,20 +621,22 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
 /* ============================================================
    Responsive — Tablet (<= 1024px): 8 col | 20px gutter | 32px margins
    ============================================================ */
-@media (max-width: 1024px) {
-  .container { padding-left: 32px; padding-right: 32px; }
-  :root { --gutter: 20px; --section-padding: 64px; }
-  .headline-xl { font-size: 42px; line-height: 50px; }
-  .headline-lg { font-size: 38px; line-height: 46px; }
-  /* Collapse navigation into hamburger menu */
+/* ============================================================
+   Navigasi runtuh ke menu hamburger lebih awal (<= 1280px).
+   Dengan 7 item menu (termasuk "News"), label multi-kata seperti "About Us" &
+   "Products & Services" mulai menabrak nama brand di rentang tablet–laptop kecil.
+   Hamburger diaktifkan sebelum masuk zona sempit itu; menu horizontal penuh hanya
+   tampil di layar >1280px yang ruangnya cukup lega.
+   ============================================================ */
+@media (max-width: 1280px) {
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: flex; }
   .topnav.open .nav-links {
     display: flex; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0;
     background: var(--surface); border-bottom: 2px solid var(--stroke-dark);
-    padding: 16px 32px 24px; gap: 4px; align-items: stretch;
+    padding: 16px 32px 24px; gap: 4px; align-items: stretch; z-index: 130;
   }
-  .topnav.open .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--surface-container-high); }
+  .topnav.open .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--surface-container-high); white-space: normal; }
   .topnav.open .nav-links .nav-contact {
     display: block; color: var(--brand-crimson); font-weight: 700; border-bottom: none;
   }
@@ -648,6 +650,13 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
   }
   .topnav.open .nav-dd-menu a { padding: 9px 0; font-size: 12.5px; }
   .topnav.open .nav-dd-menu a .dd-date { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .container { padding-left: 32px; padding-right: 32px; }
+  :root { --gutter: 20px; --section-padding: 64px; }
+  .headline-xl { font-size: 42px; line-height: 50px; }
+  .headline-lg { font-size: 38px; line-height: 46px; }
   .grid-3, .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .grid-4, .equip-grid { grid-template-columns: repeat(2, 1fr); }
   .client-grid { grid-template-columns: repeat(3, 1fr); }

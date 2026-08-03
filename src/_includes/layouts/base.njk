@@ -99,6 +99,14 @@
       {%- if alt %}
       <a href="{{ alt.en.url }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
       <a href="{{ alt.id.url }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
+      {%- elif tags == "customPage" %}
+      {#- Artikel berita: tombol bahasa menuju versi terjemahan (jika dihubungkan lewat
+          Kode Penghubung), kalau tidak ke halaman Berita bahasa tsb — bukan ke beranda. #}
+      {%- set otherLang = "id" if lang == "en" else "en" %}
+      {%- set tpair = (collections.customPage or []) | findPair(translationKey, otherLang) %}
+      {%- set otherUrl = tpair.url if tpair else routes.news[otherLang].url %}
+      <a href="{{ page.url if lang == 'en' else otherUrl }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
+      <a href="{{ page.url if lang == 'id' else otherUrl }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
       {%- else %}
       <a href="{{ routes.home.en.url }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
       <a href="{{ routes.home.id.url }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>

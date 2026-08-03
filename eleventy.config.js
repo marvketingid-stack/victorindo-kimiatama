@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
+  eleventyConfig.addPassthroughCopy({ "src/maintenance.html": "maintenance.html" });
 
   // Tanggal ISO untuk sitemap.xml (mis. 2026-07-21)
   eleventyConfig.addFilter("dateISO", function (d) {
@@ -40,6 +41,14 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addFilter("head", function (arr, n) {
     return (arr || []).slice(0, n);
+  });
+
+  // Cari berita pasangan terjemahan: entri dengan kode penghubung sama, bahasa berbeda.
+  eleventyConfig.addFilter("findPair", function (arr, key, lang) {
+    if (!key) return null;
+    return (arr || []).find(function (p) {
+      return p.data && p.data.translationKey === key && p.data.lang === lang;
+    }) || null;
   });
 
   return {
