@@ -31,8 +31,11 @@ module.exports = function (eleventyConfig) {
   });
 
   // Helper berita: saring per bahasa, urutkan terbaru dulu, ambil N teratas.
+  // Berita dengan showBoth (campuran 2 bahasa) muncul di menu ID maupun EN.
   eleventyConfig.addFilter("byLang", function (arr, lang) {
-    return (arr || []).filter(function (p) { return p.data && p.data.lang === lang; });
+    return (arr || []).filter(function (p) {
+      return p.data && (p.data.lang === lang || p.data.showBoth === true);
+    });
   });
   eleventyConfig.addFilter("newest", function (arr) {
     return (arr || []).slice().sort(function (a, b) {

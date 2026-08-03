@@ -100,11 +100,12 @@
       <a href="{{ alt.en.url }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
       <a href="{{ alt.id.url }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
       {%- elif tags == "customPage" %}
-      {#- Artikel berita: tombol bahasa menuju versi terjemahan (jika dihubungkan lewat
-          Kode Penghubung), kalau tidak ke halaman Berita bahasa tsb — bukan ke beranda. #}
+      {#- Artikel berita. Jika campuran 2 bahasa (showBoth) tombol EN/ID tetap di halaman
+          yang sama. Jika dihubungkan lewat Kode Penghubung, tombol lompat ke versi bahasa
+          lain. Selain itu, ke halaman Berita bahasa tsb — bukan ke beranda. #}
       {%- set otherLang = "id" if lang == "en" else "en" %}
       {%- set tpair = (collections.customPage or []) | findPair(translationKey, otherLang) %}
-      {%- set otherUrl = tpair.url if tpair else routes.news[otherLang].url %}
+      {%- set otherUrl = page.url if showBoth else (tpair.url if tpair else routes.news[otherLang].url) %}
       <a href="{{ page.url if lang == 'en' else otherUrl }}"{% if lang == "en" %} class="active"{% endif %}>EN</a>
       <a href="{{ page.url if lang == 'id' else otherUrl }}"{% if lang == "id" %} class="active"{% endif %}>ID</a>
       {%- else %}

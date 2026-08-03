@@ -93,15 +93,20 @@
 > dari yang terbaru. Tidak perlu mengubah menu secara manual. Slug/alamat URL dibuat otomatis
 > dari judul, jadi Anda **tidak perlu mengisi slug** lagi.
 
-> ℹ️ **Berita dua bahasa (Indonesia + English).** Satu entri = satu bahasa. Untuk berita yang
-> sama dalam dua bahasa, **buat dua entri**: satu pilih Bahasa **Indonesia**, satu lagi **English**,
-> lalu isi masing-masing. Berita ID muncul di menu Berita saat situs mode **ID**, berita EN saat
-> mode **EN**.
+> ℹ️ **Berita dua bahasa — ada 2 cara, pilih sesuai kebutuhan:**
 >
-> 🔗 **Menghubungkan keduanya (opsional tapi disarankan):** isi kolom **"Kode Penghubung"** dengan
-> kode yang **sama persis** di kedua entri (mis. `peluncuran-2026`). Hasilnya: saat pengunjung
-> membuka artikel lalu menekan tombol **EN/ID** di atas, ia langsung dibawa ke versi bahasa lain
-> dari artikel yang sama. Kalau tidak dihubungkan, tombol itu mengarah ke halaman Berita bahasa tsb.
+> **Cara A — Satu artikel isinya campur Indonesia + English (paling praktis).**
+> Tulis saja campuran kedua bahasa di dalam blok teks (boleh satu blok berisi paragraf Indonesia
+> lalu paragraf English, atau blok terpisah). Lalu **aktifkan centang "🌐 Tampilkan di menu
+> Indonesia DAN English"**. Hasilnya: **satu berita ini muncul di menu Berita versi ID maupun EN**
+> — tidak perlu membuat dua entri.
+>
+> **Cara B — Dua artikel terpisah (satu murni Indonesia, satu murni English).**
+> Buat dua entri: satu pilih Bahasa **Indonesia**, satu lagi **English**. Supaya tombol **EN/ID**
+> di halaman artikel melompat ke versi bahasa lain, isi kolom **"Kode Penghubung"** dengan kode
+> yang **sama persis** di kedua entri (mis. `peluncuran-2026`).
+>
+> Tidak dicentang & tanpa Kode Penghubung? Berita tampil di satu menu saja sesuai **Bahasa Utama**.
 
 ---
 
