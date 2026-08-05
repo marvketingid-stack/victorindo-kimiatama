@@ -56,6 +56,14 @@
 
 ## 4. Menambah Berita / Halaman Baru
 
+> 🔎 **Daftar berita jadi panjang? Saring per bahasa.** Di halaman daftar **📰 Berita**,
+> klik tombol **"Filter"** di kanan atas → pilih **"🇮🇩 Bahasa Indonesia saja"** atau
+> **"🇬🇧 English saja"**. Daftar langsung menampilkan bahasa itu saja (mis. dari 200 berita
+> jadi hanya ±100 versi Indonesia). Untuk mengedit, tinggal klik judulnya. Tombol **"Group by →
+> Bahasa"** juga bisa mengelompokkan daftar per bahasa. Setiap judul juga menampilkan label
+> bahasa, mis. `Judul Berita — [id] · 25 Jul 2026`, jadi mudah dibedakan.
+
+
 1. Klik menu **📰 Berita / Halaman Baru** → tombol **New Berita**
 2. Isi form (urut dari atas):
    - **🌐 Bahasa:** Indonesia atau English

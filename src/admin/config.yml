@@ -585,8 +585,17 @@ collections:
     extension: "md"
     # Nama file & alamat URL dibuat OTOMATIS dari bahasa + judul (editor tidak perlu isi slug).
     slug: "{{fields.lang}}-{{title}}"
-    summary: "{{title}}  ·  {{lang}}  ·  {{date | date('DD MMM YYYY')}}"
+    summary: "{{title}}  —  [{{lang}}]  ·  {{date | date('DD MMM YYYY')}}"
     sortable_fields: ["date", "title"]
+    # Tombol filter di atas daftar berita → saring per bahasa (mis. tampilkan Indonesia saja).
+    # Pilihan yang aktif tersimpan, jadi daftar tetap ringkas walau berita banyak.
+    view_filters:
+      - { label: "🇮🇩 Bahasa Indonesia saja", field: "lang", pattern: "id" }
+      - { label: "🇬🇧 English saja", field: "lang", pattern: "en" }
+      - { label: "🌐 Campuran 2 bahasa", field: "showBoth", pattern: true }
+    # Kelompokkan daftar per bahasa (judul grup "id" / "en").
+    view_groups:
+      - { label: "Bahasa", field: "lang" }
     fields:
       - { label: "🌐 Bahasa Utama", name: "lang", widget: "select", options: [{ label: "Bahasa Indonesia", value: "id" }, { label: "English", value: "en" }], default: "id", hint: "Bahasa utama berita — menentukan menu tempat ia muncul dan format tanggal. Catatan: isi berita BOLEH ditulis campuran Indonesia + English (blok teks bebas)." }
       - { label: "🌐 Tampilkan di menu Indonesia DAN English (untuk berita campur 2 bahasa)", name: "showBoth", widget: "boolean", default: false, required: false, hint: "Aktifkan bila berita ini memuat campuran Bahasa Indonesia & English dalam satu artikel. Satu berita ini akan muncul di menu Berita versi ID maupun EN — tidak perlu membuat dua entri." }
