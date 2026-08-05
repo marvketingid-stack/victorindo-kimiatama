@@ -42,6 +42,9 @@ Redirect 301 /id/industries.html       /id/industri/
 Redirect 301 /id/clients.html          /id/klien/
 Redirect 301 /id/contact.html          /id/kontak/
 
+# URL berita English berubah setelah digabung jadi satu entri dua-bahasa (i18n).
+Redirect 301 /new-website-launch        /situs-baru-diluncurkan/
+
 # ---------------------------------------------------------------
 # 2. Halaman 404 memakai desain situs
 # ---------------------------------------------------------------

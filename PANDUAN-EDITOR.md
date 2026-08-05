@@ -56,25 +56,27 @@
 
 ## 4. Menambah Berita / Halaman Baru
 
-> 🔎 **Daftar berita jadi panjang? Saring per bahasa.** Di halaman daftar **📰 Berita**,
-> klik tombol **"Filter"** di kanan atas → pilih **"🇮🇩 Bahasa Indonesia saja"** atau
-> **"🇬🇧 English saja"**. Daftar langsung menampilkan bahasa itu saja (mis. dari 200 berita
-> jadi hanya ±100 versi Indonesia). Untuk mengedit, tinggal klik judulnya. Tombol **"Group by →
-> Bahasa"** juga bisa mengelompokkan daftar per bahasa. Setiap judul juga menampilkan label
-> bahasa, mis. `Judul Berita — [id] · 25 Jul 2026`, jadi mudah dibedakan.
-
+> 🌐 **Satu berita = dua bahasa dalam SATU entri.** Anda tidak perlu membuat dua entri.
+> Di daftar **📰 Berita**, tiap berita muncul **satu baris saja** (bukan dua), jadi rapi
+> walau beritanya ratusan.
 
 1. Klik menu **📰 Berita / Halaman Baru** → tombol **New Berita**
-2. Isi form (urut dari atas):
-   - **🌐 Bahasa:** Indonesia atau English
-   - **📝 Judul Berita**
-   - **📅 Tanggal Terbit:** menentukan urutan — berita terbaru tampil paling atas
-   - **🔖 Kategori:** label merah kecil di atas judul (mis. Pengumuman, Promo, Acara)
+2. Perhatikan tombol **"Writing in ID"** (atau **"Writing in EN"**) di kiri atas editor —
+   itu menunjukkan **bahasa yang sedang Anda isi**. Klik untuk berpindah antara **id** (Indonesia)
+   dan **en** (English). Isi form untuk bahasa itu, lalu pindah bahasa dan isi lagi.
+   - Ada juga tombol **"Toggle i18n"** (ikon dua kolom) untuk menampilkan **Indonesia & English
+     berdampingan** sekaligus, dan **"Fill in from another locale"** untuk menyalin isi dari
+     bahasa lain sebagai titik awal.
+   - Boleh mengisi **satu bahasa saja** — berita tetap tayang untuk bahasa itu.
+3. Isi form (urut dari atas), untuk **tiap bahasa**:
+   - **📝 Judul Berita** (berbeda tiap bahasa)
+   - **📅 Tanggal Terbit:** menentukan urutan (sama untuk kedua bahasa)
+   - **🔖 Kategori:** label merah kecil di atas judul (mis. Pengumuman / Announcement)
    - **✍️ Ringkasan Singkat:** 1–2 kalimat untuk kartu daftar berita
-   - **🖼️ Foto Utama (Cover):** seret & lepas foto sampul yang tampil paling atas (opsional)
+   - **🖼️ Foto Utama (Cover):** seret & lepas foto sampul (dipakai sama untuk kedua bahasa)
    - **🏷️ Tag:** kata kunci pengelompokan (opsional)
    - **🧱 Susunan Isi Berita:** ini bagian utama — lihat langkah di bawah.
-3. **Menyusun isi berita (bisa tambah foto sebanyak-banyaknya, di mana saja):**
+4. **Menyusun isi berita (bisa tambah foto sebanyak-banyaknya, di mana saja):**
    - Klik tombol **"Tambah Susunan Isi Berita"** → muncul pilihan jenis blok:
      - **📝 Teks / Paragraf** — tulis paragraf. Ada tombol untuk tebal, miring, daftar, subjudul.
      - **🖼️ Foto** — satu foto lebar + keterangan (caption) opsional.
@@ -85,9 +87,11 @@
      diminta: tambah blok **Foto** → tambah blok **Teks** → tambah blok **Foto** lagi → **Teks** lagi.
    - **Mengubah urutan:** seret ikon titik-titik (⠿) di sisi setiap blok ke atas/bawah.
    - **Menghapus blok:** klik ikon tempat sampah di blok itu.
-4. **Lihat panel kanan** — itu **pratinjau artikel persis seperti yang akan dilihat pengunjung**
-   (judul, tanggal, semua foto & teks pada posisinya). Berubah otomatis saat Anda menyusun blok.
-5. Setelah cek di pratinjau, simpan → geser status ke **Ready** → **Publish**.
+5. **Lihat panel kanan** — itu **pratinjau artikel persis seperti yang akan dilihat pengunjung**
+   (judul, tanggal, semua foto & teks pada posisinya). Pratinjau **mengikuti bahasa yang sedang
+   Anda isi** — pindah ke **en**, pratinjaunya ikut jadi versi English. Berubah otomatis saat mengetik.
+   *(Kalau panel kanan tidak muncul, klik ikon **mata "Toggle preview"** di kanan atas.)*
+6. Setelah cek di pratinjau, simpan → geser status ke **Ready** → **Publish**.
 
 > 🖼️ **Ingin foto—teks—foto—teks berselang-seling?** Gampang: tinggal tambah blok Foto lalu
 > blok Teks bergantian. Setiap foto otomatis rapi (ukuran, bingkai, jarak) mengikuti desain situs —
@@ -96,25 +100,10 @@
 > ℹ️ Kolom **"Isi Lama (Markdown)"** di paling bawah hanya untuk berita lama. Untuk berita baru,
 > **biarkan kosong** dan cukup pakai **Susunan Isi Berita** di atas.
 
-> ✅ **Otomatis masuk menu "Berita" di navbar.** Begitu sebuah berita di-publish, judulnya
-> langsung muncul di **dropdown menu Berita** (panah ke bawah) di bagian atas situs — urut
-> dari yang terbaru. Tidak perlu mengubah menu secara manual. Slug/alamat URL dibuat otomatis
-> dari judul, jadi Anda **tidak perlu mengisi slug** lagi.
-
-> ℹ️ **Berita dua bahasa — ada 2 cara, pilih sesuai kebutuhan:**
->
-> **Cara A — Satu artikel isinya campur Indonesia + English (paling praktis).**
-> Tulis saja campuran kedua bahasa di dalam blok teks (boleh satu blok berisi paragraf Indonesia
-> lalu paragraf English, atau blok terpisah). Lalu **aktifkan centang "🌐 Tampilkan di menu
-> Indonesia DAN English"**. Hasilnya: **satu berita ini muncul di menu Berita versi ID maupun EN**
-> — tidak perlu membuat dua entri.
->
-> **Cara B — Dua artikel terpisah (satu murni Indonesia, satu murni English).**
-> Buat dua entri: satu pilih Bahasa **Indonesia**, satu lagi **English**. Supaya tombol **EN/ID**
-> di halaman artikel melompat ke versi bahasa lain, isi kolom **"Kode Penghubung"** dengan kode
-> yang **sama persis** di kedua entri (mis. `peluncuran-2026`).
->
-> Tidak dicentang & tanpa Kode Penghubung? Berita tampil di satu menu saja sesuai **Bahasa Utama**.
+> ✅ **Otomatis masuk menu "Berita" di navbar.** Begitu berita di-publish, judulnya langsung
+> muncul di **dropdown menu Berita** (urut dari terbaru) — versi Indonesia di mode ID, versi
+> English di mode EN. Tombol **EN/ID** di halaman artikel juga otomatis melompat ke versi bahasa
+> lain dari berita yang sama. Tidak perlu mengubah menu manual; alamat URL dibuat otomatis dari judul.
 
 ---
 

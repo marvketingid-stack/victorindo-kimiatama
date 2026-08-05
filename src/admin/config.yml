@@ -25,6 +25,14 @@ display_url: https://victorindokimiatama.com
 logo_url: https://victorindokimiatama.com/assets/img/logo-vk.png
 locale: id
 
+# Internationalisasi (i18n) — dipakai koleksi Berita: satu entri menyimpan versi
+# Indonesia & English (tiap bahasa jadi file terpisah <slug>.id.md / <slug>.en.md),
+# tapi diedit dalam SATU entri dengan tombol pilih bahasa di editor.
+i18n:
+  structure: multiple_files
+  locales: [id, en]
+  default_locale: id
+
 # ---------- Field schema definitions (dipakai ulang EN & ID) ----------
 x_schemas:
   meta: &meta
@@ -577,42 +585,33 @@ collections:
   - name: "custom_pages"
     label: "📰 Berita / Halaman Baru"
     label_singular: "Berita"
-    description: "Tulis berita, promo, atau pengumuman. Satu entri = SATU bahasa. Untuk tampil dua bahasa, buat DUA entri (satu Indonesia, satu English) — cara termudah, dan bisa dihubungkan lewat 'Kode Penghubung' agar tombol EN/ID di artikel langsung pindah ke versi bahasa lain. Pratinjau ada di panel kanan sebelum Publish."
-    # Pratinjau AKTIF: panel kanan menampilkan artikel PERSIS seperti yang dilihat
-    # pengunjung (lihat renderNewsPreview di preview-templates.js).
+    description: "Tulis berita/promo/pengumuman. SATU entri bisa memuat DUA bahasa: pakai tombol pilih bahasa (i18n) di atas editor untuk berpindah antara versi Indonesia & English, lalu isi/edit masing-masing dan Save. Boleh diisi satu bahasa saja. Pratinjau ada di panel kanan."
+    # i18n: satu entri = versi id + en (file terpisah <slug>.id.md / <slug>.en.md), diedit
+    # dalam satu form dengan tombol pilih bahasa. Pratinjau visual: renderNewsPreview di
+    # preview-templates.js. Daftar menampilkan 1 baris per berita (bukan 2).
+    i18n: true
     folder: "src/custom"
     create: true
     extension: "md"
-    # Nama file & alamat URL dibuat OTOMATIS dari bahasa + judul (editor tidak perlu isi slug).
-    slug: "{{fields.lang}}-{{title}}"
-    summary: "{{title}}  —  [{{lang}}]  ·  {{date | date('DD MMM YYYY')}}"
+    # Nama file & alamat URL dibuat OTOMATIS dari judul (editor tidak perlu isi slug).
+    slug: "{{title}}"
+    summary: "{{title}}  ·  {{date | date('DD MMM YYYY')}}"
     sortable_fields: ["date", "title"]
-    # Tombol filter di atas daftar berita → saring per bahasa (mis. tampilkan Indonesia saja).
-    # Pilihan yang aktif tersimpan, jadi daftar tetap ringkas walau berita banyak.
-    view_filters:
-      - { label: "🇮🇩 Bahasa Indonesia saja", field: "lang", pattern: "id" }
-      - { label: "🇬🇧 English saja", field: "lang", pattern: "en" }
-      - { label: "🌐 Campuran 2 bahasa", field: "showBoth", pattern: true }
-    # Kelompokkan daftar per bahasa (judul grup "id" / "en").
-    view_groups:
-      - { label: "Bahasa", field: "lang" }
     fields:
-      - { label: "🌐 Bahasa Utama", name: "lang", widget: "select", options: [{ label: "Bahasa Indonesia", value: "id" }, { label: "English", value: "en" }], default: "id", hint: "Bahasa utama berita — menentukan menu tempat ia muncul dan format tanggal. Catatan: isi berita BOLEH ditulis campuran Indonesia + English (blok teks bebas)." }
-      - { label: "🌐 Tampilkan di menu Indonesia DAN English (untuk berita campur 2 bahasa)", name: "showBoth", widget: "boolean", default: false, required: false, hint: "Aktifkan bila berita ini memuat campuran Bahasa Indonesia & English dalam satu artikel. Satu berita ini akan muncul di menu Berita versi ID maupun EN — tidak perlu membuat dua entri." }
-      - { label: "🔗 Kode Penghubung Versi Bahasa Lain (opsional)", name: "translationKey", widget: "string", required: false, default: "", hint: "Hanya untuk kasus DUA entri terpisah (satu ID, satu EN) yang ingin dihubungkan: isi kode yang SAMA di kedua entri agar tombol EN/ID melompat ke versi bahasa lain. Abaikan jika Anda memakai opsi 'Tampilkan di menu Indonesia DAN English' di atas." }
-      - { label: "📝 Judul Berita", name: "title", widget: "string", hint: "Judul utama yang tampil besar di atas artikel dan di daftar berita." }
-      - { label: "📅 Tanggal Terbit", name: "date", widget: "datetime", date_format: "DD-MM-YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false, hint: "Menentukan urutan berita (terbaru tampil paling atas di menu & daftar)." }
-      - { label: "🔖 Kategori (Label Kecil)", name: "eyebrow", widget: "string", required: false, default: "Berita", hint: "Contoh: Pengumuman, Promo, Acara. Tampil sebagai label merah kecil di atas judul." }
-      - { label: "✍️ Ringkasan Singkat", name: "description", widget: "text", required: false, hint: "1–2 kalimat. Tampil di kartu daftar berita dan saat link dibagikan. Kosong = otomatis dari isi." }
-      - { label: "🖼️ Foto Utama (Cover)", name: "heroImage", widget: "image", required: false, hint: "Seret & lepas foto sampul. Tampil besar di atas artikel dan sebagai gambar kartu. Ukuran ideal ±1200px, di bawah 300 KB." }
-      - { label: "🖼️ Teks Alt Foto (deskripsi singkat foto)", name: "heroImageAlt", widget: "string", required: false }
-      - { label: "🏷️ Tag (opsional)", name: "topics", widget: "list", required: false, default: [], hint: "Kata kunci untuk pengelompokan, mis. produk, karawang, iso. Tekan Enter tiap tag." }
+      - { label: "📝 Judul Berita", name: "title", widget: "string", i18n: true, hint: "Judul utama artikel. Berbeda per bahasa — isi versi Indonesia dan English lewat tombol pilih bahasa." }
+      - { label: "📅 Tanggal Terbit", name: "date", widget: "datetime", date_format: "DD-MM-YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false, i18n: duplicate, hint: "Menentukan urutan berita (terbaru tampil paling atas). Sama untuk kedua bahasa." }
+      - { label: "🔖 Kategori (Label Kecil)", name: "eyebrow", widget: "string", required: false, default: "Berita", i18n: true, hint: "Contoh: Pengumuman/Announcement, Promo, Acara. Label merah kecil di atas judul." }
+      - { label: "✍️ Ringkasan Singkat", name: "description", widget: "text", required: false, i18n: true, hint: "1–2 kalimat. Tampil di kartu daftar berita & saat link dibagikan." }
+      - { label: "🖼️ Foto Utama (Cover)", name: "heroImage", widget: "image", required: false, i18n: duplicate, hint: "Foto sampul (dipakai sama untuk kedua bahasa). Ukuran ideal ±1200px, di bawah 300 KB." }
+      - { label: "🖼️ Teks Alt Foto (deskripsi singkat foto)", name: "heroImageAlt", widget: "string", required: false, i18n: true }
+      - { label: "🏷️ Tag (opsional)", name: "topics", widget: "list", required: false, default: [], i18n: true, hint: "Kata kunci pengelompokan, mis. produk, karawang, iso. Tekan Enter tiap tag." }
       - label: "🧱 Susunan Isi Berita — tambah Teks & Foto sesuka Anda"
         name: "blocks"
         widget: "list"
         label_singular: "Blok"
         required: false
         collapsed: false
+        i18n: true
         summary: "{{fields.type}}"
         hint: "Klik tombol biru 'Tambah Susunan Isi Berita' di bawah, lalu pilih jenis blok (Teks, Foto, dll). Susun sebebas Anda — misalnya: Foto → Teks → Foto lagi. Seret ikon titik-titik untuk mengubah urutan."
         types:
@@ -651,7 +650,7 @@ collections:
             fields:
               - { label: "Teks Kutipan", name: "text", widget: "text" }
               - { label: "Sumber / Nama (opsional)", name: "cite", widget: "string", required: false }
-      - { label: "📄 Isi Lama (Markdown) — biarkan kosong untuk berita baru", name: "body", widget: "markdown", required: false, hint: "Kolom lama. Berita baru cukup pakai 'Susunan Isi Berita' di atas. Jika kolom ini terisi DAN Susunan di atas kosong, maka kolom ini yang dipakai." }
+      - { label: "📄 Isi Lama (Markdown) — biarkan kosong untuk berita baru", name: "body", widget: "markdown", required: false, i18n: true, hint: "Kolom lama. Berita baru cukup pakai 'Susunan Isi Berita' di atas. Jika kolom ini terisi DAN Susunan di atas kosong, maka kolom ini yang dipakai." }
 
   - name: "settings"
     label: "⚙️ Pengaturan Situs"

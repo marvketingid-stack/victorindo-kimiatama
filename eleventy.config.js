@@ -31,11 +31,8 @@ module.exports = function (eleventyConfig) {
   });
 
   // Helper berita: saring per bahasa, urutkan terbaru dulu, ambil N teratas.
-  // Berita dengan showBoth (campuran 2 bahasa) muncul di menu ID maupun EN.
   eleventyConfig.addFilter("byLang", function (arr, lang) {
-    return (arr || []).filter(function (p) {
-      return p.data && (p.data.lang === lang || p.data.showBoth === true);
-    });
+    return (arr || []).filter(function (p) { return p.data && p.data.lang === lang; });
   });
   eleventyConfig.addFilter("newest", function (arr) {
     return (arr || []).slice().sort(function (a, b) {
@@ -46,11 +43,11 @@ module.exports = function (eleventyConfig) {
     return (arr || []).slice(0, n);
   });
 
-  // Cari berita pasangan terjemahan: entri dengan kode penghubung sama, bahasa berbeda.
-  eleventyConfig.addFilter("findPair", function (arr, key, lang) {
-    if (!key) return null;
+  // Cari versi bahasa lain dari berita yang sama (base slug sama, bahasa berbeda).
+  eleventyConfig.addFilter("findSibling", function (arr, base, lang) {
+    if (!base) return null;
     return (arr || []).find(function (p) {
-      return p.data && p.data.translationKey === key && p.data.lang === lang;
+      return p.data && p.data.newsBase === base && p.data.lang === lang;
     }) || null;
   });
 

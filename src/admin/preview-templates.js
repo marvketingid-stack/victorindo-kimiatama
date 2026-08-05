@@ -613,10 +613,23 @@
 
   /* Renderer khusus: header + isi berita (blok Teks/Foto atau markdown lama) sebagai node
      React, supaya isi tampil PERSIS seperti di website (font, judul, daftar, foto). */
+  /* Bahasa yang sedang diedit. Data i18n tidak punya field 'lang', jadi ambil dari
+     props.locale milik Decap (mode i18n). Fallback ke field lang lama / 'id'. */
+  function activeLocale(d, props) {
+    // Sumber paling andal: prop locale dari Decap (mode i18n).
+    try {
+      if (props) {
+        var cand = props.locale || (props.entry && (props.entry.get && props.entry.get('locale')));
+        if (cand === 'en' || cand === 'id') return cand;
+      }
+    } catch (e) {}
+    return d && d.lang === 'en' ? 'en' : 'id';
+  }
+
   function renderNewsPreview(props) {
     var d = {};
     try { d = props.entry.getIn(['data']).toJS(); } catch (e) { d = {}; }
-    var lang = d.lang === 'en' ? 'en' : 'id';
+    var lang = activeLocale(d, props);
     var homeLabel = lang === 'en' ? 'Home' : 'Beranda';
     var title = d.title || (lang === 'en' ? '(Article title)' : '(Judul berita)');
     var heroImage = asset(props, d.heroImage);
