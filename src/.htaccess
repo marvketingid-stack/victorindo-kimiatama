@@ -1,27 +1,6 @@
 # PT Victorindo Kimiatama — konfigurasi Apache/LiteSpeed (cPanel Hostinger)
 # File ini ikut ter-upload ke public_html setiap deploy.
 
-# ===============================================================
-# MODE PEMELIHARAAN — SITUS DINONAKTIFKAN SEMENTARA
-# ---------------------------------------------------------------
-# Semua halaman publik menampilkan /maintenance.html dengan status 503
-# (Google memahami ini "sementara", jadi peringkat tidak hilang).
-# Halaman /admin dan /assets tetap dapat diakses (tim tetap bisa login).
-#
-# >>> UNTUK MENGAKTIFKAN KEMBALI SITUS: hapus SELURUH blok di antara
-#     "MULAI BLOK PEMELIHARAAN" dan "AKHIR BLOK PEMELIHARAAN", lalu deploy ulang.
-# ===============================================================
-# >>> MULAI BLOK PEMELIHARAAN
-ErrorDocument 503 /maintenance.html
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_URI} !^/admin [NC]
-  RewriteCond %{REQUEST_URI} !^/assets [NC]
-  RewriteCond %{REQUEST_URI} !^/maintenance\.html$ [NC]
-  RewriteRule ^ - [R=503,L]
-</IfModule>
-# >>> AKHIR BLOK PEMELIHARAAN
-
 # ---------------------------------------------------------------
 # 1. Redirect permanen dari URL lama (.html) ke URL baru yang bersih.
 #    Menjaga link lama yang sudah terlanjur dibagikan tetap berfungsi.
