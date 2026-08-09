@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "Industries — PT Victorindo Kimiatama",
-    "description": "From automotive factories to offshore platforms — VK powers 6 industrial verticals with proven coating solutions and a nationwide project portfolio."
+    "description": "From automotive factories to offshore platforms — VK powers 6 industrial sectors with proven coating solutions and a nationwide project portfolio."
   },
   "hero": {
     "breadcrumb": "Industries",
     "eyebrow": "Industries Served",
     "heading": "Powering Diverse Industries",
-    "lede": "From automotive factories to offshore platforms — specialized coating systems proven across six industrial verticals."
+    "lede": "From automotive factories to offshore platforms — specialized coating systems proven across six industrial sectors."
   },
   "verticals": {
-    "labelPrefix": "Vertical",
+    "labelPrefix": "Sector",
     "items": [
       { "icon": "car", "title": "Automotive & Bus Bodyworks", "desc": "OEM manufacturers, bus bodyworks, car assembly plants, and automotive refinish workshops." },
       { "icon": "building", "title": "Construction & Real Estate", "desc": "Residential housing, commercial buildings, malls, hotels, hospitals, and large infrastructure projects." },

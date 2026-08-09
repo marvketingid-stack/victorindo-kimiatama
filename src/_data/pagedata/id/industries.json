@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "Industri — PT Victorindo Kimiatama",
-    "description": "Dari pabrik otomotif hingga anjungan lepas pantai — VK menggerakkan 6 vertikal industri dengan solusi coating teruji dan portofolio proyek nasional."
+    "description": "Dari pabrik otomotif hingga anjungan lepas pantai — VK menggerakkan 6 sektor industri dengan solusi coating teruji dan portofolio proyek nasional."
   },
   "hero": {
     "breadcrumb": "Industri",
     "eyebrow": "Industri yang Dilayani",
     "heading": "Menggerakkan Beragam Industri",
-    "lede": "Dari pabrik otomotif hingga anjungan lepas pantai — sistem coating terspesialisasi yang terbukti di enam vertikal industri."
+    "lede": "Dari pabrik otomotif hingga anjungan lepas pantai — sistem coating terspesialisasi yang terbukti di enam sektor industri."
   },
   "verticals": {
-    "labelPrefix": "Vertikal",
+    "labelPrefix": "Sektor",
     "items": [
       { "icon": "car", "title": "Otomotif & Karoseri Bus", "desc": "Produsen OEM, karoseri bus, pabrik perakitan mobil, dan bengkel refinish otomotif." },
       { "icon": "building", "title": "Konstruksi & Real Estat", "desc": "Perumahan, gedung komersial, mal, hotel, rumah sakit, dan proyek infrastruktur besar." },

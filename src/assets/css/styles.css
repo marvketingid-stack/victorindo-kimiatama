@@ -190,6 +190,9 @@ button, input, select, textarea { font: inherit; color: inherit; border-radius: 
 .nav-dd-menu a {
   display: block; padding: 11px 13px; font-family: 'Inter', sans-serif; font-size: 13px;
   font-weight: 500; line-height: 18px; color: var(--on-surface); border-bottom: 1px solid var(--surface-container-high);
+  /* Judul berita boleh membungkus ke beberapa baris di dalam kotak dropdown.
+     (menimpa white-space:nowrap milik .nav-links a agar judul panjang tidak meluber) */
+  white-space: normal; overflow-wrap: break-word;
 }
 .nav-dd-menu a::after { display: none; }
 .nav-dd-menu a:hover { background: var(--surface-cream); color: var(--brand-crimson); }
