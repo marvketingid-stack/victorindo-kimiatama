@@ -257,3 +257,39 @@ Decap membuat lalu merge branch ke `main` → memicu deploy. Draft ada di branch
 **Catatan warna brand:** CSS memakai variabel `--brand-crimson`, `--brand-rust`,
 `--primary-container`. Field di Settings hanya meng-override tiga ini via inline `<style>`.
 Aman dikosongkan kapan saja untuk kembali ke warna default.
+
+## 15. Pembaruan Fitur Berita & Lainnya (Agustus 2026)
+
+**Berita/News — satu entri, dua bahasa (Decap i18n).**
+Koleksi **📰 Berita / Halaman Baru** kini memakai i18n: **satu entri** menyimpan versi
+Indonesia **dan** English sekaligus. Di editor ada tombol **"Writing in ID/EN"** untuk
+berpindah bahasa, **"Toggle i18n"** untuk menampilkan kedua bahasa berdampingan, dan
+**"Fill in from another locale"** untuk menyalin. Di daftar admin tiap berita tampil
+**satu baris** (bukan dua). Secara teknis tiap bahasa disimpan sebagai file terpisah
+`src/custom/<slug>.id.md` & `<slug>.en.md`; `src/custom/custom.11tydata.js` menurunkan
+bahasa & permalink dari nama file. Konfigurasi `i18n:` ada di paling atas `config.yml`.
+
+**Isi berita berbasis blok (Text/Foto).**
+Isi artikel disusun dari **blok** (Teks/Foto/Dua Foto/Subjudul/Kutipan) yang bisa
+ditambah & diurutkan bebas — memungkinkan foto diletakkan di mana saja. Dirender di
+`src/_includes/layouts/custom.njk`; blok Teks memakai filter `markdownify` (markdown-it)
+di `eleventy.config.js`. Berita otomatis muncul di **dropdown menu "Berita"** pada navbar
+(terbaru dulu) dan tombol EN/ID di artikel melompat ke versi bahasa lain.
+
+**Pratinjau berita mengikuti bahasa.**
+`renderNewsPreview` di `preview-templates.js` membaca `props.locale`, jadi panel pratinjau
+menampilkan versi bahasa yang sedang diedit (judul, isi, breadcrumb, format tanggal).
+
+**Mode Pemeliharaan (mematikan situs sementara).**
+`src/.htaccess` bisa memuat blok bertanda **"MULAI/AKHIR BLOK PEMELIHARAAN"** yang membuat
+seluruh halaman publik menampilkan `src/maintenance.html` dengan status **503** (aman untuk
+SEO), sementara `/admin` tetap bisa diakses. **Mengaktifkan:** tambahkan blok tsb. **Menonaktifkan
+(situs nyala lagi):** hapus blok itu, lalu deploy. Saat serah terima ini situs dalam keadaan
+**AKTIF/normal** (blok tidak terpasang).
+
+**Formulir kontak — menerima semua email.**
+Validasi email di form Contact menerima email apa pun yang valid (termasuk gmail/yahoo),
+bukan hanya email korporat.
+
+> Catatan: fitur lama "Kode Penghubung" & "Tampilkan di dua bahasa" pada berita sudah
+> **digantikan** oleh mekanisme i18n di atas (tidak perlu lagi membuat dua entri terpisah).
