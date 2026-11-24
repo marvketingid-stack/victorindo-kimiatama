@@ -139,5 +139,9 @@
 
   <footer>© {{ "" | dateISO | truncate(4, true, "") }} {{ site.companyName }}</footer>
 </div>
+<script>
+  // Tampilkan alamat dalam format QR: /kartu/?id=<kode>
+  try { history.replaceState(null, "", "/kartu/?id={{ page.fileSlug }}"); } catch (e) {}
+</script>
 </body>
 </html>
