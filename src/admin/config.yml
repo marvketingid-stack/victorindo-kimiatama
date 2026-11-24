@@ -660,14 +660,15 @@ collections:
     create: true
     extension: "md"
     identifier_field: "nama"
-    # Alamat halaman dibuat OTOMATIS dari nama saat entri DIBUAT, mis. "Budi Santoso" → /kartu/budi-santoso/.
-    # Mengganti nama di kemudian hari TIDAK mengubah alamat, jadi QR yang sudah dicetak tetap berfungsi.
-    slug: "{{slug}}"
-    summary: "{{nama}}  ·  {{jabatan}}  ·  {{aktif}}"
+    # Alamat halaman = KODE ACAK (field "kode", dibuat otomatis oleh widget kartu_id di admin/kartu-preview.js),
+    # BUKAN nama orang. QR berisi /kartu/?id=<kode>. Kode tidak pernah berubah, jadi QR yang sudah dicetak tetap berfungsi.
+    slug: "{{fields.kode}}"
+    summary: "{{nama}}  ·  {{jabatan}}  ·  id: {{kode}}"
     sortable_fields: ["nama", "jabatan"]
     preview_path: "kartu/{{slug}}/"
     fields:
-      - { label: "👤 Nama Lengkap", name: "nama", widget: "string", hint: "Tampil sebagai judul di halaman kartu. Juga menentukan alamat QR (sekali saat dibuat)." }
+      - { label: "🔑 Kode Kartu (otomatis)", name: "kode", widget: "kartu_id", hint: "Dibuat otomatis & tidak bisa diubah. Dipakai di alamat QR: victorindokimiatama.com/kartu/?id=<kode>" }
+      - { label: "👤 Nama Lengkap", name: "nama", widget: "string", hint: "Tampil sebagai judul di halaman kartu. Boleh diubah kapan saja; alamat QR tidak ikut berubah." }
       - { label: "💼 Jabatan / Divisi", name: "jabatan", widget: "string", required: false, hint: "Contoh: Sales Executive, Technical Support, Purchasing. Boleh dikosongkan." }
       - { label: "📱 Nomor WhatsApp", name: "whatsapp", widget: "string", pattern: ["^[+0-9 ()-]{9,20}$", "Isi nomor WA, mis. 0812-3456-7890 atau +62 812-3456-7890"], hint: "Boleh diawali 08 atau +62 — otomatis dirapikan." }
       - { label: "✉️ Email", name: "email", widget: "string", pattern: ["^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", "Format email tidak valid"] }
