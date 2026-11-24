@@ -652,6 +652,27 @@ collections:
               - { label: "Sumber / Nama (opsional)", name: "cite", widget: "string", required: false }
       - { label: "📄 Isi Lama (Markdown) — biarkan kosong untuk berita baru", name: "body", widget: "markdown", required: false, i18n: true, hint: "Kolom lama. Berita baru cukup pakai 'Susunan Isi Berita' di atas. Jika kolom ini terisi DAN Susunan di atas kosong, maka kolom ini yang dipakai." }
 
+  - name: "kartu_nama"
+    label: "🪪 Kartu Nama Karyawan"
+    label_singular: "Karyawan"
+    description: "Halaman kontak digital untuk QR code di kartu nama. Klik 'New Karyawan' untuk menambah orang yang mengajukan kartu nama. QR code siap unduh ada di panel kanan. ⚠️ Jangan hapus entri karyawan yang sudah keluar: matikan 'Masih Aktif' saja, supaya QR di kartu lama tetap mengarah ke kontak kantor."
+    folder: "src/kartu"
+    create: true
+    extension: "md"
+    identifier_field: "nama"
+    # Alamat halaman dibuat OTOMATIS dari nama saat entri DIBUAT, mis. "Budi Santoso" → /kartu/budi-santoso/.
+    # Mengganti nama di kemudian hari TIDAK mengubah alamat, jadi QR yang sudah dicetak tetap berfungsi.
+    slug: "{{slug}}"
+    summary: "{{nama}}  ·  {{jabatan}}  ·  {{aktif}}"
+    sortable_fields: ["nama", "jabatan"]
+    preview_path: "kartu/{{slug}}/"
+    fields:
+      - { label: "👤 Nama Lengkap", name: "nama", widget: "string", hint: "Tampil sebagai judul di halaman kartu. Juga menentukan alamat QR (sekali saat dibuat)." }
+      - { label: "💼 Jabatan / Divisi", name: "jabatan", widget: "string", required: false, hint: "Contoh: Sales Executive, Technical Support, Purchasing. Boleh dikosongkan." }
+      - { label: "📱 Nomor WhatsApp", name: "whatsapp", widget: "string", pattern: ["^[+0-9 ()-]{9,20}$", "Isi nomor WA, mis. 0812-3456-7890 atau +62 812-3456-7890"], hint: "Boleh diawali 08 atau +62 — otomatis dirapikan." }
+      - { label: "✉️ Email", name: "email", widget: "string", pattern: ["^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", "Format email tidak valid"] }
+      - { label: "✅ Masih Aktif", name: "aktif", widget: "boolean", default: true, hint: "Matikan bila karyawan sudah tidak bertugas: halaman otomatis menampilkan kontak kantor." }
+
   - name: "settings"
     label: "⚙️ Pengaturan Situs"
     # Pratinjau AKTIF dengan template visual khusus (lihat renderSettings di
