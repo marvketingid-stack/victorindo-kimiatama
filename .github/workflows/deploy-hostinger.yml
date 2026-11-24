@@ -42,6 +42,8 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_SERVER }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          # Hostinger kini MENOLAK FTP tanpa enkripsi (error 421 "cleartext sessions ... not accepted").
+          protocol: ftps
           local-dir: _site/
           # Akun FTP "deploy@" sudah di-scope ke public_html, jadi upload ke root akun ini.
           server-dir: ./
