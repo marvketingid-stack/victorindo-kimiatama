@@ -21,9 +21,8 @@
     var s = '';
     try { s = props.entry.get('slug') || ''; } catch (e) {}
     if (s) return { slug: s, final: true };
-    s = String(nama || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    return { slug: s, final: false };
+    // Entri baru: alamat = kode acak (field "kode"), final setelah disimpan.
+    return { slug: String(nama || ''), final: false };
   }
 
   function qrMatrix(text) {
@@ -61,8 +60,8 @@
   function renderKartuPreview(props) {
     var d = {};
     try { d = props.entry.getIn(['data']).toJS(); } catch (e) { d = {}; }
-    var s = kartuSlug(props, d.nama);
-    var url = s.slug ? KARTU_BASE + s.slug + '/' : '';
+    var s = kartuSlug(props, d.kode);
+    var url = s.slug ? KARTU_BASE + '?id=' + s.slug : '';
     var q = qrMatrix(url);
     var aktif = d.aktif !== false;
 
@@ -87,10 +86,10 @@
         h('div', { style: { marginTop: '28px', padding: '20px', background: '#fff', border: '1px solid #e3e2e2', textAlign: 'center' } },
           h('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: '11px', letterSpacing: '.12em', textTransform: 'uppercase', color: '#6B6B6B', marginBottom: '12px' } }, 'QR Code untuk Kartu Nama'),
           q ? h('div', { style: { width: '220px', margin: '0 auto' }, dangerouslySetInnerHTML: { __html: qrSvg(q) } })
-            : h('div', { style: { padding: '40px 0', color: '#6B6B6B', fontSize: '13px' } }, window.qrcode ? 'Isi nama dulu untuk membuat QR.' : 'Library QR belum termuat — muat ulang halaman admin.'),
+            : h('div', { style: { padding: '40px 0', color: '#6B6B6B', fontSize: '13px' } }, window.qrcode ? 'Kode kartu belum dibuat.' : 'Library QR belum termuat — muat ulang halaman admin.'),
           url ? h('div', { style: { fontSize: '12px', color: '#1a1c1c', marginTop: '10px', wordBreak: 'break-all' } }, url) : null,
           (url && !s.final) ? h('div', { style: { fontSize: '12px', color: '#9A1208', marginTop: '8px' } },
-            'Alamat final terkunci setelah entri disimpan (Save). Unduh QR setelah Save & Publish.') : null,
+            'Simpan (Save) & Publish dulu, lalu unduh QR-nya.') : null,
           q ? h('div', { style: { display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '16px' } },
             h('button', { type: 'button', style: btn, onClick: function () { download(file + '.png', qrPng(q, 1200)); } }, 'Unduh PNG'),
             h('button', { type: 'button', style: btn2, onClick: function () {
@@ -103,4 +102,27 @@
   }
 
   CMS.registerPreviewTemplate('kartu_nama', renderKartuPreview);
+
+  /* Widget "kartu_id": kode acak 8 karakter, dibuat sekali saat entri baru, lalu terkunci.
+     Huruf mirip (i, l, o, 0, 1) dihindari supaya mudah dibaca/diketik. */
+  var createClass = window.createClass;
+  if (createClass && CMS.registerWidget) {
+    var ALPHA = 'abcdefghjkmnpqrstuvwxyz23456789';
+    var genKode = function () {
+      var out = '', buf = new Uint32Array(8);
+      (window.crypto || window.msCrypto).getRandomValues(buf);
+      for (var i = 0; i < 8; i++) out += ALPHA[buf[i] % ALPHA.length];
+      return out;
+    };
+    var KartuIdControl = createClass({
+      componentDidMount: function () { if (!this.props.value) this.props.onChange(genKode()); },
+      render: function () {
+        return h('div', { id: this.props.forID, className: this.props.classNameWrapper,
+          style: { fontFamily: 'JetBrains Mono, monospace', fontSize: '15px', letterSpacing: '.08em', color: '#1a1c1c', background: '#f4f3f3' } },
+          this.props.value || '…');
+      }
+    });
+    var KartuIdPreview = function (props) { return h('span', {}, props.value || ''); };
+    CMS.registerWidget('kartu_id', KartuIdControl, KartuIdPreview);
+  }
 })();
