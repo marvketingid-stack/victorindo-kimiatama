@@ -1,4 +1,5 @@
 ---
+kode: rymvrr87
 nama: Gilang  Bangun A
 jabatan: Supervisor IT
 whatsapp: "089655832367"
